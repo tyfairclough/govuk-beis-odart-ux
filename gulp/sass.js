@@ -32,13 +32,23 @@ gulp.task('sass', function () {
 // Subapp sass
 
 gulp.task('subapp-sass', function () {
-  console.log("error here?")
 	// any sass file found within views will get processed.
   return gulp.src(config.paths.subappAssets + '/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
+    // .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
+    .pipe(gulp.dest(config.paths.public + '/stylesheets/apps/'))
+})
+
+gulp.task('subapp-js', function () {
+	// any sass file found within views will get processed.
+  return gulp.src(config.paths.subappAssets + '/**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    // .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
+    .pipe(gulp.dest(config.paths.public + '/javascripts/apps/'))
 })
 
 gulp.task('sass-documentation', function () {

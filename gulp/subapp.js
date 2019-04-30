@@ -36,17 +36,23 @@ gulp.task('watch-subapp-sass', function(){
   return gulp.watch('app/views/apps/**/*.scss', {cwd: './'}, ['subapp-sass'])
 })
 
-/**
+/*
  * Do this stuff then run the kit's default task
- */
-// gulp.task('subapp-tasks', ['subapp-sass', 'watch-subapp-sass']);
-//
-// gulp.task('subapp', function (done) {
-//   runSequence(
-// 		'generate-assets',
-// 	  'subapp-tasks',
-// 	  'watch',
-// 	  'server',
-// 		done
-// 	)
-// })
+*/
+
+// not sure what you're up to here. You run sass compiler and then watch the sass files?
+// i've just set them up as a series for you to fix the line of code that was broken
+gulp.task('subapp-tasks', gulp.series(
+  'subapp-sass', 
+  'watch-subapp-sass'
+));
+
+gulp.task('subapp', function (done) {
+  runSequence(
+		'generate-assets',
+	  'subapp-tasks',
+	  'watch',
+	  'server',
+		done
+	)
+})

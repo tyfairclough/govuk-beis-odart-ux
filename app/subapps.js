@@ -58,6 +58,7 @@ let getSubAppData = function(currentPath) {
 		// url paths constructed from the passed in subapp path
 		urlPaths: {
 			appRoot: appAbsolutePath,
+			appSubRoute: appAbsolutePath + 'views/apps/',
 			assetsPath: appAbsolutePath + 'assets/',
 			scriptsPath: appAbsolutePath + 'assets/javascripts/',
 			stylesPath: appAbsolutePath + 'assets/sass/',

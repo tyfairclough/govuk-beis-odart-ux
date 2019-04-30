@@ -30,27 +30,22 @@ gulp.task('subapp-sass', function () {
 	}))
 })
 
-gulp.task('watch-subapp-sass', function(){
-  return gulp.watch('app/views/apps/**/*.scss', {cwd: './'}, ['subapp-sass'])
-})
+// Watch files for changes (without Browser-Sync)
+gulp.task('watch-subapp-sass', function() {
+  // Watch .scss files
+  gulp.watch('app/views/apps/**/*.scss', gulp.series('subapp-sass'));
+});
 
-/*
- * Do this stuff then run the kit's default task
-*/
+// I've removed your 'subapp-tasks' task as not required. 
+// You're watching the sass files above and running 'subapp-sass' when changes are made anyway.
 
-// not sure what you're up to here. You run sass compiler and then watch the sass files?
-// i've just set them up as a series for you to fix the line of code that was broken
-gulp.task('subapp-tasks', gulp.series(
-  'subapp-sass', 
-  'watch-subapp-sass'
-));
+// Then I swapped the below 'subapp-tasks' with 'subapp-sass'.
+// I've also changes watch to 'watch-subapp-sass' as watch was not a task.
+// Also commented out 'generate-assets' as it doesn't exist in this gulpfile
 
-gulp.task('subapp', function (done) {
-  runSequence(
-		'generate-assets',
-	  'subapp-tasks',
-	  'watch',
-	  'server',
-		done
-	)
-})
+gulp.task('subapp', gulp.series(
+  // 'generate-assets',
+  'subapp-sass',
+  'watch-subapp-sass',
+  'server'
+))

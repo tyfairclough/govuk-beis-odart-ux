@@ -10,8 +10,6 @@
 var gulp = require('gulp')
 var sass = require('gulp-sass')
 var sourcemaps = require('gulp-sourcemaps')
-// var runSequence = require('run-sequence').use(gulp);
-var config = require('./config.json')
 
 gulp.task('subapp-sass', function () {
   console.log("error here?")

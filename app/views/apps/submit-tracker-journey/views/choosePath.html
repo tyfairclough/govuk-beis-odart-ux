@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Choose Path</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <p class="govuk-body-lead">Use this service to report your ODA financial data to BEIS.</p>
+        <h2 class="govuk-heading-m">Before you start</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>download the latest tracker spreadsheet template</li>
+          <li>review the guidance on how to complete the spreadsheet</li>
+          <li>populate the spreadsheet with your data</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">What you need</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a complete spreadsheet for the fiancial period you are reporting on</li>
+        </ul>
+
+        <a href="fileUpload.html" class="govuk-button govuk-button--start">Start</a>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="app-help-panel">
+            <h3 class="govuk-heading-m">Supporting documentation</h3>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the ODA reporting spreadsheet, a guide</li>
+              <li>BEIS underlying data requirements</li>
+            </ul>
+            <a href="odaTracker.xls" class="govuk-button govuk-button--secondary">Download ODA tracker spreadsheet</a>
+        </div>
+        </div>
+  </main>
+</div>
+{% endblock %}

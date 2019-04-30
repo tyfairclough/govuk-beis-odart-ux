@@ -1,0 +1,23 @@
+// the global prototyping styles get imported
+// see: app/assets/sass/_global-styles.scss
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+.app-help-panel {
+  background:  #005ea5;
+  padding: 20px;
+  a, p, h1, h2, h3, h4, h5, h6, ul, ol {
+    color: white;
+    &.govuk-button--secondary {
+      background: white;
+      color: #005ea5;
+      border-bottom-color: #f8f8f8;
+    }
+  }
+
+}
+/*----- variables -------*/

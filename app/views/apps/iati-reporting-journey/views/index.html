@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Reporting</h1>
+    <p class="govuk-body-lead">{tell the user what this page does}</p>
+    <a class="govuk-button" href="new-report.html">{create a new report}</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+<h2 class="govuk-heading-l">{reports saved by the user}</h2>
+<table class="govuk-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">{fund name}</th>
+      <th class="govuk-table__header" scope="col">{created date}</th>
+      <th class="govuk-table__header" scope="col">{author of report}</th>
+      <th class="govuk-table__header" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Ebola by Fund</td>
+      <td class="govuk-table__cell" scope="row">10 January 2019</td>
+      <td class="govuk-table__cell" scope="row">Aubrey Rowland</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Carbon Capture 2018</th>
+      <td class="govuk-table__cell" scope="row">13 Febrary 2019</td>
+      <td class="govuk-table__cell" scope="row">Yaretzi Mayo</th>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">FOI NOW Pakistan Funds</th>
+      <td class="govuk-table__cell" scope="row">24 March 2019</td>
+      <td class="govuk-table__cell" scope="row">Odeta Lebrowski</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">PQ Q3/4 Forecast</td>
+      <td class="govuk-table__cell" scope="row">26 March 2019</td>
+      <td class="govuk-table__cell" scope="row">Pradip Ahmed</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">PQM Q2/3 Forecast</td>
+      <td class="govuk-table__cell" scope="row">26 March 2019</td>
+      <td class="govuk-table__cell" scope="row">Pradip Ahmed</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Solar Projects 2018</td>
+      <td class="govuk-table__cell" scope="row">5 June 2018</td>
+      <td class="govuk-table__cell" scope="row">Lakeisha Tabb</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">FOI (indy) Money spent on mosquito research</th>
+      <td class="govuk-table__cell" scope="row">11 February 2019</td>
+      <td class="govuk-table__cell" scope="row">Odeta Lebrowski</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Quarterly forecast (test)</td>
+      <td class="govuk-table__cell" scope="row">9 March 2019</td>
+      <td class="govuk-table__cell" scope="row">Jimmy Broadbent</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Digital forecast 2020</td>
+      <td class="govuk-table__cell" scope="row">8 March 2019</td>
+      <td class="govuk-table__cell" scope="row">Leanne McNaulty</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Test report 2</td>
+      <td class="govuk-table__cell" scope="row">1 January 2019</td>
+      <td class="govuk-table__cell" scope="row">Lakeisha Tabb</td>
+      <td class="govuk-table__cell"><a href="#">Details</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-pagination--container">
+  <ul class="govuk-pagination--pages">
+    <li class="govuk-pagination--back"><</li>
+    <li class="govuk-pagination--page govuk-pagination--page--active">1</li>
+    <li class="govuk-pagination--page"><a href="#">2</a></li>
+    <li class="govuk-pagination--page"><a href="#">3</a></li>
+    <li class="govuk-pagination--forward"><a href="#">></a></li>
+  </ul>
+</div>
+
+<a href="#">{link to archived reports view}</a>
+<br />
+<br />
+        </div>
+        <div class="govuk-grid-column-full">
+          <div class="app-help-panel panel-blue">
+            <h3 class="govuk-heading-m">{IATI submission report}</h3>
+            <p class="govuk-p">{Generate IATI approved xml transparency reports}</p>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-caption-m">{show Current reporting period}</div>
+                <div class="govuk-heading-xl">Q3 2019</div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-caption-m">{show Trackers submitted into service}</div>
+                <div class="govuk-heading-xl">14 of 45</div>
+              </div>
+            </div>
+
+            <a href="#" class="govuk-button govuk-button--secondary">{users can download IATI report journey}</a>
+            <a href="#" class="govuk-button govuk-button--link">{user can view list of trackers}</a>
+
+            </div>
+        </div>
+  </main>
+</div>
+{% endblock %}

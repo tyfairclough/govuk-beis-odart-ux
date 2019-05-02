@@ -15,11 +15,19 @@ $govuk-blue: #005ea5;
 $govuk-white: #fff;
 $govuk-orange: #f47738;
 $govuk-red: #b10e1e;
+$govuk-grey-1: #6f777b;
+$govuk-grey-2: #bfc1c3;
+$govuk-grey-3: #dee0e2;
+$govuk-grey-4: #f8f8f8;
 
 
 .panel-blue {
   background: $govuk-blue;
-  a, p, h1, h2, h3, h4, h5, h6, ul, ol {
+  color: $govuk-white;
+  a, p, h1, h2, h3, h4, h5, h6, ul, ol, .govuk-heading-xl, .govuk-caption-m {
+    color: $govuk-white;
+  }
+  .govuk-heading-xl, .govuk-caption-m {
     color: $govuk-white;
   }
 }
@@ -57,6 +65,46 @@ $govuk-red: #b10e1e;
   div {
     color: $govuk-red;
     font-weight: 900;
+  }
+}
+
+/*----- pagination -------*/
+
+.govuk-pagination--container {
+  .govuk-pagination--pages {
+    list-style: none;
+    display: block;
+    float: left;
+    width: 100%;
+    overflow: auto;
+    margin: 0 0 30px 0;
+    padding: 0;
+    li {
+      font-family: "nta", arial, sans-serif;
+      color: $govuk-grey-2;
+      display: inline-block;
+      float: left;
+      padding: 10px 15px;
+      margin-right: 5px;
+      background: $govuk-grey-4;
+      a {
+        text-decoration: none;
+      }
+      &:hover {
+        background: $govuk-grey-2
+      }
+    }
+  }
+}
+
+/*----- buttons -------*/
+
+.govuk-button--link {
+  background: none;
+  text-decoration: underline;
+  box-shadow: none;
+  &:hover {
+    background: rgba(255,255,255,0.2);
   }
 }
 

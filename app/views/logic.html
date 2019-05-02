@@ -1,7 +1,6 @@
-{% extends "template.njk" %}
 {% import "includes/macros/global.html" as macros %}
 
-{% from "accordion/macro.njk"        import govukAccordion %}
+
 {% from "back-link/macro.njk"        import govukBackLink %}
 {% from "breadcrumbs/macro.njk"      import govukBreadcrumbs %}
 {% from "button/macro.njk"           import govukButton %}
@@ -31,40 +30,22 @@
   {% include "includes/head.html" %}
 {% endblock %}
 
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
 
-{% block header %}
+<section class="logicPage panel-blue">
+  <div class="container">
+ {% block logicPageBlock %}
+ <h1 class="govuk-heading-xl">Choose a path</h1>
 
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
+ <p class="govuk-body">Please choose one outcome</p>
 
-{% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ]
-      }
-    }) }}
-  {% endblock %}
-{% endif %}
+ <ul class="govuk-list govuk-list--bullet">
+   <li>Success</li>
+   <li>Fail</li>
+   </ul>
+   {% endblock %}
+</div>
+</div>
+
 
 {% block bodyEnd %}
   {% block scripts %}

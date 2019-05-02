@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Run IATI report</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <p class="govuk-body-lead">Create an IATI report that can be submitted to the IATI tracker system.</p>
+          <div class="app-help-panel panel-blue">
+            <div class="govuk-grid-row">
+                          <div class="govuk-grid-column-one-half">
+                            <div class="govuk-caption-m">{show Current reporting period}</div>
+                            <div class="govuk-heading-xl">Q3 2019</div>
+                          </div>
+
+                        </div>
+          </div>
+          <br />
+          <br />
+          <h2 class="govuk-heading-m">What you need</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>authorisation to run the IATI report</li>
+            <li>a complete set of trackers for the report</li>
+          </ul>
+
+<a class="govuk-button govuk-button--start">Start</a>
+
+        </div>
+        <div class="govuk-grid-column-one-third">
+        </div>
+  </main>
+</div>
+{% endblock %}

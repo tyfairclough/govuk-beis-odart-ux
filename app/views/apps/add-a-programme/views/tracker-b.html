@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+    <span class="govuk-caption-xl">Delivery Partner name</span>
+    <h1 class="govuk-heading-xl">{tracker}</h1>
+    <p class="govuk-body-lead">{tell the user what this page does}</p>
+    <!-- <a class="govuk-button" href="new-report.html">{create a new report}</a> -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div class="panel-blue">
+          <div class="govuk-caption-m">{total spend}</div>
+          <div class="govuk-heading-xl">£999,999</div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <div class="panel-blue">
+          <div class="govuk-caption-m">{budget difference}</div>
+          <div class="govuk-heading-xl"><sup>+/-</sup>£999,999</div>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+<h2 class="govuk-heading-l">{trackers}</h2>
+
+<div class="js-hidden" data-module="accordion-with-descriptions">
+    <div class="subsection-wrapper">
+        <div class="subsection js-subsection">
+            <div class="subsection__header">
+                <h2 class="subsection__title">{Programme name}</h2>
+                <p class="subsection__description">{Short sentence describing programme. Link to programme details}</p>
+            </div>
+            <div class="subsection__content js-subsection-content" id="subsection_content_0">
+              <table class="govuk-table govuk-table--small">
+
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">{grant name}</th>
+                    <th class="govuk-table__header" scope="col">{id}</th>
+                    <th class="govuk-table__header" scope="col">{status}</th>
+                    <th class="govuk-table__header" scope="col">{actual}</th>
+                    <th class="govuk-table__header" scope="col">{budet difference}</th>
+                    <th class="govuk-table__header" scope="col">{accrual q3 19}<span class="govuk-caption-s">{forecast q3 19}</span></th>
+                    <th class="govuk-table__header" scope="col">{accrual q4 19}<span class="govuk-caption-s">{forecast q4 19}</span></th>
+                    <th class="govuk-table__header" scope="col">{accrual q1 20}<span class="govuk-caption-s">{forecast q1 20}</span></th>
+                    <th class="govuk-table__header" scope="col">{narrative}</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">{grant name}</td>
+                    <td class="govuk-table__cell" scope="row">{BEIS-IATI-ID}</td>
+                    <td class="govuk-table__cell" scope="row">{live}</td>
+                    <td class="govuk-table__cell">£999,999</td>
+                    <td class="govuk-table__cell">+/-£999,999</td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">{the users entered narrative as to why the figure has changed, if applicable}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">{grant name}</td>
+                    <td class="govuk-table__cell" scope="row">{BEIS-IATI-ID}</td>
+                    <td class="govuk-table__cell" scope="row">{live}</td>
+                    <td class="govuk-table__cell">£999,999</td>
+                    <td class="govuk-table__cell">+/-£999,999</td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">{the users entered narrative as to why the figure has changed, if applicable}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">{grant name}</td>
+                    <td class="govuk-table__cell" scope="row">{BEIS-IATI-ID}</td>
+                    <td class="govuk-table__cell" scope="row">{live}</td>
+                    <td class="govuk-table__cell">£999,999</td>
+                    <td class="govuk-table__cell">+/-£999,999</td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">{the users entered narrative as to why the figure has changed, if applicable}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div class="subsection js-subsection">
+            <div class="subsection__header">
+                <h2 class="subsection__title">{Programme name}</h2>
+                <p class="subsection__description">{Short sentence describing category. Link to programme details}</p>
+            </div>
+            <div class="subsection__content js-subsection-content" id="subsection_content_1">
+              <table class="govuk-table govuk-table--small">
+
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">{grant name}</th>
+                    <th class="govuk-table__header" scope="col">{id}</th>
+                    <th class="govuk-table__header" scope="col">{status}</th>
+                    <th class="govuk-table__header" scope="col">{actual}</th>
+                    <th class="govuk-table__header" scope="col">{budet difference}</th>
+                    <th class="govuk-table__header" scope="col">{accrual q3 19}<span class="govuk-caption-s">{forecast q3 19}</span></th>
+                    <th class="govuk-table__header" scope="col">{accrual q4 19}<span class="govuk-caption-s">{forecast q4 19}</span></th>
+                    <th class="govuk-table__header" scope="col">{accrual q1 20}<span class="govuk-caption-s">{forecast q1 20}</span></th>
+                    <th class="govuk-table__header" scope="col">{narrative}</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">{grant name}</td>
+                    <td class="govuk-table__cell" scope="row">{BEIS-IATI-ID}</td>
+                    <td class="govuk-table__cell" scope="row">{live}</td>
+                    <td class="govuk-table__cell">£999,999</td>
+                    <td class="govuk-table__cell">+/-£999,999</td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">{the users entered narrative as to why the figure has changed, if applicable}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">{grant name}</td>
+                    <td class="govuk-table__cell" scope="row">{BEIS-IATI-ID}</td>
+                    <td class="govuk-table__cell" scope="row">{live}</td>
+                    <td class="govuk-table__cell">£999,999</td>
+                    <td class="govuk-table__cell">+/-£999,999</td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">{the users entered narrative as to why the figure has changed, if applicable}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">{grant name}</td>
+                    <td class="govuk-table__cell" scope="row">{BEIS-IATI-ID}</td>
+                    <td class="govuk-table__cell" scope="row">{live}</td>
+                    <td class="govuk-table__cell">£999,999</td>
+                    <td class="govuk-table__cell">+/-£999,999</td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">£999,999 <span class="govuk-caption-s">£999,999</span></td>
+                    <td class="govuk-table__cell">{the users entered narrative as to why the figure has changed, if applicable}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<a class="govuk-button">Continue</a>
+
+        </div>
+
+  </main>
+</div>
+{% endblock %}

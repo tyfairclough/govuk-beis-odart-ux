@@ -1,0 +1,171 @@
+{% extends "layout-wide.html" %}
+
+{% block content %}
+
+<div class="govuk-width-fluid">
+  <a href="#" class="govuk-back-link">Back</a>
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        {report created}
+      </h1>
+    </div>
+    <h1 class="govuk-heading-xl">
+        report DFID by month (Alex's report)
+     </h1>
+
+     <div class="wrapper">
+     <section id="report">
+     <div class="govuk-tabs" data-module="tabs">
+       <h2 class="govuk-tabs__title">
+         Contents
+       </h2>
+
+       <ul class="govuk-tabs__list">
+         <li class="govuk-tabs__list-item">
+           <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#section-0">
+             section 0
+           </a>
+         </li>
+         <li class="govuk-tabs__list-item">
+           <a class="govuk-tabs__tab" href="#section-1">
+             section 1
+           </a>
+         </li>
+         <li class="govuk-tabs__list-item">
+           <a class="govuk-tabs__tab" href="#section-2">
+             section 2
+           </a>
+         </li>
+         <li class="govuk-tabs__list-item">
+           <a class="govuk-tabs__tab" href="#section-3">
+             section 3
+           </a>
+         </li>
+       </ul>
+
+       <section class="govuk-tabs__panel" id="section-0">
+         <div id="chart">
+         </div>
+         <div class="govuk-grid-row">
+            <div class="govuk-column-quarter">
+            <div class="data pink">
+                <h2 class="data-item bold-large" id="data-1">£2,150</h2>
+                <h2 class="data-item bold-small">Committed to training</h2>
+            </div>
+            </div>
+            <div class="govuk-column-quarter">
+            <div class="data purple">
+                <h2 class="data-item bold-large" id="data-2">£2,150</h2>
+                <h2 class="data-item bold-small">Levy funding</h2>
+            </div>
+            </div>
+            <div class="govuk-column-quarter">
+            <div class="data fuscia">
+                <h2 class="data-item bold-large expiring-funds" id="data-3">£2,150</h2>
+                <h2 class="data-item bold-small">Training costs</h2>
+            </div>
+            </div>
+            <div class="govuk-column-quarter">
+            <div class="data">
+                <h2 class="data-item bold-large expiring-funds" id="data-4">£0</h2>
+                <h2 class="data-item bold-small">Transfer balance</h2>
+            </div>
+            </div>
+        </div>
+       </section>
+       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="section-1">
+         <h2 class="govuk-heading-l">section 1</h2>
+
+       </section>
+       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="section-2">
+         <h2 class="govuk-heading-l">section 2</h2>
+
+       </section>
+       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="section-3">
+         <h2 class="govuk-heading-l">section 3</h2>
+       </section>
+     </div>
+     </section>
+  <aside class="aside">
+              <div class="grid-row">
+                  <div class="column-full">
+                      <div>
+          <div class="hgroup">
+           <h2 class="govuk-heading-m">Saved forecasts</h2>
+              <p>TELL USERS THIS IS TO VIEW AND CREATE FORECASTS TELL USERS THIS IS TO VIEW AND CREATE FORECASTS TELL USERS THIS IS TO VIEW AND CREATE FORECASTS</p>
+           <a class="govuk-button" href="start.html">Create a new forecast</a>
+          </div>
+
+                          <div class="related">
+                                  <h2 class="govuk-heading-m">Manage existing forecasts</h2>
+  <div data-module="accordion-with-descriptions" class="js-accordion-with-descriptions"><div class="subsection-controls js-subsection-controls"><button aria-expanded="false" aria-controls="subsection_content_0 subsection_content_1 subsection_content_2 ">Open all</button></div>
+      <div class="subsection-wrapper">
+          <div class="subsection js-subsection">
+              <div class="subsection__header">
+                  <h2 class="subsection__title"><button class="subsection__button js-subsection-button" aria-expanded="false" aria-controls="subsection_content_0">forecast 301017 16:14</button></h2>
+                  <p class="subsection__description">Last updated: 30 October 2017</p>
+              <span class="subsection__icon"></span></div>
+              <div class="subsection__content js-subsection-content js-hidden" id="subsection_content_0">
+                  <ul class="subsection__list">
+                      <li class="subsection__list-item">
+                           <a href="#1">Present forecast</a>
+                      </li>
+                      <li class="subsection__list-item">
+                           <a href="#1">Export data</a>
+                      </li>
+
+                      <li class="subsection__list-item">
+                           <a href="#1">Rename forecast</a>
+                      </li>
+                       <li class="subsection__list-item">
+                           <a href="#1">Share forecast</a>
+                      </li>
+                      <li class="subsection__list-item">
+                           <a href="#1">Delete forecast</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="subsection js-subsection">
+              <div class="subsection__header">
+                  <h2 class="subsection__title"><button class="subsection__button js-subsection-button" aria-expanded="false" aria-controls="subsection_content_1">My first forecast</button></h2>
+                  <p class="subsection__description">Last updated: 3 days ago</p>
+              <span class="subsection__icon"></span></div>
+              <div class="subsection__content js-subsection-content js-hidden" id="subsection_content_1">
+                  <ul class="subsection__list">
+                      <li class="subsection__list-item">
+                           <a href="#1">List item one</a>
+                      </li>
+                      <li class="subsection__list-item">
+                           <a href="#1">List item two</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="subsection js-subsection">
+              <div class="subsection__header">
+                  <h2 class="subsection__title"><button class="subsection__button js-subsection-button" aria-expanded="false" aria-controls="subsection_content_2">5 year forecast</button></h2>
+                  <p class="subsection__description">Last updated: just now</p>
+              <span class="subsection__icon"></span></div>
+              <div class="subsection__content js-subsection-content js-hidden" id="subsection_content_1">
+                  <ul class="subsection__list">
+                      <li class="subsection__list-item">
+                           <a href="#1">List item one</a>
+                      </li>
+                      <li class="subsection__list-item">
+                           <a href="#1">List item two</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </aside>
+          </div>
+</div>
+{% endblock %}

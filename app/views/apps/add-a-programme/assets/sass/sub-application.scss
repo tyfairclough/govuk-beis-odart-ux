@@ -101,8 +101,9 @@ $govuk-grey-4: #f8f8f8;
 
 .govuk-button--link {
   background: none;
-  text-decoration: underline;
+  text-decoration: underline !important;
   box-shadow: none;
+  color: $govuk-blue !important;
   &:hover {
     background: rgba(255,255,255,0.2);
   }

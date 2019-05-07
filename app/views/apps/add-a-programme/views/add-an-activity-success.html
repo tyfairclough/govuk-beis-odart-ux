@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <div class="govuk-panel govuk-panel--confirmation">
+<h1 class="govuk-panel__title">
+  Activity added
+</h1>
+<div class="govuk-panel__body">
+  Your activity ID<br><strong>HDJ2123F</strong>
+</div>
+</div>
+
+<fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+      {what next?}
+    </h1>
+  </legend>
+  <div class="govuk-radios govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
+      <label class="govuk-label govuk-radios__label" for="changed-name-1">
+        {add another activity}
+        <span id="changed-name-hint" class="govuk-hint">
+          {You can do this at any time, but you must add activities before you can report against them.}
+        </span>
+      </label> </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+        {go to activities}
+      </label> </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+        {log out}
+      </label> </div>
+  </div>
+  <div class="govuk-form-group">
+    <br />
+    <br />
+    <a class="govuk-button" href="new-report.html">Continue</a>
+  </div>
+</fieldset>
+
+</div>
+</div>
+
+  </main>
+</div>
+{% endblock %}

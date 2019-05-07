@@ -42,12 +42,18 @@
       </label>
       <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
     </div>
+
     <div class="govuk-form-group">
-      <label class="govuk-label" for="address-line-1">
-        Pillar
-      </label>
-      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-    </div>
+<label class="govuk-label" for="pillar">
+  Pillar
+</label>
+<select class="govuk-select">
+  <option value="people">People</option>
+  <option value="research">Research</option>
+  <option value="translation">Translation</option>
+  <option value="delivery">Delivery</option>
+</select>
+</div>
 
 
 
@@ -58,7 +64,7 @@
         <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
       </div>
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group hide">
         <div class="govuk-date-input__item">
           <div class="govuk-form-group">
             <label class="govuk-label govuk-date-input__label" for="passport-issued-month">

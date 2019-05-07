@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <div class="govuk-error-summary hide" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#file-upload-1">{ProgrammeName} {rowNumber} {cellName} has {errorMessage}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Add financial tracker data</h1>
+    <p class="govuk-body-lead">Complete each programme's spreadsheet.</p>
+
+    <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+    <div class="js-accordion-with-descriptions" data-module="accordion-with-descriptions"><div class="subsection-controls js-subsection-controls"><button aria-expanded="false" aria-controls="subsection_content_0 subsection_content_1 ">Open all</button></div>
+        <div class="subsection-wrapper">
+            <div class="js-subsection subsection--is-open">
+                <div class="subsection__header">
+                    <h2 class="subsection__title"><button class="subsection__button js-subsection-button" aria-expanded="true" aria-controls="subsection_content_0">Climate Investment Funds</button></h2>
+                <span class="subsection__icon"></span></div>
+                <div class="subsection__content js-subsection-content" id="subsection_content_0">
+                  <div id="jexcel-1"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="subsection-wrapper">
+            <div class="js-subsection subsection--is-closed">
+                <div class="subsection__header">
+                    <h2 class="subsection__title"><button class="subsection__button js-subsection-button" aria-expanded="true" aria-controls="subsection_content_0">Climate Public Private Partnership (CP3) Platform</button></h2>
+                <span class="subsection__icon"></span></div>
+                <div class="subsection__content js-subsection-content hide" id="subsection_content_0">
+                  <div id="jexcel-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <a class="govuk-button">Continue</a>
+
+            </div>
+
+      </div>
+
+  </main>
+</div>
+{% endblock %}

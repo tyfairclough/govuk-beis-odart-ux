@@ -59,16 +59,48 @@ var len;
         }
     });
 
+
    switch (pageName) {
        case 'trackerSubmitJourneyLogic':
            trackerSubmitJourneyLogic();
            break;
-       case 'forecast-index':
-           forecastIndex();
+       case 'trackerDetailsReview':
+           trackerDetailsReview();
+           break;
+       case 'submitDataTable':
+           submitDataTable();
+           break;
+       case 'beisReportingDashboard':
+           beisReportingDashboard();
+           break;
+       case 'approveTrackerUserJourney':
+           approveTrackerUserJourney();
            break;
        default: break;
 }
 
+
+function approveTrackerUserJourney(){
+    $(".govuk-button").click(function(e){
+    e.preventDefault();
+    state = $("input[name=choose-journey]:checked").val()
+    console.log(state);
+    if (state === "approve") {
+        window.location.href = "success-approve.html";
+    } else {
+        window.location.href = "success-declined.html";
+    }
+  })
+}
+
+  function trackerDetailsReview(){
+    $(".govuk-table__body .govuk-table__row").click(function(){
+      // alert("boom")
+      $(this).toggleClass("highlighted")
+      $(this).find("i").toggleClass("fa").toggleClass("fal");
+      $(this).after('<tr class="govuk-table__row"  id="activityFeedback"><td class="govuk-table__cell" colspan="8"><div class="govuk-form-group"><label class="govuk-label" for="more-detail">Provide feedback (optional)</label><span id="more-detail-hint" class="govuk-hint">Explain why you are flagging this activity.</span><textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea></div></td></tr>');
+    })
+  }
 
   function trackerSubmitJourneyLogic(){
     $(".govuk-button").click(function(e){

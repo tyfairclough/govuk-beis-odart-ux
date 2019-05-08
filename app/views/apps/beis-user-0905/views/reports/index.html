@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container" data-page-name="beisReportingDashboard">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <div class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">ODA reports</h1>
+    <p class="govuk-body-lead">Create and manage financial ODA reports.</p>
+    <a class="govuk-button" href="#">Create a new report</a>
+    <a href="#" class="govuk-button govuk-button--link">View archived reports</a>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+<h2 class="govuk-heading-l">Existing reports</h2>
+<table class="govuk-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Report name</th>
+      <th class="govuk-table__header" scope="col">Created on</th>
+      <th class="govuk-table__header" scope="col">Last modified by</th>
+      <th class="govuk-table__header" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Ebola by Fund</td>
+      <td class="govuk-table__cell" scope="row">10 Jan 19</td>
+      <td class="govuk-table__cell" scope="row">Aubrey Rowland</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Carbon Capture 2018</th>
+      <td class="govuk-table__cell" scope="row">13 Feb 19</td>
+      <td class="govuk-table__cell" scope="row">Yaretzi Mayo</th>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">FOI NOW Pakistan Funds</th>
+      <td class="govuk-table__cell" scope="row">24 Mar 19</td>
+      <td class="govuk-table__cell" scope="row">Odeta Lebrowski</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">PQ Q3/4 Forecast</td>
+      <td class="govuk-table__cell" scope="row">26 Mar 19</td>
+      <td class="govuk-table__cell" scope="row">Pradip Ahmed</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row hide">
+      <td class="govuk-table__cell" scope="row">PQM Q2/3 Forecast</td>
+      <td class="govuk-table__cell" scope="row">26 Mar 19</td>
+      <td class="govuk-table__cell" scope="row">Pradip Ahmed</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row hide">
+      <td class="govuk-table__cell" scope="row">Solar Projects 2018</td>
+      <td class="govuk-table__cell" scope="row">5 Jun 18</td>
+      <td class="govuk-table__cell" scope="row">Lakeisha Tabb</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row hide">
+      <td class="govuk-table__cell" scope="row">FOI (indy) Money spent on mosquito research</th>
+      <td class="govuk-table__cell" scope="row">11 Feb 19</td>
+      <td class="govuk-table__cell" scope="row">Odeta Lebrowski</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row hide">
+      <td class="govuk-table__cell" scope="row">Quarterly forecast (test)</td>
+      <td class="govuk-table__cell" scope="row">9 Mar 19</td>
+      <td class="govuk-table__cell" scope="row">Jimmy Broadbent</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Digital forecast 2020</td>
+      <td class="govuk-table__cell" scope="row">8 Mar 19</td>
+      <td class="govuk-table__cell" scope="row">Leanne McNaulty</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Test report 2</td>
+      <td class="govuk-table__cell" scope="row">1 Jan 19</td>
+      <td class="govuk-table__cell" scope="row">Lakeisha Tabb</td>
+      <td class="govuk-table__cell"><a href="#">View</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-pagination--container">
+  <ul class="govuk-pagination--pages">
+    <li class="govuk-pagination--back"><</li>
+    <li class="govuk-pagination--page govuk-pagination--page--active">1</li>
+    <li class="govuk-pagination--page"><a href="#">2</a></li>
+    <li class="govuk-pagination--page"><a href="#">3</a></li>
+    <li class="govuk-pagination--forward"><a href="#">></a></li>
+  </ul>
+</div>
+
+<br />
+<br />
+        </div>
+    </div>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+
+            <h2 class="govuk-heading-l">IATI report</h2>
+            <p class="govuk-p">Generate an IATI approved xml transparency report</p>
+
+            <div class="govuk-caption-m">This period's deadline</div>
+            <div class="govuk-heading-m">28 Jun 2019</div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="panel-blue">
+            <div class="govuk-caption-m">Trackers submitted</div>
+            <div class="govuk-heading-l"><span>34</span> of <span>36</span></div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="panel-blue">
+            <div class="govuk-caption-m">Total spend</div>
+            <div class="govuk-heading-l">£15,590,000</div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="panel-blue">
+            <div class="govuk-caption-m">Budget vs forecast</div>
+            <div class="govuk-heading-l"><span>-</span> <span>£1,105,000</span></div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-full">
+          <div class="govuk-form-group">
+            <br />
+            <br />
+            <a href="iati-user-journey" class="govuk-button govuk-button--secondary">Download IATI xml</a>
+            <a href="../tracker-review" class="govuk-button govuk-button--link" style="text-align: center;">Review trackers</a>
+
+            </div>
+            </div>
+        </div>
+  </div>
+</div>
+{% endblock %}

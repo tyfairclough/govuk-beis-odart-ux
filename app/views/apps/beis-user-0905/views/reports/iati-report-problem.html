@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-main-wrapper" data-page-title="iatiReviewProblem">
+    <h1 class="govuk-heading-xl">Download IATI XML</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+
+          <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              You can not run the IATI download until all trackers are received and approved.
+            </h2>
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Delivery partner</th>
+                  <th class="govuk-table__header" scope="col">Status</th>
+                  <th class="govuk-table__header" scope="col">Contact</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="row">Met Office</th>
+                  <td class="govuk-table__cell govuk-table__cell govuk-error__cell" scope="row" id="warning-1">Waiting for tracker</td>
+                  <td class="govuk-table__cell" scope="row"><a href="#">Ayode Ibe</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="row">British Council	</th>
+                  <td class="govuk-table__cell govuk-table__cell govuk-error__cell" scope="row" id="warning-2">No tracker received</td>
+                  <td class="govuk-table__cell" scope="row"><a href="#">Ula Simko</a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <h1 class="govuk-heading-m">
+              What next?
+            </h1>
+          <ul class="govuk-list govuk-list-links">
+              <li><a href="../dashboard">Back to dashboard</a></li>
+              <li><a href="#">Log out</a></li>
+              <li><a href="#">Submit feedback</a></li>
+              </ul>
+
+        </div>
+  </div></div>
+  {% endblock %}

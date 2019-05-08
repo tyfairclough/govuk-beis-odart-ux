@@ -44,13 +44,36 @@ var len;
        case 'beisReportingDashboard':
            beisReportingDashboard();
            break;
+       case 'approveTrackerUserJourney':
+           approveTrackerUserJourney();
+           break;
        default: break;
+}
+
+
+function beisReportingDashboard(){
+  
+}
+
+function approveTrackerUserJourney(){
+  alert("boom")
+  $(".govuk-button").click(function(e){
+    e.preventDefault();
+    state = $("input[name=choose-journey]:checked").val()
+    console.log(state);
+    if (state === "approve") {
+        window.location.href = "data-table/start";
+    } else {
+        window.location.href = "file-upload/start";
+    }
+  })
 }
 
 function submitDataTable(){
   $(".subsection__header").click(function(){
     $(this).next().toggle();
     $(this).parent().toggleClass("subsection--is-open");
+    // $(this).after('<tr><td>my data</td><td>more data</td></tr>');
   })
 
   // js table
@@ -75,7 +98,7 @@ function submitDataTable(){
 
   $('#jexcel-0').jexcel({
       data:data,
-      colHeaders: ['Activity name', 'Acitvity ID', 'Apr 19', 'May 19', 'Jun 19', 'Q2', 'Narrative'],
+      colHeaders: ['Activity name', 'Acitvity ID', 'Apr 19', 'May 19', 'Jun 19', 'Q2', 'Narrative (optional)'],
       colWidths: [ 200, 120, 70, 100, 100, 100, 250 ],
       columns: [
           { type: 'text',readOnly:true,wordWrap:true},

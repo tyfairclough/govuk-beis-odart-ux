@@ -82,6 +82,9 @@ $govuk-black: #0b0c0c;
   justify-content: center;
 }
 
+.govuk-button-block {
+  display: block;
+}
 
 /*----- inline table errors page -------*/
 
@@ -155,6 +158,14 @@ $govuk-black: #0b0c0c;
 #trackerReviewTable {
   td:last-of-type {
     padding-left: 10px;
+  }
+}
+.projectReviewTable {
+tr {
+  cursor: pointer;
+}
+  .highlighted {
+    background: mix($govuk-white,$govuk-purple,90%);
   }
 }
 

@@ -9,7 +9,8 @@ $(".govuk-back-link").click(function(e){
 var root = "/apps/{{currentApp.appDirName}}/views/";
 console.log(root);
 var className = $("main").attr('id');
-console.log("hello")
+var pageName = $("main .govuk-width-container").data('page-name');
+console.log(pageName)
 var chart = c3.generate({
     bindto: '#chart',
     data: {
@@ -58,45 +59,28 @@ var len;
         }
     });
 
-   switch (className) {
-       case 'reportWide':
-           reportWide();
+   switch (pageName) {
+       case 'trackerSubmitJourneyLogic':
+           trackerSubmitJourneyLogic();
            break;
        case 'forecast-index':
            forecastIndex();
            break;
-       case 'another-page':
-           anotherPage();
-       break;
-       case 'fat-standard':
-           fatStandard();
-       break;
-       case 'index':
-           index();
-       break;
-       case 'finance-transactions':
-           financeTransactions();
-       break;
-       case 'forecast-start':
-           forecastStart();
-       break;
-       case 'forecastYourPaybill':
-           forecastYourPaybill();
-       break;
-       case 'forecastProjectLevy':
-           forecastProjectLevy();
-       break;
-       case 'forecastViewLevy':
-           forecastViewLevy();
-       break;
-       case 'forecastViewCommitments':
-           forecastViewCommitments();
-       break;
-       case 'forecastAlreadyHaveAccount':
-           forecastAlreadyHaveAccount();
-       break;
        default: break;
 }
+
+
+  function trackerSubmitJourneyLogic(){
+    $(".govuk-button").click(function(e){
+      e.preventDefault();
+      state = $("input[name=choose-journey]:checked").val()
+      if (state === "online") {
+          window.location.href = "data-table/start";
+      } else {
+          window.location.href = "file-upload/start";
+      }
+    })
+  }
 
     function fatStandard(){
         $(document).keypress(function(e) {

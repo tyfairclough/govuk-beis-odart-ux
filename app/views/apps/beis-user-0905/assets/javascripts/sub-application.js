@@ -9,7 +9,8 @@ $(".govuk-back-link").click(function(e){
 var root = "/apps/{{currentApp.appDirName}}/views/";
 console.log(root);
 var className = $("main").attr('id');
-console.log("hello")
+var pageName = $("main .govuk-width-container").data('page-name');
+console.log(pageName)
 var chart = c3.generate({
     bindto: '#chart',
     data: {
@@ -58,45 +59,28 @@ var len;
         }
     });
 
-   switch (className) {
-       case 'reportWide':
-           reportWide();
+   switch (pageName) {
+       case 'trackerSubmitJourneyLogic':
+           trackerSubmitJourneyLogic();
            break;
        case 'forecast-index':
            forecastIndex();
            break;
-       case 'another-page':
-           anotherPage();
-       break;
-       case 'fat-standard':
-           fatStandard();
-       break;
-       case 'index':
-           index();
-       break;
-       case 'finance-transactions':
-           financeTransactions();
-       break;
-       case 'forecast-start':
-           forecastStart();
-       break;
-       case 'forecastYourPaybill':
-           forecastYourPaybill();
-       break;
-       case 'forecastProjectLevy':
-           forecastProjectLevy();
-       break;
-       case 'forecastViewLevy':
-           forecastViewLevy();
-       break;
-       case 'forecastViewCommitments':
-           forecastViewCommitments();
-       break;
-       case 'forecastAlreadyHaveAccount':
-           forecastAlreadyHaveAccount();
-       break;
        default: break;
 }
+
+
+  function trackerSubmitJourneyLogic(){
+    $(".govuk-button").click(function(e){
+      e.preventDefault();
+      state = $("input[name=choose-journey]:checked").val()
+      if (state === "online") {
+          window.location.href = "data-table/start";
+      } else {
+          window.location.href = "file-upload/start";
+      }
+    })
+  }
 
     function fatStandard(){
         $(document).keypress(function(e) {
@@ -366,61 +350,47 @@ var chart = c3.generate({
 // js table
 
 data = [
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"],
-    ['{activityName}', "{activityID}", 2000, 2000,2000,2000,"This is a change example"]
+    ['Policy workshops and working group participation',"GCRF001",100034.00,,,,],
+    ['Carbon collection project', "GCRF002",100034.00,,,,],
+    ['Filtration tooling', "GCRF003",10900.00,,,,],
+    ['Environmental Remediation Account for Central Asia (ERA)', "GCRF004",100033.00,,,,],
+    ['Design of Adapt Environmental and Climate Resilience Programme', "GCRF005",100034.00,,,,],
+    ['Technical Assistance Package on Environment and Climate for Papua Island', "GCRF006",100033.00,,,,],
+    ['Provision of finance to the Rwanda Fund for Climate Change and Environment', "GCRF007",58422.39,,,,],
+    ['Implementation of Adapt Environmental and Climate Resilience in Sudan', "GCRF008",44699.56,,,,],
+    ['Implementation of Adapt Environmental and Climate Resilience in Sudan', "GCRF009",50309.56,,,,],
+    ['Advisory support on business environment reform', "GCRF010",57826.04,,,,],
+    ['PMEH - Polution Management and Environmental Health', "GCRF011",10900.00,,,,],
+    ['Polution Management and Environmental Health - International Climate Fund', "GCRF012",100034.00,,,,],
+    ['Polution Management and Environmental Health - Energy water research', "GCRF013",10900.00,,,,],
+    ['SHEAR - To provide scientific results that will improve sub Saharan resilience to respond to natural hazards and emergencies - Joint project with Natural Environment Research Council', "GCRF014",48356.27,,,,],
+    ['Strengthening social and environmental risk management via Not for Profits and Civil Society organisations', "GCRF015",84898.98,,,,]
   ];
 
 $('#jexcel-1').jexcel({
     data:data,
-    colHeaders: ['Activity Name', 'ID', 'Actual', 'Accrual Q1', 'Accrual Q2', 'Accrual Q3', 'Narrative'],
-    colWidths: [ 180, 80, 80, 100, 100, 100, 195 ],
+    colHeaders: ['Activity name', 'Acitvity ID', 'Apr 19', 'May 19', 'Jun 19', 'Q3', 'Narrative'],
+    colWidths: [ 150, 120, 70, 100, 100, 100, 195 ],
     columns: [
-        { type: 'text' },
-        { type: 'text' },
-        { type: 'numeric' },
-        { type: 'numeric' },
-        { type: 'numeric' },
-        { type: 'numeric' },
-        { type: 'text' }
-    ]
-});
-$('#jexcel-2').jexcel({
-    data:data,
-    colHeaders: ['Activity Name', 'ID', 'Actual', 'Accrual Q1', 'Accrual Q2', 'Accrual Q3', 'Narrative'],
-    colWidths: [ 180, 80, 80, 100, 100, 100, 195 ],
-    columns: [
-        { type: 'text' },
-        { type: 'text' },
-        { type: 'numeric' },
-        { type: 'numeric' },
-        { type: 'numeric' },
-        { type: 'numeric' },
-        { type: 'text' }
+        { type: 'text',readOnly:true,wordWrap:true},
+        { type: 'text',readOnly:true},
+        { type: 'text', readOnly:true},
+        { type: 'numeric'},
+        { type: 'numeric'},
+        { type: 'numeric'},
+        { type: 'text',wordWrap:true}
     ],
-    style:[
-        { A1: 'background-color: orange; ' },
-        { B1: 'background-color: orange; ' },
-        { C1: 'background-color: orange; ' },
-        { D1: 'background-color: orange; ' },
-    ]
+    nestedHeaders:[
+        [
+            { title:'', colspan:'2' },
+            { title:'Cash', colspan:'3' },
+            { title:'Accruals', colspan:'1' },
+            { title:'', colspan:'1' },
+        ]
+      ]
 });
 
-$('#jexcel-1').jexcel('setStyle', [{ A1:'font-size:40px'}]);
+// $('#jexcel-1').jexcel('setStyle', [{ }]);
 
 
 

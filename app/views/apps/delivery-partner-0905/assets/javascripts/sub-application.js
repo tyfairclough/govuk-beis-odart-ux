@@ -11,37 +11,7 @@ console.log(root);
 var className = $("main").attr('id');
 var pageName = $("main .govuk-width-container").data('page-name');
 console.log(pageName)
-var chart = c3.generate({
-    bindto: '#chart',
-    data: {
-      columns: [
-        ['data1', 30, 200, 100, 400, 150, 250, 30, 200, 100, 400, 150, 250],
-        ['data2', 30, 200, 100, 400, 150, 250, 30, 200, 100, 400, 321, 22],
-        ['data3', 50, 20, 10, 40, 15, 25, 30, 200, 222, 332, 533, 432],
-        ['data4', 50, 20, 10, 40, 15, 25, 30, 200, 221, 342, 112, 235]
-      ],
-        type: 'area',
-        colors: {
-            data1: '#d53880',
-            data2: '#2e358b',
-            data3: '#912b88',
-            data3: '#cccccc'
-        },
-        names: {
-            data1: 'Levy in',
-            data2: 'Traiing costs',
-            data3: 'Co-investment',
-            data4: 'Transfers'
-        }
-    },
-    subchart: {
-            show: true
-        },
-        zoom: {
-        enabled: true
-        }
 
-});
 
 // _global
 
@@ -59,16 +29,96 @@ var len;
         }
     });
 
+
+
+    // _page
+
+
    switch (pageName) {
        case 'trackerSubmitJourneyLogic':
            trackerSubmitJourneyLogic();
            break;
-       case 'forecast-index':
-           forecastIndex();
+       case 'submitDataTable':
+           submitDataTable();
+           break;
+       case 'beisReportingDashboard':
+           beisReportingDashboard();
            break;
        default: break;
 }
 
+function submitDataTable(){
+  $(".subsection__header").click(function(){
+    $(this).next().toggle();
+    $(this).parent().toggleClass("subsection--is-open");
+  })
+
+  // js table
+
+  data = [
+      ['Policy workshops and working group participation',"GCRF001",100034.00,,,,],
+      ['Carbon collection project', "GCRF002",100034.00,,,,],
+      ['Filtration tooling', "GCRF003",10900.00,,,,],
+      ['Environmental Remediation Account for Central Asia (ERA)', "GCRF004",100033.00,,,,],
+      ['Design of Adapt Environmental and Climate Resilience Programme', "GCRF005",100034.00,,,,],
+      ['Technical Assistance Package on Environment and Climate for Papua Island', "GCRF006",100033.00,,,,],
+      ['Provision of finance to the Rwanda Fund for Climate Change and Environment', "GCRF007",58422.39,,,,],
+      ['Implementation of Adapt Environmental and Climate Resilience in Sudan', "GCRF008",44699.56,,,,],
+      ['Implementation of Adapt Environmental and Climate Resilience in Sudan', "GCRF009",50309.56,,,,],
+      ['Advisory support on business environment reform', "GCRF010",57826.04,,,,],
+      ['PMEH - Polution Management and Environmental Health', "GCRF011",10900.00,,,,],
+      ['Polution Management and Environmental Health - International Climate Fund', "GCRF012",100034.00,,,,],
+      ['Polution Management and Environmental Health - Energy water research', "GCRF013",10900.00,,,,],
+      ['SHEAR - To provide scientific results that will improve sub Saharan resilience to respond to natural hazards and emergencies - Joint project with Natural Environment Research Council', "GCRF014",48356.27,,,,],
+      ['Strengthening social and environmental risk management via Not for Profits and Civil Society organisations', "GCRF015",84898.98,,,,]
+    ];
+
+  $('#jexcel-0').jexcel({
+      data:data,
+      colHeaders: ['Activity name', 'Acitvity ID', 'Apr 19', 'May 19', 'Jun 19', 'Q2', 'Narrative'],
+      colWidths: [ 200, 120, 70, 100, 100, 100, 250 ],
+      columns: [
+          { type: 'text',readOnly:true,wordWrap:true},
+          { type: 'text',readOnly:true},
+          { type: 'text', readOnly:true},
+          { type: 'numeric'},
+          { type: 'numeric'},
+          { type: 'numeric'},
+          { type: 'text',wordWrap:true}
+      ],
+      nestedHeaders:[
+          [
+              { title:'', colspan:'2' },
+              { title:'Cash', colspan:'3' },
+              { title:'Accruals', colspan:'1' },
+              { title:'', colspan:'1' },
+          ]
+        ]
+  });
+
+  $('#jexcel-1').jexcel({
+      data:data,
+      colHeaders: ['Activity name', 'Acitvity ID', 'Apr 19', 'May 19', 'Jun 19', 'Q2', 'Narrative'],
+      colWidths: [ 200, 120, 70, 100, 100, 100, 250 ],
+      columns: [
+          { type: 'text',readOnly:true,wordWrap:true},
+          { type: 'text',readOnly:true},
+          { type: 'text', readOnly:true},
+          { type: 'numeric'},
+          { type: 'numeric'},
+          { type: 'numeric'},
+          { type: 'text',wordWrap:true}
+      ],
+      nestedHeaders:[
+          [
+              { title:'', colspan:'2' },
+              { title:'Cash', colspan:'3' },
+              { title:'Accruals', colspan:'1' },
+              { title:'', colspan:'1' },
+          ]
+        ]
+  });
+}
 
   function trackerSubmitJourneyLogic(){
     $(".govuk-button").click(function(e){
@@ -81,6 +131,51 @@ var len;
       }
     })
   }
+
+
+function beisReportingDashboard(){
+  var chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: [
+          ['data1', 30, 200, 100, 400, 150, 250, 30, 200, 100, 400, 150, 250],
+          ['data2', 30, 200, 100, 400, 150, 250, 30, 200, 100, 400, 321, 22],
+          ['data3', 50, 20, 10, 40, 15, 25, 30, 200, 222, 332, 533, 432],
+          ['data4', 50, 20, 10, 40, 15, 25, 30, 200, 221, 342, 112, 235]
+        ],
+          type: 'area',
+          colors: {
+              data1: '#d53880',
+              data2: '#2e358b',
+              data3: '#912b88',
+              data3: '#cccccc'
+          },
+          names: {
+              data1: 'Levy in',
+              data2: 'Traiing costs',
+              data3: 'Co-investment',
+              data4: 'Transfers'
+          }
+      },
+      subchart: {
+              show: true
+          },
+          zoom: {
+          enabled: true
+          }
+
+  });
+}
+
+
+
+
+
+
+
+
+
+  //old
 
     function fatStandard(){
         $(document).keypress(function(e) {
@@ -220,44 +315,6 @@ $('tr').click(function () {
 
 }
 
-function forecastIndex(){
-     var chart = c3.generate({
-    bindto: '#chart',
-         size: {
-        height: 580
-    },
-    data: {
-      columns: [
-        ['data1', 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898,898],
-        ['data2', 898, 1796, 2694, 3592, 4490, 5388, 6286, 7184, 8082, 9878, 10776, 11674,12572,13470,14368,15266,16164,17062,17960,18858,19756,20654,21552,21552,21552,21552,21552,21552,21552,21552,21552,1450,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        ['data3',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2100,2100,2100,2100,2100,2100,2100,2100,2100,2100,2100,2100,2100,2100,2100,2100,2100],
-        ['data4',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1865,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010],
-        ['data5',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16787,18092,18092,18092,18092,18092,18092,18092,18092,18092,18092,18092,18092,18092,18092,18092]
-      ],
-        type: 'spline',
-        colors: {
-            data1: '#d53880',
-            data2: '#2e358b',
-            data3: '#912b88',
-            data3: '#cccccc'
-        },
-        names: {
-            data1: 'Levy in',
-            data2: 'Balance',
-            data3: 'Cost of training',
-            data4: 'Your co-investment',
-            data5: 'Government co-investment'
-        }
-    },
-    subchart: {
-            show: true
-        },
-        zoom: {
-        enabled: true
-        }
-
-});
-}
 
 function reportWide(){
   $("body").addClass("wide");
@@ -347,48 +404,7 @@ var chart = c3.generate({
     });
 
 
-// js table
 
-data = [
-    ['Policy workshops and working group participation',"GCRF001",100034.00,,,,],
-    ['Carbon collection project', "GCRF002",100034.00,,,,],
-    ['Filtration tooling', "GCRF003",10900.00,,,,],
-    ['Environmental Remediation Account for Central Asia (ERA)', "GCRF004",100033.00,,,,],
-    ['Design of Adapt Environmental and Climate Resilience Programme', "GCRF005",100034.00,,,,],
-    ['Technical Assistance Package on Environment and Climate for Papua Island', "GCRF006",100033.00,,,,],
-    ['Provision of finance to the Rwanda Fund for Climate Change and Environment', "GCRF007",58422.39,,,,],
-    ['Implementation of Adapt Environmental and Climate Resilience in Sudan', "GCRF008",44699.56,,,,],
-    ['Implementation of Adapt Environmental and Climate Resilience in Sudan', "GCRF009",50309.56,,,,],
-    ['Advisory support on business environment reform', "GCRF010",57826.04,,,,],
-    ['PMEH - Polution Management and Environmental Health', "GCRF011",10900.00,,,,],
-    ['Polution Management and Environmental Health - International Climate Fund', "GCRF012",100034.00,,,,],
-    ['Polution Management and Environmental Health - Energy water research', "GCRF013",10900.00,,,,],
-    ['SHEAR - To provide scientific results that will improve sub Saharan resilience to respond to natural hazards and emergencies - Joint project with Natural Environment Research Council', "GCRF014",48356.27,,,,],
-    ['Strengthening social and environmental risk management via Not for Profits and Civil Society organisations', "GCRF015",84898.98,,,,]
-  ];
-
-$('#jexcel-1').jexcel({
-    data:data,
-    colHeaders: ['Activity name', 'Acitvity ID', 'Apr 19', 'May 19', 'Jun 19', 'Q3', 'Narrative'],
-    colWidths: [ 150, 120, 70, 100, 100, 100, 195 ],
-    columns: [
-        { type: 'text',readOnly:true,wordWrap:true},
-        { type: 'text',readOnly:true},
-        { type: 'text', readOnly:true},
-        { type: 'numeric'},
-        { type: 'numeric'},
-        { type: 'numeric'},
-        { type: 'text',wordWrap:true}
-    ],
-    nestedHeaders:[
-        [
-            { title:'', colspan:'2' },
-            { title:'Cash', colspan:'3' },
-            { title:'Accruals', colspan:'1' },
-            { title:'', colspan:'1' },
-        ]
-      ]
-});
 
 // $('#jexcel-1').jexcel('setStyle', [{ }]);
 

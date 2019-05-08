@@ -98,7 +98,7 @@ function approveTrackerUserJourney(){
       // alert("boom")
       $(this).toggleClass("highlighted")
       $(this).find("i").toggleClass("fa").toggleClass("fal");
-      $(this).after('<tr class="govuk-table__row"  id="activityFeedback"><td class="govuk-table__cell" colspan="8"><div class="govuk-form-group"><label class="govuk-label" for="more-detail">Provide feedback (optional)</label><span id="more-detail-hint" class="govuk-hint">Explain why you are flagging this activity.</span><textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea></div></td></tr>');
+      $(this).after('<tr class="govuk-table__row highlighted"  id="activityFeedback"><td class="govuk-table__cell" colspan="8"><div class="govuk-form-group"><label class="govuk-label" for="more-detail">Provide feedback (optional)</label><span id="more-detail-hint" class="govuk-hint">Explain why you are flagging this activity.</span><textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea></div></td></tr>');
     })
   }
 

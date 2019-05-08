@@ -36,6 +36,8 @@ height: 100%;
 $govuk-blue: #005ea5;
 $govuk-white: #fff;
 $govuk-orange: #f47738;
+//tweaked purple to make it AAA with a tint purple background
+$govuk-purple: #8B2780;
 $govuk-red: #b10e1e;
 $govuk-grey-1: #6f777b;
 $govuk-grey-2: #bfc1c3;
@@ -51,8 +53,11 @@ $govuk-black: #0b0c0c;
   a, p, h1, h2, h3, h4, h5, h6, ul, ol, .govuk-heading-xl, .govuk-caption-m {
     color: $govuk-white;
   }
-  .govuk-heading-xl, .govuk-caption-m {
+  [class^="govuk-caption-"], [class^="govuk-heading-"] {
     color: $govuk-white;
+  }
+  [class^="govuk-heading-"] {
+    margin-bottom: 0;
   }
 }
 
@@ -88,6 +93,17 @@ $govuk-black: #0b0c0c;
   padding-left: 0px;
   div {
     color: $govuk-red;
+    font-weight: 900;
+  }
+}
+.govuk-warning__cell {
+  // border-left: 5px solid $govuk-red;
+  box-shadow:-10px 0px 0px 0px mix($govuk-white,$govuk-purple,90%), -15px 0px 0px 0px $govuk-purple;
+  // border-right: 5px solid $govuk-white;
+  background: mix($govuk-white,$govuk-purple,90%);
+  padding-left: 0px;
+  div {
+    color: $govuk-purple;
     font-weight: 900;
   }
 }
@@ -130,6 +146,15 @@ $govuk-black: #0b0c0c;
   color: $govuk-blue !important;
   &:hover {
     background: rgba(255,255,255,0.2);
+  }
+}
+
+
+/* table ui */
+
+#trackerReviewTable {
+  td:last-of-type {
+    padding-left: 10px;
   }
 }
 

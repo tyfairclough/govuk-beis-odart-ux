@@ -41,10 +41,10 @@
   {{ govukHeader({
     homepageUrl: "/",
     serviceName: serviceName,
-    serviceUrl: "/",
+    serviceUrl: computedPath,
     containerClasses: "govuk-width-container"
   }) }}
-  {% include "includes/prototype-banner.html" %}
+  {% include "includes/account-navigation.html" %}
 {% endblock %}
 
 {% if useAutoStoreData %}

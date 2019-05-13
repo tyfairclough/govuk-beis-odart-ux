@@ -1,0 +1,48 @@
+{% extends "layout-subApp.html" %}
+{% block content %}
+<section id="viewID" data-page-name="partnerDashboard">
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <div class="hgroup">
+            <h1 class="govuk-heading-xl">Dashboard</h1>
+            <p class="govuk-body-lead">Use this page to navigate to the goals you need to accomplish.</p>
+          </div>
+    </div>
+
+   </div>
+   <div class="govuk-grid-row">
+     <div class="govuk-grid-column-one-third">
+       <h2 class="govuk-heading-m">Projects and activities</h2>
+       <ul class="govuk-list govuk-list--links">
+         <li><a href="programmes/add/start">Add a project</a>
+         <li><a href="programmes/">Projects and activities</a></li>
+       </ul>
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <h2 class="govuk-heading-m">Financial trackers</h2>
+       <p class="govuk-body">All your reporting data lives here.</p>
+       <ul class="govuk-list govuk-list--links">
+         <li><a href="trackers/submit/start">Submit a new tracker</a>
+         <!-- <li><a href="#">Approve a tracker</a> -->
+         <li><a href="trackers/">View previous submissions</a></li>
+       </ul>
+     </div>
+
+     <div class="govuk-grid-column-one-third">
+             <h2 class="govuk-heading-m">Manage users</h2>
+             <ul class="govuk-list govuk-list--links">
+               <li><a href="#">Invite a new user</a></li>
+               <li><a href="#">View existing users</a>
+             </ul>
+
+       </div>
+       <div class="govuk-grid-column-one-third panel-blue">
+         <h3 class="govuk-heading-m">To do list</h3>
+         <p class="govuk-body">Activies that need you attention</p>
+         <ol class="govuk-list govuk-list--number">
+           <li>Add tracker data for Q3 2019</li>
+           <li>Accept pending invitations</li>
+         </ol>
+       </div>
+     </div>
+</section>
+{% endblock %}

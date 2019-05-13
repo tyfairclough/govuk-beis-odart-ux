@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-heading-xl">Add a project</h1>
+      </legend>
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+        Project title
+      </label>
+      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+        Channel of delivery code
+      </label>
+      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+        ODA Eligibility Confirmation
+      </label>
+      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+    </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-2">
+          Location(s)
+          <span class="hint-text govuk-hint">Enter all locations funds will be spent in</span>
+        </label>
+        <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-town">
+          Principal investigator
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-county">
+          Programme start date
+        </label>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-county">
+          Programme end date
+        </label>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-postcode">
+          Sectors
+        </label>
+        <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+      </div>
+
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Project call
+  </label>
+  <select class="govuk-select">
+    <optgroup label="GCRF">
+    <option value="published">Sustainable energy and international development: beyond technology</option>
+    <option value="published">Early Child Education 2019	</option>
+    <option value="published">Rethinking the off-grid city: Human-infrastructure interactions in the context of urban crises and urban change</option>
+    <option value="published">A Combined Food Systems Approach to Scaling-up Interventions to Address the Double Burden of Malnutrition</option>
+    <option value="published">Education as a Driver of Sustainable Development</option>
+    <option value="published">Cultures, Behaviours and Histories of Agriculture, Food, and Nutrition</option>
+    <option value="published">Development-based approaches to protracted displacement</option>
+    <option value="published">Pre announcement: GCRF Global Research Translation Awards</option>
+    </optgroup>
+
+    <optgroup label="Newton Fund">
+    <option value="updated" selected>UK-Malaysia Joint Partnership on Non-Communicable Diseases</option>
+    <option value="updated" selected>Cultural Heritage, Migration and Indian Diasporas</option>
+  </select>
+</div>
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="aidType">
+    Aid type
+  </label>
+  <select class="govuk-select" id="aidType">
+    <option value="a01">A01</option>
+    <option value="a02">A02</option>
+    <option value="b01">B01</option>
+    <option value="b02">B02</option>
+    <option value="b03">B03</option>
+    <option value="b04">B04</option>
+    <option value="c01">C01</option>
+    <option value="d01">D01</option>
+    <option value="d02">D02</option>
+    <option value="e01">E01</option>
+    <option value="e02">E02</option>
+    <option value="f01">F01</option>
+    <option value="g01">G01</option>
+    <option value="h01">H01</option>
+    <option value="h02">H02</option>
+    <option value="h03">H03</option>
+    <option value="h04">H04</option>
+    <option value="h05">H05</option>
+  </select>
+</div>
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+Climate change adaption
+  </label>
+  <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+
+</div>
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+Climate change mitigation
+  </label>
+  <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+
+</div>
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+Desertification
+  </label>
+  <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+
+</div>
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+Biodiversity
+  </label>
+  <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+
+</div>
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+Gender
+  </label>
+  <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+
+</div>
+
+
+      <div class="govuk-form-group">
+
+
+    </fieldset>
+
+
+    <a class="govuk-button" href="success.html">Add project</a>
+</div>
+</div>
+
+  </main>
+</div>
+{% endblock %}

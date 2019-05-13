@@ -71,7 +71,14 @@ switch (pageName) {
    case 'beisDashboard':
        beisDashboard();
        break;
+   case 'biesReporting':
+       biesReporting();
+       break;
    default: break;
+}
+
+function biesReporting(){
+  $("body").addClass("wide");
 }
 
 function odartLanding(){

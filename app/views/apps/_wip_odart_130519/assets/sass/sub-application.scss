@@ -11,24 +11,31 @@
 }
 
 
-.govuk-width-wide {
-  margin: 0 30px;
-  .wrapper {
-    position: relative;
+//
+// full width layout
+//
+
+body.wide {
+  .govuk-width-container {
+    max-width: 100%;
+    .govuk-grid-row {
+      position: relative;
+    }
+    .govuk-main-wrapper {
+      padding: 0 15px;
+    }
   }
-  #report {
-    width: 100%;
-    padding-left: 350px;
+  .header-user .header-inner, .header-organisation .header-inner {
+    max-width: 100%;
   }
-  #report + aside {
-    width: 335px;
-float: left;
-position: absolute;
-padding: 0 15px 0 0;
-top: 0;
+  .govuk-header__logo {
+    padding-left: 15px;
+  }
+}
+
+
+body.wide .aside {
 border-right: 1px solid #dee0e2;
-height: 100%;
-  }
 }
 
 /*----- variables -------*/

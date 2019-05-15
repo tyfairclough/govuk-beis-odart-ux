@@ -19,7 +19,7 @@ var userType = localStorage.getItem("userType");
 // set banner org name
 //
 
-// localStorage.setItem("userOrg","Met Office")    
+// localStorage.setItem("userOrg","Met Office")
 $(".company-name").text(localStorage.getItem("userOrg"));
 
 //
@@ -315,23 +315,80 @@ function odartLanding(){
 $(".govuk-button").click(function(e){
   e.preventDefault();
   myemail = $("#email").val();
-  if (myemail.endsWith('@beis.gov.uk')) {
-    // go to beis view
-      console.log("it ends in @beis.gov.uk")
-      localStorage.setItem("userType",0)
-      localStorage.setItem("userOrg","BEIS")
-      window.location.href = "beis/dashboard";
-  } else {
-    // go to delivery partner view
-    localStorage.setItem("userType",1)
-    localStorage.setItem("userOrg","Met Office")
-    window.location.href = "partner/dashboard";
-  }
+
+  switch (myemail) {
+     case 'louise.emerson@bbsrc.ukri.org':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","BBSRC")
+          localStorage.setItem("userName","Louise")
+         break;
+     case 'frances.medaney@bbsrc.ukri.org':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","Biotechnology and Biological Sciences Research Council")
+          localStorage.setItem("userName","Frances")
+         break;
+     case 'emily.harris@ahrc.ukri.org':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","Arts and Humanities Research Council")
+          localStorage.setItem("userName","Emily")
+         break;
+     case 'theresa.meacham@bbsrc.ukri.org':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","Biotechnology and Biological Sciences Research Council")
+          localStorage.setItem("userName","Theresa")
+         break;
+     case 'rebecca.tanner@ukri.org':
+          localStorage.setItem("userType",0)
+          localStorage.setItem("userOrg","UKRI")
+          localStorage.setItem("userName","Rebecca")
+         break;
+     case 'ryan.ahmed@royalsociety.org':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","Royal Society")
+          localStorage.setItem("userName","Ryan")
+         break;
+     case 'ben.austin@britishcouncil.org':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","British Council")
+          localStorage.setItem("userName","Ben")
+         break;
+     case 'kemi.olafare@britishcouncil.org':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","British Council")
+          localStorage.setItem("userName","Kemi")
+         break;
+     case 'alexander.lauder-bliss@newtonfund.ac.uk':
+          localStorage.setItem("userType",0)
+          localStorage.setItem("userOrg","Newton Fund")
+          localStorage.setItem("userName","Alexander")
+         break;
+         case 'odeta.butkute@beis.gov.uk':
+          localStorage.setItem("userType",0)
+          localStorage.setItem("userOrg","BEIS")
+          localStorage.setItem("userName","Admin")
+         default: break;
+   }
+
+if ( localStorage.getItem("userType") == 0 ) {
+  window.location.href = "beis/dashboard";
+} else {
+  window.location.href = "partner/dashboard";
+}
+
+   // if (myemail.endsWith('@beis.gov.uk')) {
+   //   // go to beis view
+   //     console.log("it ends in @beis.gov.uk")
+   //     localStorage.setItem("userType",0)
+   //     localStorage.setItem("userOrg","BEIS")
+   //     window.location.href = "beis/dashboard";
+   // } else {
+   //   // go to delivery partner view
+   //   localStorage.setItem("userType",1)
+   //   window.location.href = "partner/dashboard";
+   // }
+
+
 })
-// var myemail = 'test@yahoo.com'
-
-
-
 }
 
 function beisDashboard(){

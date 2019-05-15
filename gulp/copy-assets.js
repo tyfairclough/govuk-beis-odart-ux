@@ -14,6 +14,12 @@ gulp.task('copy-assets', function () {
     .pipe(gulp.dest(config.paths.public))
 })
 
+gulp.task('copy-files', function () {
+  return gulp.src(['!' + config.paths.assets + 'files{,/**/*}',
+    config.paths.assets + '/**'])
+    .pipe(gulp.dest(config.paths.public))
+})
+
 gulp.task('copy-assets-documentation', function () {
   return gulp.src(['!' + config.paths.docsAssets + 'sass{,/**/*}',
     config.paths.docsAssets + '/**'])
@@ -25,3 +31,10 @@ gulp.task('copy-assets-v6', function () {
     config.paths.v6Assets + '/**'])
     .pipe(gulp.dest(config.paths.public + '/v6'))
 })
+
+// console.log("subapp path is" + config.paths.subappAssets);
+
+// gulp.task('copy-files', function () {
+//   return gulp.src(config.paths.subappAssets + '/**/*.csv' || '/**/*.xml')
+//   .pipe(gulp.dest(config.paths.public + '/assets/apps/'))
+// })

@@ -5,8 +5,8 @@ $(document).ready(function() {
 //
 // GLOBAL VARIABLES
 //
-var root = "/apps/{{currentApp.appDirName}}/views/";
-console.log(root);
+// var root = appDirName;
+// console.log(root);
 var pageName = $("section#viewID").data('page-name');
 console.log(pageName)
 var userType = localStorage.getItem("userType");
@@ -143,7 +143,7 @@ var $width = $("#fundDistribution").parent().width()
             "translate(" + margin.left + "," + margin.top + ")");
 
   //read data
-  d3.csv("/public/assets/ebolaChart.csv", function(data) {
+  d3.csv("/public/files/ebolaChart.csv", function(data) {
 
     // Get the different categories and count them
     var categories = ["Congo", "Cote d'Ivoire", "DR of Congo", "Gabon", "Guinea", "Leone", "Liberia", "Mali", "Nigeria","Senegal","Sierra Leone","South Africa","South Sudan","Uganda" ]

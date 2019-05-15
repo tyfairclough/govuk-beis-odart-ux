@@ -16,6 +16,13 @@ var userType = localStorage.getItem("userType");
 //
 
 //
+// set banner org name
+//
+
+// localStorage.setItem("userOrg","Met Office")    
+$(".company-name").text(localStorage.getItem("userOrg"));
+
+//
 // beis or dp
 //
 if ( userType == 0 ) {
@@ -241,6 +248,66 @@ var $width = $("#fundDistribution").parent().width()
   }
 
 
+//
+// load table from google sheets
+//
+
+// Load sheets tab
+//https://docs.google.com/spreadsheets/d/e/2PACX-1vQB7ZF2mUhIfHa7faqxPB3tXYdQWp9GIEm05KHwkJMygMZjpWb_fOVfQ8SvFU7WkkV58Uw78-PNsnAs/pubhtml
+//https://docs.google.com/spreadsheets/d/12wkNTS4OYOjbFABbEchxClTYI4cZU9k7PSdHS-i4PZ8/edit?usp=sharing
+       var googleDoc = 'https://docs.google.com/spreadsheets/d/12wkNTS4OYOjbFABbEchxClTYI4cZU9k7PSdHS-i4PZ8/edit?usp=sharing';
+       // var googleDoc = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQB7ZF2mUhIfHa7faqxPB3tXYdQWp9GIEm05KHwkJMygMZjpWb_fOVfQ8SvFU7WkkV58Uw78-PNsnAs/pubhtml';
+
+       function googleTables() {
+           Tabletop.init({
+               key: googleDoc,
+               callback: showInfoA,
+               simpleSheet: false
+           })
+       }
+       function showInfoA(data, tabletop) {
+           loadTableArray(data);
+       }
+
+       function loadTableArray(data) {
+           var content = "";
+           var sheetLength = data.sheet1.elements.length;
+           for (i = 0; i < data.sheet1.elements.length; i++) {
+             if ( i == sheetLength - 1 ) {
+               content += '<tr class="govuk-table__row">';
+               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].delivery_partner + '</td>';
+               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].actuals + '</td>';
+               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].forecast + '</td>';
+               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].narrative + '</td>';
+               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].delivery_status +'</td>';
+               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].tracker_status +'</td>';
+               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].budget_month +'</td>';
+               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].budget_activity +'</td>';
+               content += '</tr>';
+             } else {
+               content += '<tr class="govuk-table__row">';
+               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].delivery_partner + '</td>';
+               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].actuals + '</td>';
+               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].forecast + '</td>';
+               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].narrative + '</td>';
+               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].delivery_status +'</td>';
+               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].tracker_status +'</td>';
+               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].budget_month +'</td>';
+               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].budget_activity +'</td>';
+               content += '</tr>';
+             }
+
+                   }
+           renderTable(content);
+           $("#resultCount").text(sheetLength - 1)
+       }
+
+       function renderTable(content) {
+               $("#trackerReviewTable tbody").html(content);
+       }
+
+googleTables();
+
 }
 
 function odartLanding(){
@@ -252,10 +319,12 @@ $(".govuk-button").click(function(e){
     // go to beis view
       console.log("it ends in @beis.gov.uk")
       localStorage.setItem("userType",0)
+      localStorage.setItem("userOrg","BEIS")
       window.location.href = "beis/dashboard";
   } else {
     // go to delivery partner view
     localStorage.setItem("userType",1)
+    localStorage.setItem("userOrg","Met Office")
     window.location.href = "partner/dashboard";
   }
 })

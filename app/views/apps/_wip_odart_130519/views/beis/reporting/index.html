@@ -8,7 +8,7 @@
   <header class="">
     <div class="resultCount">
           <div class="govuk-caption-m">Results</div>
-          <div class="govuk-heading-m">431,039</div>
+          <div class="govuk-heading-m" id="resultCount">431,039</div>
         </div>
   </header>
 
@@ -327,24 +327,47 @@
       </label>
       <select id="select-activity" class="selectized" placeholder="Choose an activity status(s)&hellip;">
         <option selected></option>
-        <option value="approved">Approved</option>
-        <option value="awaiting approval">Awaiting approval</option>
-        <option value="incomplete">Incomplete</option>
+        <option value="1">Grey</option>
+        <option value="2">Green</option>
+        <option value="3">Amber</option>
+        <option value="4">Red</option>
+        <option value="5">Blue</option>
+        <option value="6">No longer happening</option>
+        <option value="7">Delivery</option>
         </select>
       </div>
 
       <div class="govuk-form-group">
-      <label class="govuk-label" for="address-postcode">
+      <label class="govuk-label" for="address-line-1">
         Delivery partner
       </label>
-      <select id="select-dp" class="selectized" placeholder="Choose a delivery partner&hellip;">
-        <option selected></option>
-        <option value="001">Met Office</option>
-        <option value="001">Met Office</option>
-        <option value="001">Met Office</option>
-        <option value="001">Met Office</option>
-        </select>
-      </div>
+      <select id="select-dp" class="selectized" placeholder="Select a country(s)...">
+  <option selected>All</option>
+  <option value="0">Met Office</option>
+  <option value="1">British Council</option>
+  <option value="2">Academy of Medical Sciences	</option>
+  <option value="3">Innovate UK (TSB)	</option>
+  <option value="4">RCUK</option>
+  <option value="5">Royal Academy of Engineering (RAEng)	</option>
+  <option value="6">Royal Society	</option>
+  <option value="7">Academy of Medical Sciences	</option>
+  <option value="8">Arts and Humanities Research Council (AHRC)	</option>
+  <option value="9">Biotechnology and Biological Sciences Research Council (BBSRC)	</option>
+  <option value="10">Economic and Social Research Council (ESRC)	</option>
+  <option value="11">Engineering and Physical Sciences Research Council (EPSRC)	</option>
+  <option value="12">Higher Education Funding Council for England (HEFCE)	</option>
+  <option value="13">Higher Education Funding Council for Wales (HEFCW)	</option>
+  <option value="14">Medical Research Council (MRC)	</option>
+  <option value="15">Natural Environment Research Council (NERC)	</option>
+  <option value="16">Northern Ireland Executive	</option>
+  <option value="17">Research Councils UK (RCUK)	</option>
+  <option value="18">Royal Academy of Engineering	</option>
+  <option value="19">Royal Society	</option>
+  <option value="20">Science and Technology Facilities Council (STFC)	</option>
+  <option value="21">Scottish Funding Council (SFC)	</option>
+  <option value="22">UK Space Agency	</option>
+  </select>
+  </div>
 
       <div class="govuk-form-group">
       <label class="govuk-label" for="address-postcode">
@@ -360,7 +383,7 @@
     </div>
   </div>
 
-  <div class="related">
+  <div class="related hide">
     <div class="relatedHeader">
     <i class="fa fa-plus"></i>
     <h3 class="govuk-heading-s">Sort data by</h3>
@@ -368,7 +391,23 @@
     </div>
     <div class="relatedBody">
       <form>
-
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Activity Status
+          </label>
+          <select id="select-activity" class="selectized" placeholder="Choose an activity status(s)&hellip;">
+            <option selected></option>
+            <option value="1">Grey</option>
+            <option value="2">Green</option>
+            <option value="3">Amber</option>
+            <option value="4">Red</option>
+            <option value="5">Blue</option>
+            <option value="6">No longer happening</option>
+            <option value="7">Delivery</option>
+            </select>
+          </div>
+        </fieldset>
       </form>
     </div>
   </div>
@@ -381,7 +420,56 @@
     </div>
     <div class="relatedBody">
       <form>
-
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              </legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-1">
+                    Delivery partner name
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    Actuals
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                    Forecast
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Narrative
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Delivery status
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Tracker status
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Budget (month)
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Budget (activity)
+                  </label> </div>
+              </div>
+            </fieldset>
+          </div>
+        </fieldset>
       </form>
     </div>
   </div>
@@ -498,151 +586,16 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header" scope="col">Delivery partner</th>
-          <th class="govuk-table__header" scope="col">Status</th>
-          <th class="govuk-table__header" scope="col">Budet (month)</th>
-          <th class="govuk-table__header" scope="col"></th>
+          <th class="govuk-table__header" scope="col">Actuals</th>
+          <th class="govuk-table__header" scope="col">Forecast</th>
+          <th class="govuk-table__header" scope="col">Narrative</th>
+          <th class="govuk-table__header" scope="col">Delivery status</th>
+          <th class="govuk-table__header" scope="col">Tracker status</th>
+          <th class="govuk-table__header" scope="col">Budget (by month)</th>
+          <th class="govuk-table__header" scope="col">Budget (by activity)</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Met Office</td>
-          <td class="govuk-table__cell" scope="row">Returned to delivery partner</td>
-          <td class="govuk-table__cell">--</td>
-          <td class="govuk-table__cell"><a href="details"></a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">British Council</td>
-          <td class="govuk-table__cell" scope="row">Not yet received</td>
-          <td class="govuk-table__cell">--</td>
-          <td class="govuk-table__cell"><a href="details"></a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Academy of Medical Sciences</td>
-          <td class="govuk-table__cell" scope="row">Pending review</td>
-          <td class="govuk-table__cell govuk-warning__cell"><div id="warning-1">Under budget</div>-£60,000</td>
-          <td class="govuk-table__cell"><a href="details">Review</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Innovate UK (TSB)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">RCUK</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell govuk-error__cell"><div id="warning-1">Over budget</div>+£150,000</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Royal Academy of Engineering (RAEng)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Royal Society</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Academy of Medical Sciences</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Arts and Humanities Research Council (AHRC)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Biotechnology and Biological Sciences Research Council (BBSRC)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Economic and Social Research Council (ESRC)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Engineering and Physical Sciences Research Council (EPSRC)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Higher Education Funding Council for England (HEFCE)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Higher Education Funding Council for Wales (HEFCW)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Medical Research Council (MRC)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Natural Environment Research Council (NERC)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Northern Ireland Executive</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Research Councils UK (RCUK)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Royal Academy of Engineering</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Royal Society</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Science and Technology Facilities Council (STFC)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">Scottish Funding Council (SFC)</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">UK Space Agency</td>
-          <td class="govuk-table__cell" scope="row">Approved</td>
-          <td class="govuk-table__cell">£0</td>
-          <td class="govuk-table__cell"><a href="details">Details</a></td>
-        </tr>
-
       </tbody>
     </table>
   </div>

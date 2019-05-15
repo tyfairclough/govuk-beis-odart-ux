@@ -1,45 +1,9 @@
 // the global prototyping styles get imported
 // see: app/assets/sass/_global-styles.scss
 
-@import "jexcel.scss";
-* {
-    box-sizing: border-box;
-}
-
-.hide {
-  display: none;
-}
-
-
 //
-// full width layout
+// imports
 //
-
-body.wide {
-  .govuk-width-container {
-    max-width: 100%;
-    .govuk-grid-row {
-      position: relative;
-    }
-    .govuk-main-wrapper {
-      padding: 0 15px;
-    }
-  }
-  .header-user .header-inner, .header-organisation .header-inner {
-    max-width: 100%;
-  }
-  .govuk-header__logo {
-    padding-left: 15px;
-  }
-}
-
-
-body.wide .aside {
-border-right: 1px solid #dee0e2;
-}
-
-/*----- variables -------*/
-
 $govuk-blue: #005ea5;
 $govuk-white: #fff;
 $govuk-orange: #f47738;
@@ -50,10 +14,49 @@ $govuk-grey-3: #dee0e2;
 $govuk-grey-4: #f8f8f8;
 $govuk-black: #0b0c0c;
 
-
+//
+// imports
+//
+@import "jexcel.scss";
+@import "selectize.scss";
 //
 // global overrides
 //
+
+* {
+    box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+text {
+  font-family: "nta", sans-serif;
+}
+
+.flex-center {
+  height: calc(80vh - 600px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.govuk-button--secondary {
+  background-color: #dee0e2;
+  -webkit-box-shadow: 0 2px 0 #858688;
+  box-shadow: 0 2px 0 #858688;
+  color: $govuk-black;
+  &:hover {
+    background: $govuk-grey-3;
+    color: $govuk-black;
+  }
+}
+
+.govuk-body--hint {
+  color: $govuk-grey-2;
+}
 
 .hgroup {
   margin-top: 30px;
@@ -71,6 +74,31 @@ $govuk-black: #0b0c0c;
   margin-bottom: 0;
 }
 
+header {
+  margin-top: 30px;
+  > h2 {
+    margin: 0 !important;
+  }
+}
+
+.govuk-summary-list {
+  &.govuk-body-s {
+    font-size: 16px;
+  }
+}
+
+.panel-center {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  * {
+
+  }
+}
+
 .panel-blue {
   background: $govuk-blue;
   color: $govuk-white;
@@ -80,6 +108,36 @@ $govuk-black: #0b0c0c;
   }
   .govuk-heading-xl, .govuk-caption-m {
     color: $govuk-white;
+  }
+}
+
+.panel-grey {
+  background: $govuk-grey-4;
+  color: $govuk-grey-3;
+  position: relative;
+  padding: 1rem;
+  a, p, h1, h2, h3, h4, h5, h6, ul, ol, .govuk-heading-xl, .govuk-caption-m {
+    color: $govuk-black;
+  }
+  .govuk-heading-xl, .govuk-caption-m {
+    color: $govuk-black;
+  }
+}
+
+.addPanel {
+  padding: 60px;
+  &:before {
+    content: "";
+    height: calc(100% - 60px);
+    width: calc(100% - 60px);
+    position: absolute;
+    outline: dashed 10px $govuk-grey-3;
+  }
+  &:hover{
+    cursor: pointer;
+    &:before {
+      outline-color: $govuk-grey-2
+    }
   }
 }
 
@@ -97,11 +155,44 @@ $govuk-black: #0b0c0c;
   }
 }
 
-.flex-center {
-  height: calc(80vh - 600px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
+//
+// full width layout
+//
+@media (min-width: 641px) {
+  body.wide {
+    .govuk-width-container {
+      max-width: 100%;
+      > .govuk-grid-row {
+        position: relative;
+        display: flex;
+        width: 100%;
+        margin: 0
+        }
+      .govuk-main-wrapper {
+        padding: 0;
+      }
+      aside {
+        width: 350px;
+        border-right: 1px solid $govuk-grey-3;
+        padding-left: 30px;
+        float: left;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+      }
+      .main {
+        flex: 1;
+      }
+    }
+    .header-user .header-inner, .header-organisation .header-inner {
+      max-width: 100%;
+    }
+    .govuk-header__logo {
+      padding-left: 15px;
+    }
+  }
 }
 
 
@@ -259,7 +350,9 @@ $govuk-black: #0b0c0c;
 .js-accordion-with-descriptions .subsection-wrapper {
     border-bottom: 1px solid #bfc1c3
 }
-
+.js-accordion-with-descriptions .subsection-wrapper:last-child {
+  border-bottom: none;
+}
 .js-accordion-with-descriptions .subsection {
     margin-bottom: 0
 }
@@ -385,6 +478,32 @@ p {
     clear: both
 }
 
+
+.related {
+  .relatedHeader {
+    color: $govuk-blue;
+    cursor: pointer;
+    border-top: 1px solid $govuk-grey-3;
+    padding-top: 15px;
+    h3 {
+      width: calc(100% - 30px);
+      float: left;
+      color: $govuk-blue;
+      text-decoration: underline;
+      margin-bottom: 0;
+    }
+    i {
+      float: right;
+    }
+    .relatedBody {
+
+    }
+  }
+  &:first-child {
+    // border-bottom: 1px solid $govuk-grey-3;
+    border-top: none;
+  }
+}
 
 /*----- definition list pattern -------*/
 .govuk-definition-list {

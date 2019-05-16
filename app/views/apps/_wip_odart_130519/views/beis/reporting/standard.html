@@ -1,0 +1,83 @@
+{% extends "layout-subapp.html" %}
+{% block content %}
+<section id="viewID" data-page-name="biesReporting">
+
+<div class="govuk-grid-row">
+<aside class="govuk-grid-column-one-third aside">
+  <a href="#" class="govuk-back-link">Back to all reports</a>
+                <h3 class="govuk-heading-s">Report actions</h3>
+                <ul class="govuk-list govuk-body-s">
+                      <li><a href="#1" class="govuk-link">Export data</a></li>
+                      <li><a href="#1" class="govuk-link">Rename</a></li>
+                      <li><a href="#1" class="govuk-link">Share</a></li>
+                      <li><a href="#1" class="govuk-link">Delete</a></li>
+                  </ul>
+</aside>
+
+<div class="govuk-grid-column-two-thirds main">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <header>
+      <span class="govuk-caption-xl">Reporting</span>
+       <h1 class="govuk-heading-xl" style="margin-bottom: 15px;">
+           Quarterly projection by country
+        </h1>
+        <p class="govuk-body govuk-body--hint">A break down of projected spend by country over the next 4 quarters.</p>
+        </header>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <a class="govuk-button" href="start.html" style="margin-top: 30px; text-align: right; float: right;">Share report</a>
+    </div>
+  </div>
+        <div class="hgroup form-group">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-s">By country</h3>
+                <p class="govuk-body">Country x time <span><a href="#">(edit description)</a></span></p>
+                <div id="fundDistribution">
+                </div>
+                <style>
+                .xAxis line {
+                  stroke: #B8B8B8;
+                }
+                </style>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <h3 class="govuk-heading-s">&nbsp;</h3>
+                <p class="govuk-body">&nbsp;</p>
+                <div class="panel panel-grey panel-center addPanel" style="height:400px;">
+                    <i class="fa fa-plus fa-6x"></i>
+                  <span class="govuk-caption-l">No chart added</span>
+                  <p class="govuk-body">Choose a chart from the gallery to show here</p>
+                  <button class="govuk-button">Add chart</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table" id="trackerReviewTable">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Delivery partner</th>
+          <th class="govuk-table__header" scope="col">Actuals</th>
+          <th class="govuk-table__header" scope="col">Forecast</th>
+          <th class="govuk-table__header" scope="col">Narrative</th>
+          <th class="govuk-table__header" scope="col">Delivery status</th>
+          <th class="govuk-table__header" scope="col">Tracker status</th>
+          <th class="govuk-table__header" scope="col">Budget (by month)</th>
+          <th class="govuk-table__header" scope="col">Budget (by activity)</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+  </section>
+  {% endblock %}

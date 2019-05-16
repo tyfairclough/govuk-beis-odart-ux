@@ -20,7 +20,8 @@ var userType = localStorage.getItem("userType");
 //
 
 // localStorage.setItem("userOrg","Met Office")
-$(".company-name").text(localStorage.getItem("userOrg"));
+$(".userOrg").text(localStorage.getItem("userOrg"));
+$(".userName").text(localStorage.getItem("userName"));
 
 //
 // beis or dp

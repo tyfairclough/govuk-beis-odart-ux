@@ -1,0 +1,147 @@
+{% extends "layout-subApp.html" %}
+
+{% block content %}
+<section id="viewID" data-page-name="partnerActivitiesDashboard">
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <div class="govuk-panel govuk-panel--confirmation hide" id="newProject">
+    <h1 class="govuk-panel__title">
+      Project added
+    </h1>
+    <div class="govuk-panel__body">
+      New project ID is <strong>GB-GOV-13-91116</strong> <br>You can now <a href="activity/add/index.html">add activities</a> to this project
+    </div>
+  </div>
+
+  <div class="govuk-panel govuk-panel--confirmation hide" id="newActivity">
+    <h1 class="govuk-panel__title">
+      Activity added
+    </h1>
+    <div class="govuk-panel__body">
+      New activity ID is <strong>GB-GOV-13-91116</strong> <br>You can now <a href="../trackers/index.html">report funding</a> for this activity
+    </div>
+  </div>
+
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Activities</h1>
+    <p class="govuk-body-lead">Manage activities that your organisation report ODA spending on.</p>
+    <section id="addProject" class="hide">
+    <p class="govuk-body">All activities belong to a project. You need to associate activities with projects in order to report funds.</p>
+    <a class="govuk-button" href="add/index.html">Add a project</a>
+    </section>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+<div class="govuk-inset-text" id="emptyState">
+  <p class="govuk-body">You currently have no projects or activities in your account. <a href="add/">Set up your first project now</a>.
+</div>
+<div class="js-accordion-with-descriptions hide" data-module="accordion-with-descriptions"><div class="subsection-controls js-subsection-controls"><button aria-expanded="false" aria-controls="subsection_content_0 subsection_content_1 ">Open all</button></div>
+					<div class="subsection-wrapper">
+						<div class="js-subsection subsection">
+							<div class="subsection__header">
+								<h2 class="subsection__title">
+                  <button class="subsection__button js-subsection-button" aria-expanded="false" aria-controls="subsection_content_0">Climate Investment Fund</button>
+                </h2>
+								<!-- <p class="subsection__description">Short sentence describing category.</p> -->
+							<span class="subsection__icon"></span></div>
+							<div class="subsection__content js-subsection-content js-hidden activity-table" id="subsection_content_0">
+                <table class="govuk-table govuk-table--small">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Project ID</th>
+                      <th class="govuk-table__header" scope="col">Fund</th>
+                      <th class="govuk-table__header" scope="col">Status</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Budget</th>
+                      <th class="govuk-table__header" scope="col">Activities</th>
+                      <th class="govuk-table__header" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell" scope="row">Newton</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,000</td>
+                    <td class="govuk-table__cell govuk-table__cell">No activities listed</td>
+                    <td class="govuk-table__cell"><a href="details?hasActivity=1">Details</a></td>
+                  </tr>
+                </table>
+                <table class="govuk-table govuk-table--small">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Activity name</th>
+                      <th class="govuk-table__header" scope="col">Activity ID</th>
+                      <th class="govuk-table__header" scope="col">Countries</th>
+                      <th class="govuk-table__header" scope="col">Status</th>
+                      <th class="govuk-table__header" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Shoreline reinforcement, Morroco</td>
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell">Morroco</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Details</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Shoreline reinforcement, Morroco</td>
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell">Morroco</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Details</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Shoreline reinforcement, Morroco</td>
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell">Morroco</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Details</a></td>
+                  </tr>
+                </table>
+                <a class="govuk-button govuk-button--secondary" href="activity/add/index">Add an activity</a>
+							</div>
+						</div>
+            <div class="js-subsection subsection">
+							<div class="subsection__header">
+								<h2 class="subsection__title">
+                  <button class="subsection__button js-subsection-button" aria-expanded="false" aria-controls="subsection_content_0">Forestry investigation fund</button>
+                </h2>
+								<!-- <p class="subsection__description">Short sentence describing category.</p> -->
+							<span class="subsection__icon"></span></div>
+							<div class="subsection__content js-subsection-content js-hidden" id="subsection_content_0">
+                <table class="govuk-table govuk-table--small">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Project ID</th>
+                      <th class="govuk-table__header" scope="col">Fund</th>
+                      <th class="govuk-table__header" scope="col">Status</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Budget</th>
+                      <th class="govuk-table__header" scope="col">Activities</th>
+                      <th class="govuk-table__header" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell" scope="row">Newton</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,000</td>
+                    <td class="govuk-table__cell govuk-table__cell">No activities listed</td>
+                    <td class="govuk-table__cell"><a href="details?hasActivity=0">Details</a></td>
+                  </tr>
+                </table>
+                <div class="govuk-inset-text">You have no acitivities listed for this project. <a href="#">Add an activity</a> to report ODA funding.</div>
+                <a class="govuk-button govuk-button--secondary" href="activity/add/index">Add an activity</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+        </div>
+
+  </main>
+</div>
+</section>
+{% endblock %}

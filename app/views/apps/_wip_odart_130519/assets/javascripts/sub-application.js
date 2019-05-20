@@ -11,14 +11,34 @@ var pageName = $("section#viewID").data('page-name');
 console.log(pageName)
 var userType = localStorage.getItem("userType");
 
+var state =  getQueryVariable("state");
+var projectCount = localStorage.getItem("projectCount");
+
+if (projectCount == null ) {
+  localStorage.setItem("projectCount",0)
+}
+
 //
 // GLOBAL FUNCTIONS
 //
+//get url variables
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return (false);
+}
+
+
 
 //
 // set banner org name
 //
-
 // localStorage.setItem("userOrg","Met Office")
 $(".userOrg").text(localStorage.getItem("userOrg"));
 $(".userName").text(localStorage.getItem("userName"));
@@ -29,7 +49,7 @@ $(".userName").text(localStorage.getItem("userName"));
 if ( userType == 0 ) {
   $("#beisNav.header-organisation").removeClass("hide");
 } else {
-  $("#partnerNav.header-organisation").removeClass("hide");
+  $("#deliveryPartner.header-organisation").removeClass("hide");
 }
 
 //
@@ -43,11 +63,11 @@ $(".govuk-back-link").click(function(e){
 //
 // Word count
 //
-var wordLen = $("#wordlimit").data("max-length-in-words");
+var wordLen = $(".wordlimit").data("max-length-in-words");
 var len;
     $(".words-left").html(wordLen+ ' words left');
-    $('#wordlimit').keydown(function(event) {
-        len = $('#wordlimit').val().split(/[\s]+/);
+    $('.wordlimit').keydown(function(event) {
+        len = $('.wordlimit').val().split(/[\s]+/);
         console.log(len.length + " words are typed out of an available " + wordLen);
         wordsLeft = (wordLen) - len.length;
         if (len.length <= wordLen) {
@@ -82,232 +102,341 @@ switch (pageName) {
    case 'biesReporting':
        biesReporting();
        break;
+   case 'biesReportingStandard':
+       biesReportingStandard();
+       break;
+   case 'biesReportingCustom':
+       biesReportingCustom();
+       break;
+   case 'beisTrackerDashboard':
+       beisTrackerDashboard();
+       break;
+   case 'trackerDetailsReview':
+       trackerDetailsReview();
+       break;
+   case 'partnerAddProject':
+       partnerAddProject();
+       break;
+   case 'partnerAddActivity':
+       partnerAddActivity();
+       break;
+   case 'partnerActivitiesDashboard':
+       partnerActivitiesDashboard();
+       break;
+   case 'partnerAddProjectCheckAnswers':
+       partnerAddProjectCheckAnswers();
+       break;
    default: break;
 }
 
-function biesReporting(){
-  $("body").addClass("wide");
+function partnerAddProjectCheckAnswers(){
 
-
-// accordion
-
-$(".related .relatedBody").addClass("hide");
-
-
-$(".related .relatedHeader").click(function(e){
-  $(this).next().toggleClass("hide");
-  $(this).children(".fa").toggleClass("fa-plus");
-  $(this).children(".fa").toggleClass("fa-minus");
-  // $(this).parent($("i").toggleClass("fa-minus"));
-  // $(this).parent().css("background","red");
-  // $(this).parent().css("background","red").closest("i").toggleClass("fa-plus");
-  // $(".relatedHeader i", this).toggleClass("fa-minus");
-});
-
-// filter drop downs
-
-$('#select-region').selectize({
-});
-$('#select-country').selectize({
-  maxItems: 3
-});
-$('#select-approval').selectize({
-  maxItems: 3
-});
-$('#select-activity').selectize({
-  maxItems: 3
-});
-$('#select-dp').selectize({
-  maxItems: 10
-});
-
-$('#select-keywords').selectize({
-    delimiter: ',',
-    persist: false,
-    create: function(input) {
-        return {
-            value: input,
-            text: input
-        }
-    }
+$(".govuk-button").click(function(e){
+  e.preventDefault();
+  projectCount = localStorage.getItem("projectCount");
+  localStorage.setItem("projectCount",projectCount++);
+  window.location = $(this).attr("href");
 })
 
+}
 
-var $width = $("#fundDistribution").parent().width()
+function partnerAddActivity(){
+  console.log("log")
+  $('#select-newton-country').selectize({
+    maxItems: 5
+  });
+  $('#select-pillars').selectize({
+  });
+  $('#select-status').selectize({
+  });
+  $('#select-match').selectize({
+  });
+}
 
-  // set the dimensions and margins of the graph
-  var margin = {top: 80, right: 30, bottom: 50, left:110},
-      // width = 460 - margin.left - margin.right,
-      width = $("#fundDistribution").parent().width() - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+function partnerActivitiesDashboard(projectCount){
 
-  // append the svg object to the body of the page
-  var svg = d3.select("#fundDistribution")
-    .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+  if (state == "newProject") {
+    // show added project feedback
+    $("#newProject.govuk-panel--confirmation").removeClass("hide");
+    // $("#emptyState").addClass("hide")
+  } else if ( state == "newActivity"){
+    $("#newActivity.govuk-panel--confirmation").removeClass("hide");
+  }
+  projectCount = localStorage.getItem("projectCount");
+  console.log("porject count is: " + projectCount);
+  if (projectCount != 0) {
+    $(".js-accordion-with-descriptions, #addProject").removeClass("hide");
+    $("#emptyState").addClass("hide");
+  }
 
-  //read data
-  d3.csv("/public/files/ebolaChart.csv", function(data) {
+}
 
-    // Get the different categories and count them
-    var categories = ["Congo", "Cote d'Ivoire", "DR of Congo", "Gabon", "Guinea", "Leone", "Liberia", "Mali", "Nigeria","Senegal","Sierra Leone","South Africa","South Sudan","Uganda" ]
-    var n = categories.length
+function partnerAddProject(){
+  $('#select-fund').selectize();
 
-    // Compute the mean of each group
-    allMeans = []
-    for (i in categories){
-      currentGroup = categories[i]
-      mean = d3.mean(data, function(d) { return +d[currentGroup] })
-      allMeans.push(mean)
+  $("#fundSelected").click(function(e){
+    e.preventDefault();
+    state = $("#select-fund").find(":selected").val();
+    // state = $("input[name=select-fund]").chosen().val()
+    //.chosen().val();
+    console.log(state)
+    $("#chooseFund").hide();
+    if ( state >= 9 ){
+      // open newton
+      $("#projectNewton").removeClass("hide");
+      $('.select-oda-channel').selectize();
+      $('.select-aid').selectize();
+
+    } else {
+      // open gcrf
+      $("#projectGCRF").removeClass("hide");
+      $('.select-oda-channel').selectize();
+      $('.select-aid').selectize();
+
     }
-
-    // Create a color scale using these means.
-    var myColor = d3.scaleSequential()
-      .domain([0,100])
-      .interpolator(d3.interpolateViridis);
-
-    // Add X axis
-    var x = d3.scaleLinear()
-      .domain([-10, 120])
-      .range([ 0, width ]);
-    svg.append("g")
-      .attr("class", "xAxis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x).tickValues([0,25, 50, 75, 100]).tickSize(-height) )
-      .select(".domain").remove()
-
-    // Add X axis label:
-    svg.append("text")
-        .attr("text-anchor", "end")
-        .attr("x", width)
-        .attr("y", height + 40)
-        .text("Spend over time (days)");
-
-    // Create a Y scale for densities
-    var y = d3.scaleLinear()
-      .domain([0, 0.25])
-      .range([ height, 0]);
-
-    // Create the Y axis for names
-    var yName = d3.scaleBand()
-      .domain(categories)
-      .range([0, height])
-      .paddingInner(1)
-    svg.append("g")
-      .call(d3.axisLeft(yName).tickSize(0))
-      .select(".domain").remove()
-
-    // Compute kernel density estimation for each column:
-    var kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40)) // increase this 40 for more accurate density.
-    var allDensity = []
-    for (i = 0; i < n; i++) {
-        key = categories[i]
-        density = kde( data.map(function(d){  return d[key]; }) )
-        allDensity.push({key: key, density: density})
-    }
-
-    // Add areas
-    svg.selectAll("areas")
-      .data(allDensity)
-      .enter()
-      .append("path")
-        .attr("transform", function(d){return("translate(0," + (yName(d.key)-height) +")" )})
-        .attr("fill", function(d){
-          grp = d.key ;
-          index = categories.indexOf(grp)
-          value = allMeans[index]
-          return myColor( value  )
-        })
-        .datum(function(d){return(d.density)})
-        .attr("opacity", 0.7)
-        .attr("stroke", "#000")
-        .attr("stroke-width", 0.1)
-        .attr("d",  d3.line()
-            .curve(d3.curveBasis)
-            .x(function(d) { return x(d[0]); })
-            .y(function(d) { return y(d[1]); })
-        )
 
   })
+}
 
-  // This is what I need to compute kernel density estimation
-  function kernelDensityEstimator(kernel, X) {
-    return function(V) {
-      return X.map(function(x) {
-        return [x, d3.mean(V, function(v) { return kernel(x - v); })];
-      });
-    };
-  }
-  function kernelEpanechnikov(k) {
-    return function(v) {
-      return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
-    };
-  }
+function trackerDetailsReview(){
+  $("body").addClass("wide");
+
+}
+
+function beisTrackerDashboard(){
+
+  $('#select-fund').selectize({
+    sortField: 'text',
+    allowEmptyOption: true
+  });
+  $('#select-status').selectize({
+    sortField: 'text',
+    allowEmptyOption: true
+  });
+
+  // LOADS tracker TAB
+  var googleDoc = 'https://docs.google.com/spreadsheets/d/12wkNTS4OYOjbFABbEchxClTYI4cZU9k7PSdHS-i4PZ8/edit?usp=sharing';
+  // var googleDoc = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQB7ZF2mUhIfHa7faqxPB3tXYdQWp9GIEm05KHwkJMygMZjpWb_fOVfQ8SvFU7WkkV58Uw78-PNsnAs/pubhtml';
+  // console.log(googleDoc)
+
+         function googleTables() {
+             Tabletop.init({
+                 key: googleDoc,
+                 callback: getGSheetData,
+                 simpleSheet: false
+             })
+         }
 
 
-//
-// load table from google sheets
-//
+         function getGSheetData(data, tabletop) {
+             renderTable(data);
+             // console.log(data);
+         }
 
-// Load sheets tab
-//https://docs.google.com/spreadsheets/d/e/2PACX-1vQB7ZF2mUhIfHa7faqxPB3tXYdQWp9GIEm05KHwkJMygMZjpWb_fOVfQ8SvFU7WkkV58Uw78-PNsnAs/pubhtml
-//https://docs.google.com/spreadsheets/d/12wkNTS4OYOjbFABbEchxClTYI4cZU9k7PSdHS-i4PZ8/edit?usp=sharing
-       var googleDoc = 'https://docs.google.com/spreadsheets/d/12wkNTS4OYOjbFABbEchxClTYI4cZU9k7PSdHS-i4PZ8/edit?usp=sharing';
-       // var googleDoc = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQB7ZF2mUhIfHa7faqxPB3tXYdQWp9GIEm05KHwkJMygMZjpWb_fOVfQ8SvFU7WkkV58Uw78-PNsnAs/pubhtml';
+         function renderTable(data) {
+             var content = "";
+             var sheetLength = data.trackerApprovalSheet.elements.length - 1;
+             for (i = 0; i < data.trackerApprovalSheet.elements.length; i++) {
+               if ( i ==  sheetLength ){
+                 content += '<tr class="govuk-table__row" data-row="100"><td class="govuk-table__header" colspan="4"></td><td class="govuk-table__header">'+data.trackerApprovalSheet.elements[i].budget_month+'</td><td class="govuk-table__header">'+data.trackerApprovalSheet.elements[i].budget_activity+'</td><td class="govuk-table__header"></td></tr>';
+               } else {
+                             content += '<tr class="govuk-table__row" data-row="'+i+'">';
+                             content += '<td class="govuk-table__cell"><a href="trackers/tracker">' + data.trackerApprovalSheet.elements[i].delivery_partner + '</a></td>';
+                             content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].funds +'</td>';
+                             content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].status + '</td>';
+                             content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].qa_status + '</td>';
+                             // console.log(data.trackerApprovalSheet.elements[i].budget_month_num);
+                             if (data.trackerApprovalSheet.elements[i].budget_month_num > 1 ) {
+                               // console.log("over budget")
+                               content += '<td class="govuk-table__cell govuk-error__cell"><div id="warning-1">Over budget</div>' + data.trackerApprovalSheet.elements[i].budget_month + '</td>';
+                             } else if (data.trackerApprovalSheet.elements[i].budget_month_num < 0 ) {
+                               // console.log("under budget")
+                               content += '<td class="govuk-table__cell govuk-warning__cell"><div id="warning-1">Under budget</div><span>' + data.trackerApprovalSheet.elements[i].budget_month + '</span></td>';
+                             } else {
+                               // console.log("just right")
+                               content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_month + '</td>';
+                             }
 
-       function googleTables() {
-           Tabletop.init({
-               key: googleDoc,
-               callback: showInfoA,
-               simpleSheet: false
-           })
-       }
-       function showInfoA(data, tabletop) {
-           loadTableArray(data);
-       }
-
-       function loadTableArray(data) {
-           var content = "";
-           var sheetLength = data.sheet1.elements.length;
-           for (i = 0; i < data.sheet1.elements.length; i++) {
-             if ( i == sheetLength - 1 ) {
-               content += '<tr class="govuk-table__row">';
-               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].delivery_partner + '</td>';
-               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].actuals + '</td>';
-               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].forecast + '</td>';
-               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].narrative + '</td>';
-               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].delivery_status +'</td>';
-               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].tracker_status +'</td>';
-               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].budget_month +'</td>';
-               content += '<td class="govuk-table__header">' + data.sheet1.elements[i].budget_activity +'</td>';
-               content += '</tr>';
-             } else {
-               content += '<tr class="govuk-table__row">';
-               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].delivery_partner + '</td>';
-               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].actuals + '</td>';
-               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].forecast + '</td>';
-               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].narrative + '</td>';
-               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].delivery_status +'</td>';
-               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].tracker_status +'</td>';
-               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].budget_month +'</td>';
-               content += '<td class="govuk-table__cell">' + data.sheet1.elements[i].budget_activity +'</td>';
-               content += '</tr>';
-             }
-
+                             if (data.trackerApprovalSheet.elements[i].budget_activity_num > 1 ) {
+                               // console.log("over budget")
+                               content += '<td class="govuk-table__cell govuk-error__cell"><div id="warning-1">Over budget</div>' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
+                             } else if (data.trackerApprovalSheet.elements[i].budget_month_num < 0 ) {
+                               // console.log("under budget")
+                               content += '<td class="govuk-table__cell govuk-warning__cell"><div id="warning-1">Under budget</div><span>' + data.trackerApprovalSheet.elements[i].budget_activity + '</span></td>';
+                             } else {
+                               // console.log("just right")
+                               content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
+                             }
+                             // content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
+                             content += '<td class="govuk-table__cell"><a href="trackers/tracker">Review activities</a></td>';
+                             content += '</tr>';
+                     }
                    }
-           renderTable(content);
-           $("#resultCount").text(sheetLength - 1)
-       }
-
-       function renderTable(content) {
-               $("#trackerReviewTable tbody").html(content);
-       }
-
+               $("tbody").html(content);
+         }
 googleTables();
+}
+
+function biesReportingCustom(){
+  $("body").addClass("wide");
+  // accordion
+  $(".related .relatedBody").addClass("hide");
+  $(".related .relatedHeader").click(function(e){
+    $(this).next().toggleClass("hide");
+    $(this).children(".fa").toggleClass("fa-plus");
+    $(this).children(".fa").toggleClass("fa-minus");
+    // $(this).parent($("i").toggleClass("fa-minus"));
+    // $(this).parent().css("background","red");
+    // $(this).parent().css("background","red").closest("i").toggleClass("fa-plus");
+    // $(".relatedHeader i", this).toggleClass("fa-minus");
+  });
+
+  // filter drop downs
+
+  $('#select-region').selectize({
+  });
+  $('#select-country').selectize({
+    maxItems: 3
+  });
+  $('#select-approval').selectize({
+    maxItems: 3
+  });
+  $('#select-activity').selectize({
+    maxItems: 3
+  });
+  $('#select-dp').selectize({
+    maxItems: 10
+  });
+
+  $('#select-keywords').selectize({
+      delimiter: ',',
+      persist: false,
+      create: function(input) {
+          return {
+              value: input,
+              text: input
+          }
+      }
+  })
+}
+function biesReportingStandard(){
+  $("body").addClass("wide");
+  var $width = $("#fundDistribution").parent().width()
+
+    // set the dimensions and margins of the graph
+    var margin = {top: 80, right: 30, bottom: 50, left:110},
+        // width = 460 - margin.left - margin.right,
+        width = $("#fundDistribution").parent().width() - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg = d3.select("#fundDistribution")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+    //read data
+    d3.csv("/public/files/ebolaChart.csv", function(data) {
+
+      // Get the different categories and count them
+      var categories = ["Congo", "Cote d'Ivoire", "DR of Congo", "Gabon", "Guinea", "Leone", "Liberia", "Mali", "Nigeria","Senegal","Sierra Leone","South Africa","South Sudan","Uganda" ]
+      var n = categories.length
+
+      // Compute the mean of each group
+      allMeans = []
+      for (i in categories){
+        currentGroup = categories[i]
+        mean = d3.mean(data, function(d) { return +d[currentGroup] })
+        allMeans.push(mean)
+      }
+
+      // Create a color scale using these means.
+      var myColor = d3.scaleSequential()
+        .domain([0,100])
+        .interpolator(d3.interpolateViridis);
+
+      // Add X axis
+      var x = d3.scaleLinear()
+        .domain([-10, 120])
+        .range([ 0, width ]);
+      svg.append("g")
+        .attr("class", "xAxis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x).tickValues([0,25, 50, 75, 100]).tickSize(-height) )
+        .select(".domain").remove()
+
+      // Add X axis label:
+      svg.append("text")
+          .attr("text-anchor", "end")
+          .attr("x", width)
+          .attr("y", height + 40)
+          .text("Spend over time (days)");
+
+      // Create a Y scale for densities
+      var y = d3.scaleLinear()
+        .domain([0, 0.25])
+        .range([ height, 0]);
+
+      // Create the Y axis for names
+      var yName = d3.scaleBand()
+        .domain(categories)
+        .range([0, height])
+        .paddingInner(1)
+      svg.append("g")
+        .call(d3.axisLeft(yName).tickSize(0))
+        .select(".domain").remove()
+
+      // Compute kernel density estimation for each column:
+      var kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40)) // increase this 40 for more accurate density.
+      var allDensity = []
+      for (i = 0; i < n; i++) {
+          key = categories[i]
+          density = kde( data.map(function(d){  return d[key]; }) )
+          allDensity.push({key: key, density: density})
+      }
+
+      // Add areas
+      svg.selectAll("areas")
+        .data(allDensity)
+        .enter()
+        .append("path")
+          .attr("transform", function(d){return("translate(0," + (yName(d.key)-height) +")" )})
+          .attr("fill", function(d){
+            grp = d.key ;
+            index = categories.indexOf(grp)
+            value = allMeans[index]
+            return myColor( value  )
+          })
+          .datum(function(d){return(d.density)})
+          .attr("opacity", 0.7)
+          .attr("stroke", "#000")
+          .attr("stroke-width", 0.1)
+          .attr("d",  d3.line()
+              .curve(d3.curveBasis)
+              .x(function(d) { return x(d[0]); })
+              .y(function(d) { return y(d[1]); })
+          )
+
+    })
+
+    // This is what I need to compute kernel density estimation
+    function kernelDensityEstimator(kernel, X) {
+      return function(V) {
+        return X.map(function(x) {
+          return [x, d3.mean(V, function(v) { return kernel(x - v); })];
+        });
+      };
+    }
+    function kernelEpanechnikov(k) {
+      return function(v) {
+        return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
+      };
+    }
+}
+function biesReporting(){
 
 }
 
@@ -363,6 +492,11 @@ $(".govuk-button").click(function(e){
           localStorage.setItem("userOrg","Newton Fund")
           localStorage.setItem("userName","Alexander")
          break;
+     case 'ty.fairclough@gmail.com':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","Kickass Funding Pty")
+          localStorage.setItem("userName","Ty")
+         break;
          case 'odeta.butkute@beis.gov.uk':
           localStorage.setItem("userType",0)
           localStorage.setItem("userOrg","BEIS")
@@ -394,58 +528,54 @@ if ( localStorage.getItem("userType") == 0 ) {
 
 function beisDashboard(){
 
-
-
-  var chart = c3.generate({
-    bindto: "#timeChart",
-      data: {
-          columns: [
-              ['data1', 300, 350, 300, 0, 0, 0],
-              ['data2', 130, 100, 140, 200, 150, 50]
-          ],
-          types: {
-              data1: 'area',
-              data2: 'area-spline'
-          }
-      }
-  });
-
-
-  var chart = c3.generate({
-    bindto: "#guageChart",
-      data: {
-          columns: [
-              ['data', 91.4]
-          ],
-          type: 'gauge',
-          onclick: function (d, i) { console.log("onclick", d, i); },
-          onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-          onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-      },
-      gauge: {
-  //        label: {
-  //            format: function(value, ratio) {
-  //                return value;
-  //            },
-  //            show: false // to turn off the min/max labels.
-  //        },
-  //    min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
-  //    max: 100, // 100 is default
-  //    units: ' %',
-  //    width: 39 // for adjusting arc thickness
-      },
-      color: {
-          pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
-          threshold: {
-  //            unit: 'value', // percentage is default
-  //            max: 200, // 100 is default
-              values: [30, 60, 90, 100]
-          }
-      },
-      size: {
-          height: 180
-      }
-  });
+  // var chart = c3.generate({
+  //   bindto: "#timeChart",
+  //     data: {
+  //         columns: [
+  //             ['data1', 300, 350, 300, 0, 0, 0],
+  //             ['data2', 130, 100, 140, 200, 150, 50]
+  //         ],
+  //         types: {
+  //             data1: 'area',
+  //             data2: 'area-spline'
+  //         }
+  //     }
+  // });
+  // var chart = c3.generate({
+  //   bindto: "#guageChart",
+  //     data: {
+  //         columns: [
+  //             ['data', 91.4]
+  //         ],
+  //         type: 'gauge',
+  //         onclick: function (d, i) { console.log("onclick", d, i); },
+  //         onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+  //         onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+  //     },
+  //     gauge: {
+  // //        label: {
+  // //            format: function(value, ratio) {
+  // //                return value;
+  // //            },
+  // //            show: false // to turn off the min/max labels.
+  // //        },
+  // //    min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+  // //    max: 100, // 100 is default
+  // //    units: ' %',
+  // //    width: 39 // for adjusting arc thickness
+  //     },
+  //     color: {
+  //         pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+  //         threshold: {
+  // //            unit: 'value', // percentage is default
+  // //            max: 200, // 100 is default
+  //             values: [30, 60, 90, 100]
+  //         }
+  //     },
+  //     size: {
+  //         height: 180
+  //     }
+  // });
 
 }
 
@@ -467,77 +597,62 @@ function approveTrackerUserJourney(){
 }
 
 function submitDataTable(){
-  $(".subsection__header").click(function(){
-    $(this).next().toggle();
-    $(this).parent().toggleClass("subsection--is-open");
-    // $(this).after('<tr><td>my data</td><td>more data</td></tr>');
-  })
 
+
+$("body").addClass("wide")
   // js table
 
-  data = [
-      ['Policy workshops and working group participation',"GCRF001",100034.00,,,,],
-      ['Carbon collection project', "GCRF002",100034.00,,,,],
-      ['Filtration tooling', "GCRF003",10900.00,,,,],
-      ['Environmental Remediation Account for Central Asia (ERA)', "GCRF004",100033.00,,,,],
-      ['Design of Adapt Environmental and Climate Resilience Programme', "GCRF005",100034.00,,,,],
-      ['Technical Assistance Package on Environment and Climate for Papua Island', "GCRF006",100033.00,,,,],
-      ['Provision of finance to the Rwanda Fund for Climate Change and Environment', "GCRF007",58422.39,,,,],
-      ['Implementation of Adapt Environmental and Climate Resilience in Sudan', "GCRF008",44699.56,,,,],
-      ['Implementation of Adapt Environmental and Climate Resilience in Sudan', "GCRF009",50309.56,,,,],
-      ['Advisory support on business environment reform', "GCRF010",57826.04,,,,],
-      ['PMEH - Polution Management and Environmental Health', "GCRF011",10900.00,,,,],
-      ['Polution Management and Environmental Health - International Climate Fund', "GCRF012",100034.00,,,,],
-      ['Polution Management and Environmental Health - Energy water research', "GCRF013",10900.00,,,,],
-      ['SHEAR - To provide scientific results that will improve sub Saharan resilience to respond to natural hazards and emergencies - Joint project with Natural Environment Research Council', "GCRF014",48356.27,,,,],
-      ['Strengthening social and environmental risk management via Not for Profits and Civil Society organisations', "GCRF015",84898.98,,,,]
-    ];
 
-  $('#jexcel-0').jexcel({
-      data:data,
-      colHeaders: ['Activity name', 'Acitvity ID', 'Apr 19', 'May 19', 'Jun 19', 'Q2', 'Narrative (optional)'],
-      colWidths: [ 200, 120, 70, 100, 100, 100, 250 ],
-      columns: [
-          { type: 'text',readOnly:true,wordWrap:true},
-          { type: 'text',readOnly:true},
-          { type: 'text', readOnly:true},
-          { type: 'numeric'},
-          { type: 'numeric'},
-          { type: 'numeric'},
-          { type: 'text',wordWrap:true}
-      ],
-      nestedHeaders:[
-          [
-              { title:'', colspan:'2' },
-              { title:'Cash', colspan:'3' },
-              { title:'Accruals', colspan:'1' },
-              { title:'', colspan:'1' },
-          ]
-        ]
+  var viewportHeightAvailable = ($(document).height()*0.6);
+  // var viewportHeightAvailable = 800;
+  console.log(viewportHeightAvailable)
+  var data = [
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow', 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
+    ['Malaria vacination delivery', 'GB-PD-300104019', 'Blue', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000]
+  ];
+
+  var container = document.getElementById('jexcel-0');
+  var hot = new Handsontable(container, {
+    data: data,
+    licenseKey: 'non-commercial-and-evaluation',
+    rowHeaders: true,
+
+    nestedHeaders: [
+      [{label: '', colspan: 4}, {label: 'Actuals', colspan: 5}, {label: 'Forecast', colspan: 25}],
+      [{label: '', colspan: 4}, {label: 'Cash', colspan: 4}, {label: 'Accruals', colspan: 25}, {label: 'Accruals', colspan: 5}],
+      ['Activity', 'ID', 'Status', 'Narrative', 'Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q1 19','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21','Q2 21','Q3 21','Q4 21','Q1 22','Q2 22','Q3 22','Q4 22','Q1 23','Q2 23','Q3 23','Q4 23','Q1 24','Q2 24','Q3 24','Q4 24','Q1 25','Q2 25','Q3 25','Q4 25','Q1 26','Q2 26','Q3 26','Q4 26']
+    ],
+
+/*    hiddenColumns: {
+      columns: [4, 5, 6,7],
+      indicators: true
+    },
+*/
+    manualColumnFreeze: true,
+    manualColumnMove: false,
+    manualRowMove: true,
+    fixedColumnsLeft: 2,
+    colHeaders: true,
+    colWidths: 100,
+    width: '100%',
+    height: viewportHeightAvailable,
+    fixedColumnsLeft: 4,
+    filters: true,
+    dropdownMenu: false
   });
 
-  $('#jexcel-1').jexcel({
-      data:data,
-      colHeaders: ['Activity name', 'Acitvity ID', 'Apr 19', 'May 19', 'Jun 19', 'Q2', 'Narrative'],
-      colWidths: [ 200, 120, 70, 100, 100, 100, 250 ],
-      columns: [
-          { type: 'text',readOnly:true,wordWrap:true},
-          { type: 'text',readOnly:true},
-          { type: 'text', readOnly:true},
-          { type: 'numeric'},
-          { type: 'numeric'},
-          { type: 'numeric'},
-          { type: 'text',wordWrap:true}
-      ],
-      nestedHeaders:[
-          [
-              { title:'', colspan:'2' },
-              { title:'Cash', colspan:'3' },
-              { title:'Accruals', colspan:'1' },
-              { title:'', colspan:'1' },
-          ]
-        ]
-  });
 }
 
 function trackerSubmitJourneyLogic(){

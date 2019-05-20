@@ -1,0 +1,132 @@
+{% extends "layout-subapp.html" %}
+{% block content %}
+<section id="viewID" data-page-name="trackerDetailsReview">
+
+  <div class="govuk-grid-row">
+  <aside class="govuk-grid-column-one-third aside">
+    <a href="#" class="govuk-back-link">Back to all trackers</a>
+                  <h3 class="govuk-heading-s">Tracker actions</h3>
+                  <ul class="govuk-list govuk-body-s">
+                        <li><a href="#1" class="govuk-link">Return to delivery partner</a></li>
+                        <li><a href="#1" class="govuk-link">Add notes</a></li>
+                        <li><a href="#1" class="govuk-button">Complete review</a></li>
+                    </ul>
+                  <h3 class="govuk-heading-s">Show/Hide</h3>
+                  <ul class="govuk-list govuk-body-s">
+                        <li><a href="#1" class="govuk-link">Actuals</a></li>
+                        <li><ul class="govuk-list govuk-body-s" style="margin-left: 15px;">
+                            <li><a href="#1" class="govuk-link">Cash</a></li>
+                            <li><a href="#1" class="govuk-link">Accruals</a></li>
+                          </ul>
+                        <li><a href="#1" class="govuk-link">Forecast</a></li>
+                        <li><ul class="govuk-list govuk-body-s" style="margin-left: 15px;">
+                          <li><a href="#1" class="govuk-link">Cash</a></li>
+                          <li><a href="#1" class="govuk-link">Accruals</a></li>
+                        </ul></li>
+                        <li><a href="#1" class="govuk-link">Status</a></li>
+                        <li><a href="#1" class="govuk-link">Narrative</a></li>
+                    </ul>
+  </aside>
+
+  <div class="govuk-grid-column-two-thirds main">
+    <span class="govuk-caption-xl">Academy of Medical Sciences	</span>
+    <h1 class="govuk-heading-xl">Review activities</h1>
+    <p class="govuk-body-lead">Review and approve the data submitted by the delivery partner.</p>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div class="panel-blue">
+          <div class="govuk-caption-m">Total spend</div>
+          <div class="govuk-heading-l">£47,850</div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <div class="panel-blue">
+          <div class="govuk-caption-m">Budget difference</div>
+          <div class="govuk-heading-l"><span>-</span>£60,000</div>
+        </div>
+      </div>
+    </div>
+    <div class="js-hidden" data-module="accordion-with-descriptions">
+        <div class="subsection-wrapper">
+            <div class="subsection js-subsection">
+                <div class="subsection__header">
+                    <h2 class="subsection__title">Forests Carbon Partnership Facility	</h2>
+                </div>
+                <div class="subsection__content js-subsection-content" id="subsection_content_1">
+                  <table class="govuk-table govuk-table--small projectReviewTable" id="activityReview_2">
+
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col" colspan="3"></th>
+                        <th class="govuk-table__header" scope="col" colspan="8" style="text-align:left;">Actuals</th>
+                        <th class="govuk-table__header" scope="col" colspan="8" style="text-align:left;">Forecast</th>
+                        <th class="govuk-table__header" scope="col" colspan="1"></th>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col" colspan="3"></th>
+                        <th class="govuk-table__header" scope="col" colspan="4" style="text-align:left;">Cash</th>
+                        <th class="govuk-table__header" scope="col" colspan="4" style="text-align:left;">Accruals</th>
+                        <th class="govuk-table__header" scope="col" colspan="4" style="text-align:left;">Cash</th>
+                        <th class="govuk-table__header" scope="col" colspan="4" style="text-align:left;">Accruals</th>
+                        <th class="govuk-table__header" scope="col" colspan="1"></th>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col">Activity</th>
+                        <th class="govuk-table__header" scope="col">Current status</th>
+                        <th class="govuk-table__header" scope="col">Narrative</th>
+                        <th class="govuk-table__header" scope="col">Q4 18</th>
+                        <th class="govuk-table__header" scope="col">Q1 19</th>
+                        <th class="govuk-table__header" scope="col">Q2 19</th>
+                        <th class="govuk-table__header" scope="col">Q3 19</th>
+                        <th class="govuk-table__header" scope="col">Q4 18</th>
+                        <th class="govuk-table__header" scope="col">Q1 19</th>
+                        <th class="govuk-table__header" scope="col">Q2 19</th>
+                        <th class="govuk-table__header" scope="col">Q3 19</th>
+                        <th class="govuk-table__header" scope="col">Q4 18</th>
+                        <th class="govuk-table__header" scope="col">Q1 19</th>
+                        <th class="govuk-table__header" scope="col">Q2 19</th>
+                        <th class="govuk-table__header" scope="col">Q3 19</th>
+                        <th class="govuk-table__header" scope="col">Q4 18</th>
+                        <th class="govuk-table__header" scope="col">Q1 19</th>
+                        <th class="govuk-table__header" scope="col">Q2 19</th>
+                        <th class="govuk-table__header" scope="col">Q3 19</th>
+                        <th class="govuk-table__header" scope="col" colspan="1"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row">1</td>
+                        <td class="govuk-table__cell" scope="row"><a href="#">Add feedback</a></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+  </div>
+    </div>
+</section>
+{% endblock %}

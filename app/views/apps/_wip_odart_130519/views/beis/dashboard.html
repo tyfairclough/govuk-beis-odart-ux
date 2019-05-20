@@ -4,71 +4,49 @@
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
           <div class="hgroup">
-            <h1 class="govuk-heading-xl">Dashboard</h1>
+            <h1 class="govuk-heading-xl">Home</h1>
+            <p class="govuk-body">Use this page to navigate towards tasks you need to complete.</p>
           </div>
     </div>
    </div>
+
    <div class="govuk-grid-row">
      <div class="govuk-grid-column-two-thirds">
-       <h3 class="govuk-heading-m">Forecast</h3>
-       <div id="timeChart">
-         </div>
+       <section>
+       <h2 class="govuk-heading-l"><a href="trackers/index">Trackers</a></h2>
+       <p class="govuk-body">Open, review and feedback on delivery partner submissions.</p>
+       </section>
+       <section>
+       <h2 class="govuk-heading-l"><a href="#">Reporting</a></h2>
+       <p class="govuk-body">Run a selection of standard reports or create your own.</p>
+       </section>
      </div>
-     <div class="govuk-grid-column-one-third">
-       <h3 class="govuk-heading-m">Budget utilisation</h3>
-       <div id="guageChart">
-
-         </div>
+     <div class="govuk-grid-column-one-third panel-blue">
+       <h3 class="govuk-heading-m">To do list</h3>
+       <p class="govuk-body">Actions reported by the service that need your attention.</p>
+       <ol class="govuk-list govuk-list--number">
+         <li><a href="#">Review new tracker.</a></li>
+         <li><a href="#">Review project changes.</a></li>
+         <li><a href="#">Chase missing trackers</a></li>
+         <li><a href="#">Approve trackers</a></li>
+         <li><a href="#">The IATI report needs to be submitted by 25 June 19.</a></li>
+       </ol>
      </div>
    </div>
-   <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
    <div class="govuk-grid-row">
      <div class="govuk-grid-column-two-thirds">
-       <h2 class="govuk-heading-m">Programme management</h2>
-       <p class="govuk-body">Add new programmes and accept.</p>
-       <ul class="govuk-list govuk-list--links">
-         <li><a href="#">Add a programme</a>
-         <li><a href="#">Programmes and projects</a></li>
-       </ul>
-             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-             <h2 class="govuk-heading-m">Trackers</h2>
-             <p class="govuk-body">Review and approve financial trackers for use in reporting.</p>
-             <ul class="govuk-list govuk-list--links">
-               <li><a href="tracker-review/index">Financial trackers</a>
-               <!-- <li><a href="#">Approve a tracker</a> -->
-               <li><a href="trackers/">Previous submissions</a></li>
-             </ul>
-             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-             <h2 class="govuk-heading-m">Reports</h2>
-             <p class="govuk-body">Generate financial reports based on submitted tracker data</p>
-             <ul class="govuk-list govuk-list--links">
-               <li><a href="reports/iati-user-journey.html">Generate an IATI xml report</a>
-               <li><a href="reports/index.html">View ODA reports</a>
-               <!-- <li><a href="#">Approve a tracker</a> -->
-             </ul>
-     </div>
+     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+     <h3 class="govuk-heading-m">Administration</h3>
+     <section>
+     <h2 class="govuk-heading-s"><a href="#">Delivery partner account settings</a></h2>
+     <p class="govuk-body">Configure and update delivery partner accounts. Invite delivery partner users into the service.</p>
+     </section>
 
-     <div class="govuk-grid-column-one-third">
-             <h2 class="govuk-heading-m">Manage users</h2>
-             <ul class="govuk-list govuk-list--links">
-               <li><a href="#">Invite a new user</a></li>
-               <li><a href="#">Existing users</a>
-             </ul>
-             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-             <h2 class="govuk-heading-m">Manage delivery partners</h2>
-             <ul class="govuk-list govuk-list--links">
-               <li><a href="#">Create a new delivery partner</a></li>
-               <li><a href="#">Existing delivery partners</a>
-             </ul>
-       </div>
-       <div class="govuk-grid-column-one-third panel-blue">
-         <h3 class="govuk-heading-m">To do list</h3>
-         <p class="govuk-body">Activies that need you attention</p>
-         <ol class="govuk-list govuk-list--number">
-           <li>Approve tracker data for Q2 2019</li>
-           <li>Download IATI xml transparency report</li>
-         </ol>
-       </div>
+     <section>
+     <h2 class="govuk-heading-s"><a href="#">General administration</a></h2>
+     <p class="govuk-body">Manage the service's settings.</p>
+     </section>
      </div>
+   </div>
 </section>
 {% endblock %}

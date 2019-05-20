@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-subApp.html" %}
 
 {% block content %}
 
@@ -7,51 +7,55 @@
 
   <main class="govuk-main-wrapper">
     <h1 class="govuk-heading-xl">Financial trackers</h1>
-    <p class="govuk-body-lead">View previous financial trackers and submit financial trackers for review.</p>
-    <a class="govuk-button" href="submit/start.html">Submit a tracker</a>
+    <p class="govuk-body-lead">View previous financial submissions and update this period's funding data for review.</p>
+    <a class="govuk-button" href="submit/start.html">Update activity funding</a>
+    <a class="govuk-button govuk-button--link" href="submit/start.html">Change project or activity information</a>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
 
-<h2 class="govuk-heading-m">Tracker submission archive</h2>
+        <div class="govuk-grid-row govuk-form-group">
+          <div class="govuk-grid-column-one-third">
+            <div class="panel-blue">
+                <div class="govuk-caption-m">Tracker submission deadline</div>
+                <div class="govuk-heading-m">Friday, 28 Jun 2019</div>
+            </div>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <div class="panel-blue">
+                <div class="govuk-caption-m">activities complete</div>
+                <div class="govuk-heading-m"><span>11</span> of <span>45</span></div>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <div class="panel-red">
+                <div class="govuk-caption-m">Errors found</div>
+                <div class="govuk-heading-m">4,305</div>
+                </div>
+              </div>
+        </div>
+
+<h2 class="govuk-heading-m">Tracker archive</h2>
 <table class="govuk-table govuk-table--small">
 
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="col">Programme name</th>
-      <th class="govuk-table__header" scope="col">Programme ID</th>
-      <th class="govuk-table__header" scope="col">Fund</th>
-      <th class="govuk-table__header" scope="col">Status</th>
-      <th class="govuk-table__header" scope="col">Budet</th>
-      <th class="govuk-table__header" scope="col">Dates</th>
-      <!-- <th class="govuk-table__header" scope="col">Narrative</th> -->
-      <th class="govuk-table__header" scope="col">Activity count</th>
-      <th class="govuk-table__header" scope="col">Principal investigator</th>
+      <th class="govuk-table__header" scope="col">Date</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Program count</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Activity count</th>
+      <th class="govuk-table__header" scope="col">Submitted by</th>
+      <th class="govuk-table__header" scope="col">Approved by</th>
+      <th class="govuk-table__header" scope="col">Accepted by BEIS</th>
       <th class="govuk-table__header" scope="col"></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell" scope="row">Climate Investment Funds</th>
-      <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
-      <td class="govuk-table__cell" scope="row">Newton</td>
-      <td class="govuk-table__cell">Live</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,000</td>
-      <td class="govuk-table__cell">01 Jan 2018 - 31 Oct 2020</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">15</td>
-      <!-- <td class="govuk-table__cell">Multilateral World Bank-administered funds to help developing countries pilot low-carbon, climate-resilient pathways. This is funded by both the Department for International Development and the Department of Enegry and Climate Change (DECC). This refers only to the DECC spend.</td> -->
-      <td class="govuk-table__cell">Kai Moon</td>
-      <td class="govuk-table__cell"><a href="details.html">Details</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell" scope="row">Climate Investment Funds</th>
-      <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
-      <td class="govuk-table__cell" scope="row">Newton</td>
-      <td class="govuk-table__cell">Live</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,000</td>
-      <td class="govuk-table__cell">01 Jan 2018 - 31 Oct 2020</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">15</td>
-      <!-- <td class="govuk-table__cell">Multilateral World Bank-administered funds to help developing countries pilot low-carbon, climate-resilient pathways. This is funded by both the Department for International Development and the Department of Enegry and Climate Change (DECC). This refers only to the DECC spend.</td> -->
-      <td class="govuk-table__cell">Dr Jeung-Lee</td>
+      <td class="govuk-table__cell">01 June 2019</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">5</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">45</td>
+      <td class="govuk-table__cell"><span class="userName"></span></td>
+      <td class="govuk-table__cell">Leela Pushpa</td>
+      <td class="govuk-table__cell">23 June 2019</td>
       <td class="govuk-table__cell"><a href="details.html">Details</a></td>
     </tr>
   </tbody>

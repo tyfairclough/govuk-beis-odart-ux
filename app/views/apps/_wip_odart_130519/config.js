@@ -23,5 +23,6 @@ module.exports = {
 	// sub-application but you will need to rename the file as well.
 	// file is located: app/views/apps/[SUB APPLICATION DIR]/assets/javascripts/
 	jsFile: 'sub-application.js',
+	accordion: 'service-manual_accordion.js',
 
 }

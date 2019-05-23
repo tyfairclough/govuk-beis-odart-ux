@@ -1,0 +1,60 @@
+{% extends "layout-subApp.html" %}
+{% block content %}
+<section id="viewID" data-page-name="partnerDashboard">
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <div class="hgroup">
+            <h1 class="govuk-heading-xl">Home</h1>
+            <p class="govuk-body-lead">Use this page to navigate towards tasks you need to complete.</p>
+          </div>
+    </div>
+
+   </div>
+   <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l"><a href="trackers/">Financial data</a></h2>
+      <p class="govuk-body">Update and report your ODA financial data.</p>
+
+     <h2 class="govuk-heading-l"><a href="projects/">Activities</a></h2>
+     <p class="govuk-body">Create, read or update your activities.</p>
+     <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">What are activities?</span>
+      </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">The language used to describe things such as programmes, grants and calls varies across organisations. We use the following definitions:
+        <h3 class="govuk-heading-s">Programmes</h3>
+        <p class="govuk-body">Programmes are the aims or subject areas that funds like Newton and GCRF raise funding against. Calls to tender are made under these headings for delivery partners to deliver agianst.</p>
+        <h3 class="govuk-heading-s">Projects</h3>
+        <p class="govuk-body">Projects are the initiatives that feed into the programme. They are operated by delivery partners who issue calls to tender activities against these projects.</p>
+        <h3 class="govuk-heading-s">Activites</h3>
+        <p class="govuk-body">Activities represent the end of the supply chain spending. Activities have a principal investigator who delivers against the funding project and programme goals.</p>
+      </div>
+     </details>
+     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+     <h3 class="govuk-heading-m">Administration</h3>
+     <ul class="govuk-list govuk-list--links">
+               <li><a href="#">Manage users</a></li>
+               <li><a href="#">Your user account settings</a></li>
+     </ul>
+
+     </div>
+     <div class="govuk-grid-column-one-third panel-blue" style="margin-bottom: 30px;">
+            <h3 class="govuk-caption-l">Q1 ODA tracker deadline</h3>
+            <h3 class="govuk-heading-l">28 June 2019</h3>
+            <br>
+            <p class="govuk-body">All tracker data should be submitted no later than 5pm on the date shown above.</p>
+          </div>
+     <div class="govuk-grid-column-one-third hide">
+            <h3 class="govuk-heading-m">To do list</h3>
+            <p class="govuk-body">Actions reported by the service that need your attention.</p>
+            <ol class="govuk-list govuk-list--number">
+              <li><a href="#">Add forecast data to your tracker</a></li>
+              <li><a href="#">Add actuals data to your tracker</a></li>
+            </ol>
+          </div>
+     </div>
+</section>
+{% endblock %}

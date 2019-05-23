@@ -1,0 +1,49 @@
+{% extends "layout-subapp.html" %}
+{% block content %}
+<section id="viewID" data-page-name="trackerCompleteReview">
+
+  <div class="govuk-width-container" data-page-name="approveTrackerUserJourney">
+    <a href="#" class="govuk-back-link">Back</a>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Complete review
+          </h1>
+        </legend>
+        <span id="how-contacted-conditional-hint" class="govuk-hint">
+          Is this tracker ready for BEIS QA?
+        </span>
+        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="approve" name="choose-journey" type="radio" value="approve">
+            <label class="govuk-label govuk-radios__label" for="approve">
+              yes, approve this tracker and notify BEIS analysts
+            </label> </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="decline" name="choose-journey" type="radio" value="decline">
+            <label class="govuk-label govuk-radios__label" for="decline">
+              no, send the tracker back to the delivery partner to fix
+            </label> </div>
+          <div class="govuk-radios__conditional -govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+            <div class="govuk-form-group">
+            <div class="word-count">
+              <label class="govuk-label" for="contact-by-phone">
+                Add feedback
+              </label>            <textarea class="govuk-textarea govuk-!-width-one-half" type="text" id="wordlimit" data-max-length-in-words="50"></textarea>
+                <span class="sfa-form-control-after" id="#charlimit">
+                    <span class="words-left govuk-body">50 words left</span>
+                </span>
+            </div>
+            </div>
+          </div>
+        </div>
+    <br>
+    <br>
+        <a href="#" class="govuk-button">Finish</a>
+      </fieldset>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

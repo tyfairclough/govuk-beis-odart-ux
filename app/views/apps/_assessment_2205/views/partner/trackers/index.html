@@ -1,0 +1,115 @@
+{% extends "layout-subApp.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Financial data</h1>
+    <p class="govuk-body-lead">View previous financial submissions and update this period's financial data.</p>
+    <a class="govuk-button" href="submit/input.html">Report financial data</a>
+    <a class="govuk-button govuk-button--link" href="../projects/">View activities</a>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <!-- <h3 class="govuk-heading-m">This period's tracker status</h3> -->
+        <h3 class="govuk-heading-m">Report status</h3>
+        <p class="govuk-body">Shows imporant information pertaining to your financial data submission.</p>
+        <div class="govuk-grid-row govuk-form-group">
+
+          <div class="govuk-grid-column-one-third">
+            <div class="panel-blue">
+                <div class="govuk-caption-m">Tracker submission deadline</div>
+                <div class="govuk-heading-m">Friday, 28 Jun 2019</div>
+            </div>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <div class="panel-grey">
+                <div class="govuk-caption-m">Activities up to date</div>
+                <div class="govuk-heading-m"><span>11</span> of <span>45</span></div>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <div class="panel-red">
+                <div class="govuk-caption-m">Errors found in tracker</div>
+                <div class="govuk-heading-m">4,305</div>
+                </div>
+              </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h3 class="govuk-heading-m">Headline financial figures</h3>
+<p class="govuk-body">Values shown are key spend metrics, updated daily.</p>
+        <div class="govuk-grid-row govuk-form-group">
+          <div class="govuk-grid-column-one-third">
+            <div class="panel-grey">
+                <div class="govuk-caption-m">Spend</div>
+                <div class="govuk-heading-m">£999,999</div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="panel-grey">
+                <div class="govuk-caption-m">Spend against budget</div>
+                <div class="govuk-heading-m">£999,999</div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="panel-grey">
+                <div class="govuk-caption-m">Variance</div>
+                <div class="govuk-heading-m">£999,999</div>
+            </div>
+          </div>
+
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Tracker archive</h2>
+<table class="govuk-table govuk-table--small">
+
+  <thead class="govuk-table__head">
+    <tr>
+      <th colspan="1"></th>
+      <th colspan="3">Activity count</th>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Date</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">(h1)</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">(h2)</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">(h3)</th>
+      <th class="govuk-table__header" scope="col">Submitted by</th>
+      <th class="govuk-table__header" scope="col">Approved by</th>
+      <th class="govuk-table__header" scope="col">Accepted by BEIS</th>
+      <th class="govuk-table__header" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">01 June 2019</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">2</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">5</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">45</td>
+      <td class="govuk-table__cell"><span class="userName"></span></td>
+      <td class="govuk-table__cell">Leela Pushpa</td>
+      <td class="govuk-table__cell">23 June 2019</td>
+      <td class="govuk-table__cell"><a href="details.html">Details</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-pagination--container hide">
+  <ul class="govuk-pagination--pages">
+    <li class="govuk-pagination--back"><</li>
+    <li class="govuk-pagination--page govuk-pagination--page--active">1</li>
+    <li class="govuk-pagination--page"><a href="#">2</a></li>
+    <li class="govuk-pagination--page"><a href="#">3</a></li>
+    <li class="govuk-pagination--forward"><a href="#">></a></li>
+  </ul>
+</div>
+
+        </div>
+
+  </main>
+</div>
+{% endblock %}

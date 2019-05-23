@@ -1,0 +1,1189 @@
+// the global prototyping styles get imported
+// see: app/assets/sass/_global-styles.scss
+
+//
+// imports
+//
+$govuk-blue: #005ea5;
+$govuk-white: #fff;
+$govuk-orange: #f47738;
+$govuk-red: #b10e1e;
+$govuk-grey-1: #6f777b;
+$govuk-grey-2: #bfc1c3;
+$govuk-grey-3: #dee0e2;
+$govuk-grey-4: #f8f8f8;
+$govuk-black: #0b0c0c;
+$govuk-purple: #8B2780;
+//
+// imports
+//
+@import "jexcel.scss";
+@import "selectize.scss";
+//
+// global overrides
+//
+
+* {
+    box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+text {
+  font-family: "nta", sans-serif;
+}
+
+.nc {
+  text-transform: uppercase;
+}
+
+.flex-center {
+  height: calc(80vh - 600px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.govuk-button.govuk-button--secondary {
+  background-color: #dee0e2;
+  -webkit-box-shadow: 0 2px 0 #858688;
+  box-shadow: 0 2px 0 #858688;
+  color: $govuk-black;
+  &:link {
+    color: $govuk-black !important;
+  }
+  &:hover {
+    background: $govuk-grey-2;
+    color: $govuk-black;
+  }
+}
+
+.govuk-body--hint {
+  color: $govuk-grey-2;
+}
+
+.hgroup {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  h1 {
+    margin-bottom: 15px;
+  }
+}
+
+.govuk-header {
+  border-bottom: solid 10px $govuk-blue;
+}
+.govuk-header__container {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+header {
+  margin-top: 30px;
+  > h2 {
+    margin: 0 !important;
+  }
+}
+
+.govuk-summary-list {
+  &.govuk-body-s {
+    font-size: 16px;
+  }
+}
+
+.panel-center {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  * {
+
+  }
+}
+
+.panel-blue {
+  background: $govuk-blue;
+  color: $govuk-white;
+  padding: 1rem;
+  a, p, h1, h2, h3, h4, h5, h6, ul, ol, .govuk-heading-xl, .govuk-caption-m {
+    color: $govuk-white;
+  }
+  .govuk-heading-xl,.govuk-heading-l,.govuk-heading-m,.govuk-heading-s, .govuk-caption-m {
+    color: $govuk-white;
+  }
+}
+.panel-red {
+  background: $govuk-red;
+  color: $govuk-white;
+  padding: 1rem;
+  a, p, h1, h2, h3, h4, h5, h6, ul, ol, .govuk-heading-xl, .govuk-caption-m {
+    color: $govuk-white;
+  }
+  .govuk-heading-xl,.govuk-heading-l,.govuk-heading-m,.govuk-heading-s, .govuk-caption-m {
+    color: $govuk-white;
+  }
+}
+
+.panel-grey {
+  background: $govuk-grey-4;
+  color: $govuk-grey-3;
+  position: relative;
+  padding: 1rem;
+  a, p, h1, h2, h3, h4, h5, h6, ul, ol, .govuk-heading-xl, .govuk-caption-m {
+    color: $govuk-black;
+  }
+  .govuk-heading-xl, .govuk-caption-m {
+    color: $govuk-black;
+  }
+}
+
+.panel-blue [class^="govuk-heading-"],.panel-grey [class^="govuk-heading-"],.panel-red [class^="govuk-heading-"] {
+  margin-bottom: 0;
+}
+
+.addPanel {
+  padding: 60px;
+  &:before {
+    content: "";
+    height: calc(100% - 60px);
+    width: calc(100% - 60px);
+    position: absolute;
+    outline: dashed 10px $govuk-grey-3;
+  }
+  &:hover{
+    cursor: pointer;
+    &:before {
+      outline-color: $govuk-grey-2
+    }
+  }
+}
+
+
+.app-help-panel {
+  background:  #005ea5;
+  padding: 20px 20px 0 20px;
+  a, p, h1, h2, h3, h4, h5, h6, ul, ol {
+    color: white;
+    &.govuk-button--secondary {
+      background: white;
+      color: #005ea5;
+      border-bottom-color: #f8f8f8;
+    }
+  }
+}
+
+.govuk-panel--confirmation {
+  a {
+    color: $govuk-white;
+  }
+}
+
+
+
+//
+// full width layout
+//
+@media (min-width: 641px) {
+  body.wide {
+    .govuk-width-container {
+      max-width: 100%;
+      > .govuk-grid-row {
+        position: relative;
+        display: flex;
+        width: 100%;
+        margin: 0
+        }
+      .govuk-main-wrapper {
+        padding: 0;
+      }
+      aside {
+        width: 350px;
+        border-right: 1px solid $govuk-grey-3;
+        padding-left: 30px;
+        float: left;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+      }
+      .main {
+        flex: 1;
+        width: calc(100% - 365px);
+      }
+    }
+    .header-user .header-inner, .header-organisation .header-inner {
+      max-width: 100%;
+    }
+    .govuk-header__logo {
+      padding-left: 15px;
+    }
+  }
+}
+
+
+/*----- inline table errors page -------*/
+
+.govuk-error__cell {
+  // border-left: 5px solid $govuk-red;
+  box-shadow:-10px 0px 0px 0px mix($govuk-white,$govuk-red,90%), -15px 0px 0px 0px $govuk-red;
+  // border-right: 5px solid $govuk-white;
+  background: mix($govuk-white,$govuk-red,90%);
+  padding-left: 0px;
+  white-space: nowrap;
+  div {
+    color: $govuk-red;
+    font-weight: 900;
+  }
+}
+.govuk-warning__cell {
+box-shadow: -10px 0px 0px 0px mix($govuk-white,$govuk-purple,90%), -15px 0px 0px 0px $govuk-purple;
+background: mix($govuk-white,$govuk-purple,90%);
+padding-left: 0px;
+white-space: nowrap;
+  div {
+    color: $govuk-purple;
+    font-weight: 900;
+  }
+}
+
+/* table ui */
+
+
+.activity-table {
+  table + table {
+    margin-left: 15px;
+    box-shadow: -10px 0 0px $govuk-white, -15px 0 0px $govuk-grey-3;
+  }
+}
+
+#trackerReviewTable {
+  td:last-of-type {
+    padding-left: 10px;
+  }
+}
+.projectReviewTable {
+tr {
+  cursor: pointer;
+}
+  .highlighted {
+    background: mix($govuk-white,$govuk-purple,90%);
+  }
+}
+
+/*----- pagination -------*/
+
+.govuk-pagination--container {
+  .govuk-pagination--pages {
+    list-style: none;
+    display: block;
+    float: left;
+    width: 100%;
+    overflow: auto;
+    margin: 0 0 30px 0;
+    padding: 0;
+    li {
+      font-family: "nta", arial, sans-serif;
+      color: $govuk-grey-2;
+      display: inline-block;
+      float: left;
+      padding: 10px 15px;
+      margin-right: 5px;
+      background: $govuk-grey-4;
+      a {
+        text-decoration: none;
+      }
+      &:hover {
+        background: $govuk-grey-2
+      }
+    }
+  }
+}
+
+/*----- buttons -------*/
+
+.govuk-button--link {
+  background: none;
+  text-decoration: underline !important;
+  box-shadow: none;
+  color: $govuk-blue !important;
+  &:hover {
+    background: rgba(255,255,255,0.2);
+  }
+}
+
+/*----- accordion pattern -------*/
+.subsection {
+    width: 100%;
+    margin-bottom: 30px
+}
+
+@media (min-width: 641px) {
+    .subsection {
+        margin-bottom:45px
+    }
+}
+
+.subsection__title {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 5px
+}
+
+@media (min-width: 641px) {
+    .subsection__title {
+        font-size:24px;
+        line-height: 1.25
+    }
+}
+
+.subsection__description {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 7.5px
+}
+
+@media (min-width: 641px) {
+    .subsection__description {
+        font-size:19px;
+        line-height: 1.31579
+    }
+}
+
+@media (min-width: 641px) {
+    .subsection__description {
+        margin-bottom:15px
+    }
+}
+
+.subsection__list {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    padding-left: 0;
+    list-style-type: none
+}
+
+@media (min-width: 641px) {
+    .subsection__list {
+        font-size:19px;
+        line-height: 1.31579
+    }
+}
+
+.subsection__list-item {
+    margin-bottom: 0.5em
+}
+
+.subsection__list-item a {
+    text-decoration: none
+}
+
+.js-accordion-with-descriptions .subsection-controls button {
+    float: right;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #005ea5;
+    padding: 0.5em 0
+}
+
+@media (min-width: 641px) {
+    .js-accordion-with-descriptions .subsection-controls button {
+        font-size:16px;
+        line-height: 1.25
+    }
+}
+
+.js-accordion-with-descriptions .subsection-wrapper {
+    border-bottom: 1px solid #bfc1c3
+}
+.js-accordion-with-descriptions .subsection-wrapper:last-child {
+  border-bottom: none;
+}
+.js-accordion-with-descriptions .subsection {
+    margin-bottom: 0
+}
+
+@media (min-width: 641px) {
+    .js-accordion-with-descriptions .subsection {
+        margin-bottom:0
+    }
+}
+
+.js-accordion-with-descriptions .subsection__header {
+    position: relative;
+    padding-top: 14px;
+    padding-bottom: 12px;
+    border-top: 1px solid #bfc1c3
+}
+
+.js-accordion-with-descriptions .subsection__header:hover {
+    cursor: pointer;
+    background: #f8f8f8
+}
+
+.js-accordion-with-descriptions .subsection__title {
+    margin-bottom: 0;
+    margin-right: 15px
+}
+
+.js-accordion-with-descriptions .subsection__title button {
+    color: #005ea5;
+    cursor: pointer;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    background: none;
+    border: 0;
+    padding-left: 0;
+    text-align: left
+}
+
+@media (min-width: 641px) {
+    .js-accordion-with-descriptions .subsection__title button {
+        font-size:24px;
+        line-height: 1.25
+    }
+}
+
+@media (min-width: 641px) {
+    .js-accordion-with-descriptions .subsection__title {
+        margin-right:30px
+    }
+}
+
+.js-accordion-with-descriptions .subsection__description {
+    margin-bottom: 0;
+    margin-right: 15px
+}
+
+@media (min-width: 641px) {
+    .js-accordion-with-descriptions .subsection__description {
+        margin-bottom:0;
+        margin-right: 30px
+    }
+}
+
+.js-accordion-with-descriptions .subsection__icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 16px;
+    width: 16px;
+    margin-top: -8px;
+    background-image: url(https://assets.publishing.service.gov.uk/service-manual-frontend/icons-plus-minus-1bd32ac92894793f16898334c6a8af216b283adcb4d0a9b8cbe1621509f6b0d5.png);
+    background: url(https://assets.publishing.service.gov.uk/service-manual-frontend/icons-plus-minus-d4de828db60520db2057af7ed3526d770973e70a94c4d8a1ba6cf4a6dcf6490e.svg),linear-gradient(transparent, transparent);
+    background-repeat: no-repeat;
+    background-position: 0 -16px
+}
+
+@media (min-width: 641px) {
+    .js-accordion-with-descriptions .subsection__icon {
+        right:15px
+    }
+}
+
+.js-accordion-with-descriptions .subsection--is-open .subsection__icon {
+    background-position: 0 0
+}
+
+.js-accordion-with-descriptions .subsection__content {
+    padding-top: 5px;
+    padding-bottom: 15px
+}
+
+@media (min-width: 641px) {
+    .js-accordion-with-descriptions .subsection--is-open .subsection__content {
+        padding-top:10px;
+        padding-bottom: 30px
+    }
+}
+
+p {
+    margin-top: 0.3125em;
+    margin-bottom: 1.25em
+}
+
+@media (min-width: 641px) {
+    p {
+        margin-top:0.26316em;
+        margin-bottom: 1.05263em
+    }
+}
+
+.js-accordion-with-descriptions .subsection-controls:after,.js-accordion-with-descriptions .subsection-wrapper:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.js-accordion-with-descriptions .subsection-controls:after,.js-accordion-with-descriptions .subsection-wrapper:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+
+.related {
+  .relatedHeader {
+    color: $govuk-blue;
+    cursor: pointer;
+    border-top: 1px solid $govuk-grey-3;
+    padding-top: 15px;
+    h3 {
+      width: calc(100% - 30px);
+      float: left;
+      color: $govuk-blue;
+      text-decoration: underline;
+      margin-bottom: 0;
+    }
+    i {
+      float: right;
+    }
+    .relatedBody {
+
+    }
+  }
+  &:first-child {
+    // border-bottom: 1px solid $govuk-grey-3;
+    border-top: none;
+  }
+}
+
+/*----- definition list pattern -------*/
+.govuk-definition-list {
+  dd,dt {
+    display: block;
+  }
+  dt {
+    float: left;
+    padding-right: 10px;
+    font-weight: 900;
+    width: 30%;
+    clear: left;
+    text-align: right;
+  }
+  dd {
+    width: 70%;
+    margin-left: 30%;
+  }
+}
+
+/*----- heading caption small pattern -------*/
+.govuk-caption-s {
+    font-size: 16px;
+    display: block;
+    color: $govuk-grey-1;
+  }
+
+
+/*----- table small pattern -------*/
+.govuk-table {
+&.govuk-table--small {
+    font-size: 1rem;
+  }
+}
+
+/*----- logic page -------*/
+
+.logicPage {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 16px);
+}
+
+
+/*----- jexcel demo page -------*/
+
+.jexcel, .jexcel td, .jexcel_corner {
+  font-family: "nta",sans-serif;
+  color: $govuk-black;
+}
+
+// tr#row-0 {
+//   background-color: $govuk-red;
+//   td {
+//     color: $govuk-white;
+//     }
+// }
+
+
+//
+// nav
+//
+.header-global {
+  margin: 0 auto;
+  max-width: 960px;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.header-global__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 641px) {
+  .header-global__title {
+    font-size: 32px;
+  }
+}
+
+.header-global__title a {
+  border-bottom: 1px solid #000;
+  color: #fff;
+  display: inline-block;
+  padding: 2px 0;
+  text-decoration: none;
+}
+
+.phase-banner-alpha .phase-tag {
+  background: #005ea5;
+}
+
+#global-header-bar {
+  background: #6f777b;
+}
+
+nav#globalNav {
+  background: #f8f8f8;
+}
+
+.header-user,
+.header-organisation {
+  border-bottom: 1px solid #bfc1c3;
+  padding: 0 15px;
+  float: none;
+}
+
+.header-organisation {
+  margin-bottom: 15px;
+  float: left;
+  width: 100%;
+}
+
+.header-inner {
+  padding: 0;
+}
+
+.global-header-bar {
+  height: 10px;
+  // background: #005ea5;
+}
+
+.header-organisation h2 {
+  padding: 0;
+  margin-top: .75em;
+  margin-bottom: 0;
+}
+
+.js-hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .js-hidden-mobile {
+    display: block;
+  }
+}
+
+.js-hidden-desktop {
+  display: block;
+}
+
+@media (min-width: 641px) {
+  .js-hidden-desktop {
+    display: none;
+  }
+}
+
+a.nav-menu-link {
+  float: right;
+  clear: both;
+  margin: 10px 0;
+  font-size: 16px;
+  padding-left: 15px !important;
+  color: #000;
+  text-decoration: none;
+}
+
+a.nav-menu-link:before {
+  left: 5px !important;
+  margin-top: -6px !important;
+}
+
+nav#user-nav {
+  font-size: 14px;
+  clear: both;
+  + h2 {
+    margin: 15px 0;
+  }
+}
+
+@media (min-width: 641px) {
+
+.header-user .header-inner {
+  padding: 0;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header-organisation {
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+
+  nav#user-nav {
+    font-size: 16px;
+  }
+  nav#user-nav > ul {
+    float: right;
+    margin: 0;
+  }
+  nav#user-nav > ul li {
+    border: none;
+  }
+  nav#user-nav > ul li.top-level {
+    display: inline-block;
+    float: left;
+  }
+  nav#user-nav > ul li.top-level > a {
+    padding-top: 10px;
+    padding-bottom: 8px;
+    margin: 3px 0;
+  }
+  nav#user-nav > ul li.top-level > a.js-toggle {
+    padding-left: 25px;
+  }
+  nav#user-nav > ul li.top-level ul {
+    display: none;
+  }
+  nav#user-nav > ul li.top-level.open {
+    position: relative;
+  }
+  nav#user-nav > ul li.top-level.open ul {
+    display: block;
+    position: absolute;
+    width: 250px;
+    top: 100%;
+    right: 0;
+    background: #f8f8f8;
+    border: 1px solid #bfc1c3;
+    z-index: 100;
+  }
+  nav#user-nav > ul li.top-level.open ul li {
+    margin: 0 10px;
+    border-bottom: 1px solid #bfc1c3;
+  }
+  nav#user-nav > ul li.top-level.open ul li:last-child {
+    border: none;
+  }
+  nav#user-nav > ul li.top-level.open ul li a {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  nav#user-nav > ul li.top-level.open ul li.selected a {
+    margin-left: 0;
+  }
+  nav#user-nav > ul li.top-level a.menu-open,
+  nav#user-nav > ul li.top-level a.menu-open:focus {
+    background: #f8f8f8;
+    border: 1px solid #bfc1c3;
+    border-bottom: none;
+    position: relative;
+    margin-bottom: -1px;
+    z-index: 101;
+  }
+}
+
+nav#user-nav > ul {
+  list-style: none;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+}
+
+nav#user-nav > ul li {
+}
+
+nav#user-nav > ul li a {
+  padding: 12px 15px 10px 20px;
+  display: block;
+}
+
+nav#user-nav > ul li li a {
+  padding-left: 15px;
+}
+
+nav#user-nav > ul li.top-level > a {
+  text-decoration: none;
+  color: #0b0c0c;
+}
+
+nav#user-nav > ul li.top-level.open ul li.selected a {
+  padding-left: 20px;
+  background-image: url("/public/images/tick.png");
+  background-repeat: no-repeat;
+  background-position: 0px 14px;
+  background-size: 15px;
+  text-decoration: none;
+  color: #0b0c0c;
+  margin-left: 15px;
+}
+
+
+a.menu-open,
+a.menu-closed {
+  padding-left: 20px;
+  position: relative;
+}
+
+a.menu-open:before,
+a.menu-closed:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  border-color: transparent;
+  border-width: 7px 4px;
+  border-style: solid;
+  display: block;
+  width: 0;
+  height: 0;
+  top: 50%;
+  margin-top: -4px;
+}
+
+a.menu-open:before {
+  border-top-color: black;
+  border-top-color: #0b0c0c;
+}
+
+a.menu-closed:before {
+  border-left-color: black;
+  border-left-color: #0b0c0c;
+  border-width: 4px 7px;
+}
+
+nav.global-nav {
+  font-size: 14px;
+}
+
+@media (min-width: 641px) {
+  nav.global-nav {
+    font-size: 16px;
+  }
+}
+
+nav.global-nav ul {
+  list-style: none;
+  margin: 0;
+  margin-left: -15px;
+  margin-rightr: -15px;
+  padding: 0;
+  position: relative;
+}
+
+nav.global-nav ul li {
+  display: inline-block;
+  float: left;
+}
+
+nav.global-nav ul li a {
+  padding: 12px 15px 10px;
+  display: block;
+  position: relative;
+}
+
+nav.global-nav ul li a:focus {
+  outline: 0;
+}
+
+nav.global-nav ul li.current a, nav.global-nav ul li.active a {
+  color: black;
+  color: #0b0c0c;
+  text-decoration: none;
+}
+
+nav.global-nav ul li.current a:after, nav.global-nav ul li.active a:after {
+  content: "";
+  display: block;
+  height: 5px;
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: -1px;
+  z-index: 1;
+  background: #005ea5;
+}
+
+nav.global-nav ul li.more-link a {
+  position: absolute;
+}
+
+@media (min-width: 641px) {
+  nav.global-nav ul li.more-link {
+    display: none;
+  }
+}
+
+nav.global-nav ul#global-nav-links-secondary {
+  float: none;
+  clear: both;
+  margin-right: -15px;
+}
+
+@media (min-width: 641px) {
+  nav.global-nav ul#global-nav-links-secondary {
+    float: left;
+    clear: none;
+    margin-left: 0;
+  }
+}
+
+nav.global-nav ul#global-nav-links-secondary li {
+  display: block;
+  float: none;
+  border-top: 1px solid #bfc1c3;
+}
+
+@media (min-width: 641px) {
+  nav.global-nav ul#global-nav-links-secondary li {
+    float: left;
+    border: none;
+  }
+}
+
+@media (min-width: 769px) {
+  nav.global-nav ul {
+    font-size: 19px;
+  }
+}
+
+nav.global-nav ul li.sa-stacker {
+  float: right;
+}
+
+nav.global-nav ul li.sa-stacker ul {
+  display: none;
+}
+
+nav.global-nav ul li.sa-stacker.sa-open ul {
+  display: block;
+  position: absolute;
+  background: white;
+  left: 15px;
+  right: -15px;
+  border-bottom: 2px solid #bfc1c3;
+}
+
+nav.global-nav ul li.sa-stacker.sa-open ul li {
+  display: block;
+  float: none;
+  border-top: 1px solid #bfc1c3;
+}
+
+
+//
+// small checkboxes
+//
+
+.govuk-checkboxes--small .govuk-checkboxes__item {
+    min-height: 0;
+    margin-bottom: 0;
+    padding-left: 34px;
+    float: left
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__item:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__input {
+    left: -10px
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__label {
+    margin-top: -2px;
+    padding: 13px 15px 13px 1px;
+    float: left
+}
+
+@media (min-width: 40.0625em) {
+    .govuk-checkboxes--small .govuk-checkboxes__label {
+        padding:11px 15px 10px 1px
+    }
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__label::before {
+    top: 8px;
+    width: 24px;
+    height: 24px
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__label::after {
+    top: 15px;
+    left: 6px;
+    width: 9px;
+    height: 3.5px;
+    border-width: 0 0 3px 3px
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__hint {
+    padding: 0;
+    clear: both
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__conditional {
+    margin-left: 10px;
+    padding-left: 20px;
+    clear: both
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled)+.govuk-checkboxes__label::before {
+    -webkit-box-shadow: 0 0 0 10px #dee0e2;
+    box-shadow: 0 0 0 10px #dee0e2
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus+.govuk-checkboxes__label::before {
+    -webkit-box-shadow: 0 0 0 3px #ffbf47,0 0 0 10px #dee0e2;
+    box-shadow: 0 0 0 3px #ffbf47,0 0 0 10px #dee0e2
+}
+
+@media (hover: none), (pointer: coarse) {
+    .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled)+.govuk-checkboxes__label::before {
+        -webkit-box-shadow:initial;
+        box-shadow: initial
+    }
+
+    .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus+.govuk-checkboxes__label::before {
+        -webkit-box-shadow: 0 0 0 3px #ffbf47;
+        box-shadow: 0 0 0 3px #ffbf47
+    }
+}
+
+
+
+//
+// beis logo
+//
+
+.brand--department-for-business-innovation-skills.brand__border-color, .brand--department-for-business-innovation-skills .brand__border-color {
+    border-color: #003479;
+}
+
+.gem-c-organisation-logo {
+    font-size: 13px;
+    line-height: 1.1538461538;
+    font-weight: 400;
+}
+.gem-c-organisation-logo__crest--single-identity, .gem-c-organisation-logo__crest--eo, .gem-c-organisation-logo__crest--org {
+    background: url(https://assets.publishing.service.gov.uk/collections/crests/org_crest_18px-4e3d1aa185df88183df4fd4d1338cba324d0125d4bb7a5644edbef42d9bcd16e.png) no-repeat 5px 0;
+    background-size: auto 20px;
+}
+.gem-c-organisation-logo__crest {
+    border-left: 2px solid #0b0c0c;
+    padding-top: 20px;
+    padding-left: 6px;
+}
+.gem-c-organisation-logo__container {
+    text-transform: none;
+    text-decoration: none;
+    display: block;
+    color: #0b0c0c;
+    height: auto;
+    width: auto;
+    direction: ltr;
+}
+.gem-c-organisation-logo__name {
+    position: relative;
+    top: 3px;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+@media (min-width: 641px) {
+  .gem-c-organisation-logo {
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 400;
+    }
+    .gem-c-organisation-logo__crest--single-identity, .gem-c-organisation-logo__crest--eo, .gem-c-organisation-logo__crest--org {
+    background: url(https://assets.publishing.service.gov.uk/collections/crests/org_crest_18px-4e3d1aa185df88183df4fd4d1338cba324d0125d4bb7a5644edbef42d9bcd16e.png) no-repeat 6px 0;
+    background-size: auto 26px;
+    }
+    .gem-c-organisation-logo__crest {
+    padding-top: 25px;
+    padding-left: 7px;
+    }
+
+}
+
+.selectize-dropdown .optgroup-header {
+  font-weight: 900;
+}
+
+
+//
+// handsometable
+//
+.govuk-template__body{
+  .handsontable {
+    font-family: "nta", sans-serif;
+    thead th .relative {
+      padding: 10px 15px;
+    }
+    tbody td {
+      padding: 10px 15px;
+      // word-break: break-word;
+    }
+  }
+}
+
+
+//
+// handsometable
+//
+
+
+#jexcel-0 {
+  .ht_clone_top.handsontable {
+    .htCore {
+      thead tr th {
+        text-align: left !important;
+      }
+      thead tr + tr + tr th {
+        text-align: center;
+      }
+    }
+  }
+
+}

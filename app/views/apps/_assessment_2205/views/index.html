@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<section id="viewID" data-page-name="odartLanding">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="gem-c-organisation-logo brand--department-for-business-innovation-skills">
+        <div class="gem-c-organisation-logo__container gem-c-organisation-logo__crest gem-c-organisation-logo__crest--single-identity brand__border-color">
+          <span class="gem-c-organisation-logo__name">Department for<br>Business, Energy<br>&amp; Industrial Strategy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <div class="hgroup">
+        <h1 class="govuk-heading-xl">
+          Report on ODA activity and financial data<span class="sr-only">(ROODAAF)</span>
+              </h1>
+  <p>This service is for organisations that either receive or report ODA funding.</p>
+  <p>Use this service to:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+              <li>report cash and accrual spend on activites</li>
+              <li>report forecasted cash and accrual spend on activites</li>
+              <li>manage projects and their activities</li>
+              <!--<li>your Companies House number - <a href="https://beta.companieshouse.gov.uk/search/" rel="external">find my Companies House number</a></li>-->
+          </ul>
+      </div>
+    </div>
+
+   </div>
+   <div class="govuk-grid-row">
+     <div class="govuk-grid-column-one-half">
+              <h3 class="govuk-heading-m">Sign in</h3>
+             <form>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                Email address
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="password">
+                Password
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="password" name="password" type="text">
+              </div>
+             <div class="govuk-form-group">
+             <button class="govuk-button">Sign in</button>
+             </div>
+             </form>
+             <h2 class="govuk-heading-s">Problems signing in?</h2>
+             <ul class="govuk-list govuk-list--links">
+             <li><a href="#">Reset your password?</a></li>
+             </ul>
+         </div>
+     <div class="govuk-grid-column-one-half">
+              <h3 class="govuk-heading-m">Register</h3>
+              <div class="govuk-inset-text">
+              <p class="govuk-body">This service is available by invite only. Please speak to your line manager to arrange access.</p>
+              <p class="govuk-body">OR</p>
+              <p class="govuk-body">Contact the BEIS service helpdesk for further assistance.</p>
+              </div>
+         </div>
+       </div>
+
+  </section>
+{% endblock %}

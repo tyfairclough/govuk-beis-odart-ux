@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	{{ currentApp | log }}
+
+	<main id="content">
+
+	  <div class="grid-row">
+	    <div class="column-two-thirds">
+
+			<p><a href="/" class="link-back">Back</a></p>
+
+			<h1 class="govuk-heading-xl">
+				{{ currentApp.title }}
+				<span class="govuk-caption-xl">Details of this prototype</span>
+			</h1>
+
+			{% block description %}
+				<h2 class="govuk-heading-m">Description</h2>
+				<p>This is the ODART prototype for alpha assessment.</p>
+				<p>There are, currently, two main user groups. BEIS users and Delivery Partners. BEIS users QA and report on data submitted by Delivery Partners.</p>
+				<h3 class="govuk-heading-s">Before you start</h3>
+				<p class="govuk-body">You will need:</p>
+				<ul class="govuk-list govuk-list--bullet">
+					<li>A partner or beis e-mail address to login with</li>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>(beis) odeta.butkute@beis.gov.uk</li>
+						<li>(beis) ty.fairclough@gmail.com</li>
+						<li>(partner) louise.emerson@bbsrc.ukri.org</li>
+						<li>(partner) frances.medaney@bbsrc.ukri.org</li>
+						<li>(partner) emily.harris@ahrc.ukri.org</li>
+						<li>(partner) theresa.meacham@bbsrc.ukri.org</li>
+						<li>(beis) rebecca.tanner@ukri.org</li>
+						<li>(partner) ryan.ahmed@royalsociety.org</li>
+						<li>(partner) ben.austin@britishcouncil.org</li>
+						<li>(partner) kemi.olafare@britishcouncil.org</li>
+						<li>(beis) alexander.lauder-bliss@newtonfund.ac.uk</li>
+					</ul>
+				</ul>
+			{% endblock %}
+
+			<br>
+
+			<p><a href="{{ currentApp.urlPaths.appRoot | d('views/') }}views/" class="govuk-button govuk-button-start">Launch {{ (currentApp.title) if currentApp.title }} prototype</a></p>
+			<!-- <a href="{{ currentApp.urlPaths.appSubRoute }}">Test link</a> -->
+
+	    </div>
+	  </div>
+
+
+	</main>
+
+{% endblock %}

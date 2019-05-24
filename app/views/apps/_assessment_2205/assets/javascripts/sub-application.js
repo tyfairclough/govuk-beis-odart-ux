@@ -602,6 +602,16 @@ $(".govuk-button").click(function(e){
   myemail = $("#email").val();
 
   switch (myemail) {
+     case 'partner':
+          localStorage.setItem("userType",1)
+          localStorage.setItem("userOrg","BBSRC")
+          localStorage.setItem("userName","Joanna")
+         break;
+     case 'beis':
+          localStorage.setItem("userType",0)
+          localStorage.setItem("userOrg","BEIS")
+          localStorage.setItem("userName","Simone")
+         break;
      case 'louise.emerson@bbsrc.ukri.org':
           localStorage.setItem("userType",1)
           localStorage.setItem("userOrg","BBSRC")

@@ -218,7 +218,121 @@ function partnerAddProject(){
 
 function trackerDetailsReview(){
   $("body").addClass("wide");
+  // accordion
+  $(".related .relatedBody").addClass("hide");
+  $(".related .relatedHeader").click(function(e){
+    $(this).next().toggleClass("hide");
+    $(this).children(".fa").toggleClass("fa-plus");
+    $(this).children(".fa").toggleClass("fa-minus");
+    // $(this).parent($("i").toggleClass("fa-minus"));
+    // $(this).parent().css("background","red");
+    // $(this).parent().css("background","red").closest("i").toggleClass("fa-plus");
+    // $(".relatedHeader i", this).toggleClass("fa-minus");
+  });
 
+  // $("#activityReview_2")
+
+  var viewportHeightAvailable = ($(document).height()*0.6);
+  // var viewportHeightAvailable = 800;
+  console.log(viewportHeightAvailable)
+  var data = [
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow','Add comment',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000]
+  ];
+
+  var container = document.getElementById('activityReview_2');
+  var hot = new Handsontable(container, {
+    data: data,
+    licenseKey: 'non-commercial-and-evaluation',
+    rowHeaders: true,
+    allowInsertRow: false,
+    allowInsertColumn: false,
+    allowEmpty: false,
+    allowRemoveColumn: false,
+    allowRemoveRow: false,
+
+
+    nestedHeaders: [
+      [{label: '', colspan: 5}, {label: 'Actuals', colspan: 10}, {label: 'Forecast', colspan: 16}],
+      [{label: '', colspan: 5}, {label: 'Cash', colspan: 5},{label: 'Accruals', colspan: 5}, {label: 'Cash', colspan: 8}, {label: 'Accruals', colspan: 8}],
+      ['Activity', 'ID', 'Status', 'Narrative','','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21']
+    ],
+
+  /*    hiddenColumns: {
+      columns: [4, 5, 6,7],
+      indicators: true
+    },
+
+  */
+  //
+  // hiddenColumns: {
+  //   // set columns that are hidden by default
+  //   // columns: [5, 10, 15],
+  //   // show where are hidden columns
+  //   indicators: true
+  // },
+    manualColumnFreeze: true,
+    manualColumnMove: false,
+    manualRowMove: true,
+    fixedColumnsLeft: 4,
+    colHeaders: true,
+    colWidths: 100,
+    width: '100%',
+    height: viewportHeightAvailable,
+    fixedColumnsLeft: 4,
+    filters: true,
+    dropdownMenu: false
+  });
+
+  // filter drop downs
+
+  $('#select-fund').selectize({
+  });
+  $('#select-country').selectize({
+    maxItems: 3
+  });
+  $('#select-approval').selectize({
+    maxItems: 3
+  });
+  $('#select-activity').selectize({
+    maxItems: 3
+  });
+  $('#select-dp').selectize({
+    maxItems: 10
+  });
+
+  $('#select-keywords').selectize({
+      delimiter: ',',
+      persist: false,
+      create: function(input) {
+          return {
+              value: input,
+              text: input
+          }
+      }
+  })
 }
 
 function beisTrackerDashboard(){
@@ -266,10 +380,10 @@ function beisTrackerDashboard(){
                              // console.log(data.trackerApprovalSheet.elements[i].budget_month_num);
                              if (data.trackerApprovalSheet.elements[i].budget_month_num > 1 ) {
                                // console.log("over budget")
-                               content += '<td class="govuk-table__cell govuk-error__cell"><div id="warning-1">Over budget</div>' + data.trackerApprovalSheet.elements[i].budget_month + '</td>';
+                               content += '<td class="govuk-table__cell govuk-over__cell"><div id="warning-1">Over budget</div>' + data.trackerApprovalSheet.elements[i].budget_month + '</td>';
                              } else if (data.trackerApprovalSheet.elements[i].budget_month_num < 0 ) {
                                // console.log("under budget")
-                               content += '<td class="govuk-table__cell govuk-warning__cell"><div id="warning-1">Under budget</div><span>' + data.trackerApprovalSheet.elements[i].budget_month + '</span></td>';
+                               content += '<td class="govuk-table__cell govuk-under__cell"><div id="warning-1">Under budget</div><span>' + data.trackerApprovalSheet.elements[i].budget_month + '</span></td>';
                              } else {
                                // console.log("just right")
                                content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_month + '</td>';
@@ -277,16 +391,16 @@ function beisTrackerDashboard(){
 
                              if (data.trackerApprovalSheet.elements[i].budget_activity_num > 1 ) {
                                // console.log("over budget")
-                               content += '<td class="govuk-table__cell govuk-error__cell"><div id="warning-1">Over budget</div>' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
+                               content += '<td class="govuk-table__cell govuk-over__cell"><div id="warning-1">Over budget</div>' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
                              } else if (data.trackerApprovalSheet.elements[i].budget_month_num < 0 ) {
                                // console.log("under budget")
-                               content += '<td class="govuk-table__cell govuk-warning__cell"><div id="warning-1">Under budget</div><span>' + data.trackerApprovalSheet.elements[i].budget_activity + '</span></td>';
+                               content += '<td class="govuk-table__cell govuk-under__cell"><div id="warning-1">Under budget</div><span>' + data.trackerApprovalSheet.elements[i].budget_activity + '</span></td>';
                              } else {
                                // console.log("just right")
                                content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
                              }
                              // content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
-                             content += '<td class="govuk-table__cell"><a href="tracker/index">Review activities</a></td>';
+                             content += '<td class="govuk-table__cell"><a href="trackers/tracker/index">Review activities</a></td>';
                              content += '</tr>';
                      }
                    }

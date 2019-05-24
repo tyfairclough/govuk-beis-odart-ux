@@ -105,6 +105,9 @@ switch (pageName) {
    case 'biesReportingCustom':
        biesReportingCustom();
        break;
+   case 'trackerCompleteReview':
+       trackerCompleteReview();
+       break;
    case 'submitDataTable':
        submitDataTable();
        break;
@@ -127,6 +130,19 @@ switch (pageName) {
        partnerAddProjectCheckAnswers();
        break;
    default: break;
+}
+
+function trackerCompleteReview(){
+  $("input").click(function(e){
+    state = $("input[name=choose-journey]:checked").val()
+      if ( state == "decline") {
+        $(".govuk-radios__conditional").removeClass("govuk-radios__conditional--hidden")
+      } else {
+        $(".govuk-radios__conditional").addClass("govuk-radios__conditional--hidden")
+      }
+  })
+
+
 }
 
 function partnerAddProjectCheckAnswers(){
@@ -337,6 +353,11 @@ function trackerDetailsReview(){
 
 function beisTrackerDashboard(){
 
+  if ( state == "reviewed") {
+    // show review feedback
+    $("#sentToBeis").removeClass("hide");
+  }
+
   $('#select-fund').selectize({
     sortField: 'text',
     allowEmptyOption: true
@@ -400,7 +421,7 @@ function beisTrackerDashboard(){
                                content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
                              }
                              // content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
-                             content += '<td class="govuk-table__cell"><a href="trackers/tracker/index">Review activities</a></td>';
+                             content += '<td class="govuk-table__cell"><a href="tracker/index">Review activities</a></td>';
                              content += '</tr>';
                      }
                    }

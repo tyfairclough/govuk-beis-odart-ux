@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back to dashboard</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Financial tracker spreadsheet successfully submitted
+      </h1>
+      <div class="govuk-panel__body">
+        Keep this reference number<br><strong>HDJ2123F</strong> for your records.
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">What happens next</h2>
+        <p class="govuk-body-lead">It will now be reviewed by the BEIS RM team. Should there be any issues you will be contacted within the next 3 working days.</p>
+      </div>
+      <div class="govuk-grid-column-full">
+
+
+                <h1 class="govuk-heading-m">
+                  Choose an option
+                </h1>
+
+              <ul class="govuk-list">
+                <li><a href="../../../dashboard">Back to dashboard</a></li>
+                <li><a href="#">Log out</a></li>
+                <li><a href="mailto:ty.fairclough@digi2al.co.uk">Submit feedback</a></li>
+              </ul>
+        </div>
+  </main>
+</div>
+{% endblock %}

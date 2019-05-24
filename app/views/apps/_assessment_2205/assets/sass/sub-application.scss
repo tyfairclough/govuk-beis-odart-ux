@@ -1187,3 +1187,207 @@ nav.global-nav ul li.sa-stacker.sa-open ul li {
   }
 
 }
+
+
+
+/* HTML Guideance styles */
+.html-publications-show:after,
+.html-publications-show .publication-external:after,
+.html-publications-show .publication-header:after,
+.html-publications-show .publication-content .govspeak .contact:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.html-publications-show:after,
+.html-publications-show .publication-external:after,
+.html-publications-show .publication-header:after,
+.html-publications-show .publication-content .govspeak .contact:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.html-publications-show {
+  padding: 15px 15px 90px;
+}
+
+.html-publications-show .publication-header {
+  background: #2b8cc4;
+  padding: 10px 15px;
+  margin: 0 -15px;
+}
+
+.html-publications-show .publication-header .headings {
+  overflow: hidden;
+}
+
+.html-publications-show .publication-header .headings .document-type {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  margin: 20px 0 0;
+}
+
+.html-publications-show .publication-header .headings h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 32px;
+  line-height: 1.09375;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: bold;
+  margin: 5px 0 15px;
+  color: #fff;
+}
+
+.html-publications-show .publication-header .headings p {
+  margin: 15px 0 20px;
+  color: #fff;
+}
+
+.html-publications-show .in-page-navigation {
+  color: #fff;
+  margin: 0 0 40px;
+  width: 100%;
+}
+
+.html-publications-show .in-page-navigation h2 {
+  font-weight: bold;
+}
+
+.html-publications-show .in-page-navigation ol {
+  padding-left: 30px;
+  list-style-type: decimal;
+}
+
+.html-publications-show .in-page-navigation ol li {
+  list-style: decimal;
+  font-weight: bold;
+}
+
+.html-publications-show .in-page-navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.html-publications-show .publication-header a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.html-publications-show .publication-content {
+  position: relative;
+  z-index: 2;
+}
+
+.html-publications-show .publication-content .govspeak h2, #whitehall-wrapper .html-publications-show .publication-content .govspeak h3 {
+  font-weight: bold;
+  color: black;
+  color: #0b0c0c;
+  margin-top: 30px;
+}
+
+.html-publications-show .publication-content .govspeak h2 .number {
+  background: #fff;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.html-publications-show .publication-content .govspeak h3 {
+  font-weight: bold;
+  color: black;
+  color: #0b0c0c;
+  margin-top: 30px;
+}
+
+.html-publications-show .publication-content .govspeak h3 .number {
+  background: #fff;
+  color: #6f777b;
+  padding-right: 10px;
+}
+
+.html-publications-show .govspeak h4, .html-publications-show .govspeak h5, .html-publications-show .govspeak h6 {
+  font-size: 19px;
+  line-height: 1.31579;
+}
+
+@media (min-width: 641px) {
+  .html-publications-show .publication-header {
+    padding: 0 30px;
+    margin: 0 -15px;
+  }
+  .html-publications-show .publication-header .headings .document-type {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-header .headings .document-type {
+    margin: 75px 0 10px;
+  }
+  .html-publications-show .publication-header .headings h1 {
+    font-size: 48px;
+    line-height: 1.04167;
+  }
+  .html-publications-show .publication-header .headings h1 {
+    margin-bottom: 60px;
+  }
+  .html-publications-show .publication-content .govspeak {
+    width: 75%;
+    float: right;
+  }
+  .html-publications-show .publication-content .govspeak h2, #whitehall-wrapper .html-publications-show .publication-content .govspeak h3 {
+    margin-top: 80px;
+  }
+  .html-publications-show .publication-content .govspeak h2 {
+    font-size: 36px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-content .govspeak h2 {
+    margin: 60px 0 15px;
+  }
+  .html-publications-show .publication-content .govspeak h2 .number {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 53px;
+    line-height: 1.03774;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: bold;
+    position: absolute;
+    margin: -30px 0 0 -25%;
+    width: 22%;
+    padding: 35px 0 30px 3%;
+  }
+  .html-publications-show .publication-content .govspeak h2 .number {
+    font-size: 80px;
+    line-height: 1;
+  }
+  .html-publications-show .publication-content .govspeak h3 {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-content .govspeak h3 {
+    margin-top: 80px;
+  }
+  .html-publications-show .publication-content .govspeak h3 .number {
+    padding-right: 0;
+    display: inline-block;
+    width: 75px;
+    margin-left: -75px;
+  }
+  .html-publications-show .publication-content .govspeak h4, #whitehall-wrapper .html-publications-show .publication-content .govspeak h5, #whitehall-wrapper .html-publications-show .publication-content .govspeak h6 {
+    font-weight: bold;
+    color: black;
+    color: #0b0c0c;
+    margin-top: 30px;
+  }
+  .html-publications-show .back-to-content {
+    position: fixed;
+    bottom: 15px;
+  }
+}

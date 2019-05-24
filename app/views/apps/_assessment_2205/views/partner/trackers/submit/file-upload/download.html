@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+  <div class="govuk-error-summary hide" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#file-upload-1">The XLS must be smaller than 2MB</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Download your financial tracker spreadsheet</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <p class="govuk-body-lead">Use this pre-completed spreadsheet to update your records.</p>
+          <a href="/public/files/oda-financial-tracker-q319.xlsx" class="govuk-button govuk-button--secondary">Download your Q2 financial tracker spreadsheet</a>
+          <br />
+          <p class="govuk-body">When you have updated and save your spreadsheet continue to upload your financial tracker spreadsheet.</p>
+          <a href="upload" class="govuk-button govuk-button">Continue</a>
+
+
+
+        </div>
+        <div class="govuk-grid-column-one-third">
+        </div>
+  </main>
+</div>
+{% endblock %}

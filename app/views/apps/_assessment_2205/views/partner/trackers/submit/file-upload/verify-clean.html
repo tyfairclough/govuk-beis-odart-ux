@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <section class="govuk-main-wrapper" id="success">
+    <h1 class="govuk-heading-xl">Verify your submission</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+          <p class="govuk-body-lead">Please check the data has been processed as you expected.</p>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">Programme</th>
+                <th class="govuk-table__header" scope="col">IATI Code</th>
+                <th class="govuk-table__header" scope="col">Actual</th>
+                <th class="govuk-table__header" scope="col">Accrual 04/19</th>
+                <th class="govuk-table__header" scope="col">Accrual 08/19</th>
+                <th class="govuk-table__header" scope="col">Accrual 12/19</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility</td>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Forests Carbon Partnership Facility</td>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91101</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">International Carbon Capture and Storage Capacity Building</th>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91106</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <form>
+            <legend class="govuk-heading-m">Approve tracker for submission</legend>
+            <div class="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+        I confirm the data is correct to the best of my knowledge and I am authorised to submit it to BEIS.
+      </label>
+    </div>
+      </div>
+            </form>
+            <br>
+          <a href="success.html" class="govuk-button">Submit</a>
+
+        </div>
+  </section>
+</div>
+{% endblock %}

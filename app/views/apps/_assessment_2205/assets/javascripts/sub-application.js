@@ -666,20 +666,38 @@ $("body").addClass("wide")
   // var viewportHeightAvailable = 800;
   console.log(viewportHeightAvailable)
   var data = [
-    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow', 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Phagen information campaign', 'GB-PD-300103019', 'Green', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000],
-    ['Malaria vacination delivery', 'GB-PD-300104019', 'Blue', , 54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000]
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000],
+    ['Nationally Appropriate Mitigating Actions Facility: Administration', 'GB-PD-300102019', 'Grey', 'We made some changes to the profile of the grant to help with the PI\'s cash flow',54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54000,54999,54999,54999,54999,54999,75000]
   ];
 
   var container = document.getElementById('jexcel-0');
@@ -695,23 +713,28 @@ $("body").addClass("wide")
 
 
     nestedHeaders: [
-      [{label: '', colspan: 4}, {label: 'Actuals', colspan: 5}, {label: 'Forecast', colspan: 25}],
-      [{label: '', colspan: 4}, {label: 'Cash', colspan: 4}, {label: 'Accruals', colspan: 25}, {label: 'Accruals', colspan: 5}],
-      ['Activity', 'ID', 'Status', 'Narrative', 'Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q1 19','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21','Q2 21','Q3 21','Q4 21','Q1 22','Q2 22','Q3 22','Q4 22','Q1 23','Q2 23','Q3 23','Q4 23','Q1 24','Q2 24','Q3 24','Q4 24','Q1 25','Q2 25','Q3 25','Q4 25','Q1 26','Q2 26','Q3 26','Q4 26']
+      [{label: '', colspan: 4}, {label: 'Actuals', colspan: 10}, {label: 'Forecast', colspan: 16}],
+      [{label: '', colspan: 4}, {label: 'Cash', colspan: 5},{label: 'Accruals', colspan: 5}, {label: 'Cash', colspan: 8}, {label: 'Accruals', colspan: 8}],
+      ['Activity', 'ID', 'Status', 'Narrative', 'Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21']
     ],
-    columns: [
-        {data: 'Activity',readOnly: true},{data: 'ID',readOnly: true},{data: 'Status'},{data: 'Narrative'},{data: 'Q1 18'},{data: 'Q2 18'},{data: 'Q3 18'},{data: 'Q4 18'},{data: 'Q1 19'},,{data: 'Q1 19'},{data: 'Q2 19'},{data: 'Q3 19'},{data: 'Q4 19'},{data: 'Q1 20'},{data: 'Q2 20'},{data: 'Q3 20'},{data: 'Q4 21'},{data: 'Q1 22'},{data: 'Q2 22'},{data: 'Q3 22'}
-      ],
 
 /*    hiddenColumns: {
       columns: [4, 5, 6,7],
       indicators: true
     },
+
 */
+//
+// hiddenColumns: {
+//   // set columns that are hidden by default
+//   // columns: [5, 10, 15],
+//   // show where are hidden columns
+//   indicators: true
+// },
     manualColumnFreeze: true,
     manualColumnMove: false,
     manualRowMove: true,
-    fixedColumnsLeft: 2,
+    fixedColumnsLeft: 4,
     colHeaders: true,
     colWidths: 100,
     width: '100%',
@@ -728,7 +751,7 @@ function trackerSubmitJourneyLogic(){
       e.preventDefault();
       state = $("input[name=choose-journey]:checked").val()
       if (state === "online") {
-          window.location.href = "data-table/start";
+          window.location.href = "start";
       } else {
           window.location.href = "file-upload/start";
       }

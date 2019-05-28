@@ -6,7 +6,7 @@ module.exports = {
 	overrides: {
 
 	  // Service name used in header. Eg: 'Renew your passport'
-	   serviceName: 'Report on ODA activity and financial data'
+	   serviceName: 'Report ODA activity and financial data'
 
 	  // Cookie warning - update link to service's cookie page.
 	  // cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#" title="Find out more about cookies">Find out more about cookies</a>'

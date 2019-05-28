@@ -84,7 +84,7 @@
             <p class="govuk-body">Please fix errors listed and <a href="upload.html">upload your financial tracker file</a> again to continue.</p>
 
             <div class="govuk-error-summary__body">
-              <ul class="govuk-list govuk-error-summary__list">
+              <ul class="govuk-list govuk-error-summary__list hide">
                 <li>
                   <a href="#warning-1">Row 1, Column 3: Not a valid figure</a>
                 </li>
@@ -96,43 +96,49 @@
                 </li>
               </ul>
             </div>
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Row</th>
+                  <th class="govuk-table__header" scope="col">Column</th>
+                  <th class="govuk-table__header" scope="col">Column name</th>
+                  <th class="govuk-table__header" scope="col">Actual</th>
+                  <th class="govuk-table__header" scope="col">Error</th>
+                  <th class="govuk-table__header" scope="col">Example</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row warning">
+                  <td class="govuk-table__cell" scope="row">1</td>
+                  <td class="govuk-table__cell" scope="row">3</td>
+                  <td class="govuk-table__cell" scope="row">Q3 19 accrual actual</td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row">9540000</td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">Not a valid figure</div></td>
+                  <td class="govuk-table__cell" scope="row" style="padding-left: 5px">954,000.00</td>
+                </tr>
+                <tr class="govuk-table__row warning">
+                  <td class="govuk-table__cell" scope="row">2</td>
+                  <td class="govuk-table__cell" scope="row">7</td>
+                  <td class="govuk-table__cell" scope="row">Narrative</td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"></td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">No content entered</div></td>
+                  <td class="govuk-table__cell" scope="row" style="padding-left: 5px">"The project was downscaled as part of an aggregation of another programme."</td>
+                </tr>
+                <tr class="govuk-table__row warning">
+                  <td class="govuk-table__cell" scope="row">3</td>
+                  <td class="govuk-table__cell" scope="row">3</td>
+                  <td class="govuk-table__cell" scope="row">Status</td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"></td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">Status of activity not declared</div></td>
+                  <td class="govuk-table__cell" scope="row" style="padding-left: 5px">Grey</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="upload" class="govuk-button govuk-button--secondary">Re-upload financial tracker spreadsheet</a>
           </div>
 
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col">Row</th>
-                <th class="govuk-table__header" scope="col">Column</th>
-                <th class="govuk-table__header" scope="col">Actual</th>
-                <th class="govuk-table__header" scope="col">Error</th>
-                <th class="govuk-table__header" scope="col">Example</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row warning">
-                <td class="govuk-table__cell" scope="row">1</td>
-                <td class="govuk-table__cell" scope="row">3</td>
-                <td class="govuk-table__cell govuk-error__cell" scope="row">two thousand pounds</td>
-                <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">Not a valid figure</div></td>
-                <td class="govuk-table__cell" scope="row" style="padding-left: 5px">954,000</td>
-              </tr>
-              <tr class="govuk-table__row warning">
-                <td class="govuk-table__cell" scope="row">2</td>
-                <td class="govuk-table__cell" scope="row">7</td>
-                <td class="govuk-table__cell govuk-error__cell" scope="row"></td>
-                <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">No content entered</div></td>
-                <td class="govuk-table__cell" scope="row" style="padding-left: 5px">The project was downscaled as part of an aggregation of another programme.</td>
-              </tr>
-              <tr class="govuk-table__row warning">
-                <td class="govuk-table__cell" scope="row">3</td>
-                <td class="govuk-table__cell" scope="row">3</td>
-                <td class="govuk-table__cell govuk-error__cell" scope="row"></td>
-                <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">Status of activity not declared</div></td>
-                <td class="govuk-table__cell" scope="row" style="padding-left: 5px">Grey</td>
-              </tr>
-            </tbody>
-          </table>
-          <a href="upload" class="govuk-button govuk-button--secondary">Re-upload financial tracker spreadsheet</a>
+
 
           <form class="hide">
             <legend class="govuk-heading-m">Approve tracker for submission</legend>

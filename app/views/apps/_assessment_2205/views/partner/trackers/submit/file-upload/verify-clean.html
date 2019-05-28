@@ -1,48 +1,259 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<section id="viewID" data-page-name="partnerVerifyUpload">
 
-<div class="govuk-width-container">
-  <a href="#" class="govuk-back-link">Back</a>
+  <div class="govuk-grid-row">
+  <aside class="govuk-grid-column-one-third aside">
+    <a href="#" class="govuk-back-link">Back to all reports</a>
+    <header class="">
+      <!-- <div class="resultCount">
+            <div class="govuk-caption-m">Results</div>
+            <div class="govuk-heading-m" id="resultCount">431,039</div>
+          </div> -->
+    </header>
 
-  <section class="govuk-main-wrapper" id="success">
-    <h1 class="govuk-heading-xl">Verify your submission</h1>
+
+              <form>
+                <legend class="govuk-heading-m">Approve tracker for submission</legend>
+                <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+            I confirm the data is correct to the best of my knowledge and I am authorised to submit it to BEIS.
+          </label>
+        </div>
+          </div>
+                </form>
+                <br>
+              <a href="success.html" class="govuk-button">Submit</a>
+
+    </aside>
+      <div class="govuk-grid-column-two-thirds">
+  <section id="success">
+    <header>
+    <!-- <span class="govuk-caption-xl">Reporting</span> -->
+    <h1 class="govuk-heading-xl" style="margin-bottom: 15px;">Verify your submission</h1>
+    <p class="govuk-body-lead">Please check the data has been processed as you expected.</p>
+      </header>
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
 
-          <p class="govuk-body-lead">Please check the data has been processed as you expected.</p>
 
           <table class="govuk-table">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col">Programme</th>
-                <th class="govuk-table__header" scope="col">IATI Code</th>
-                <th class="govuk-table__header" scope="col">Actual</th>
-                <th class="govuk-table__header" scope="col">Accrual 04/19</th>
-                <th class="govuk-table__header" scope="col">Accrual 08/19</th>
-                <th class="govuk-table__header" scope="col">Accrual 12/19</th>
+                <th class="govuk-table__header" scope="col" colspan="3">Activity/ID</th>
+                <th class="govuk-table__header" scope="col" colspan="5">Actuals</th>
+                <th class="govuk-table__header" scope="col" colspan="9">Forecast</th>
+              </tr>
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">h1</th>
+                <th class="govuk-table__header" scope="col">h2</th>
+                <th class="govuk-table__header" scope="col">h3</th>
+                <th class="govuk-table__header" scope="col">Q1 19</th>
+                <th class="govuk-table__header" scope="col">Q2 19</th>
+                <th class="govuk-table__header" scope="col">Q3 19</th>
+                <th class="govuk-table__header" scope="col">Q4 19</th>
+                <th class="govuk-table__header" scope="col">Q1 20</th>
+                <th class="govuk-table__header" scope="col">Q1 19</th>
+                <th class="govuk-table__header" scope="col">Q2 19</th>
+                <th class="govuk-table__header" scope="col">Q3 19</th>
+                <th class="govuk-table__header" scope="col">Q4 19</th>
+                <th class="govuk-table__header" scope="col">Q1 20</th>
+                <th class="govuk-table__header" scope="col">Q1 20</th>
+                <th class="govuk-table__header" scope="col">Q2 20</th>
+                <th class="govuk-table__header" scope="col">Q3 20</th>
+                <th class="govuk-table__header" scope="col">Q4 20</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility</td>
-                <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" scope="row">Forests Carbon Partnership Facility</td>
-                <td class="govuk-table__cell" scope="row">GB-GOV-13-91101</td>
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" scope="row">International Carbon Capture and Storage Capacity Building</th>
-                <td class="govuk-table__cell" scope="row">GB-GOV-13-91106</td>
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility / GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">Marine Shoreline Defense / GB-GOV-13-911123</td>
+                <td class="govuk-table__cell" scope="row">Morroco Shoreline Defense / GB-GOV-13-93923</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
                 <td class="govuk-table__cell" scope="row">£1,909.80</td>
@@ -51,21 +262,8 @@
             </tbody>
           </table>
 
-          <form>
-            <legend class="govuk-heading-m">Approve tracker for submission</legend>
-            <div class="govuk-checkboxes">
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
-      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
-        I confirm the data is correct to the best of my knowledge and I am authorised to submit it to BEIS.
-      </label>
-    </div>
-      </div>
-            </form>
-            <br>
-          <a href="success.html" class="govuk-button">Submit</a>
-
         </div>
   </section>
-</div>
+  </div>
+  </div>
 {% endblock %}

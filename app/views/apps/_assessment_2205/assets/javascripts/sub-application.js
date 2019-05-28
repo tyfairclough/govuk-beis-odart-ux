@@ -99,6 +99,9 @@ switch (pageName) {
    case 'biesReporting':
        biesReporting();
        break;
+   case 'partnerVerifyUpload':
+       partnerVerifyUpload();
+       break;
    case 'biesReportingStandard':
        biesReportingStandard();
        break;
@@ -143,6 +146,10 @@ function trackerCompleteReview(){
   })
 
 
+}
+
+function partnerVerifyUpload(){
+  $("body").addClass("wide");
 }
 
 function partnerAddProjectCheckAnswers(){
@@ -291,9 +298,9 @@ function trackerDetailsReview(){
 
 
     nestedHeaders: [
-      [{label: '', colspan: 5}, {label: 'Actuals', colspan: 10}, {label: 'Forecast', colspan: 16}],
-      [{label: '', colspan: 5}, {label: 'Cash', colspan: 5},{label: 'Accruals', colspan: 5}, {label: 'Cash', colspan: 8}, {label: 'Accruals', colspan: 8}],
-      ['Activity', 'ID', 'Status', 'Narrative','','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21']
+      [{label: '', colspan: 4}, {label: 'Actuals', colspan: 10}, {label: 'Forecast', colspan: 17}],
+      [{label: '', colspan: 4}, {label: 'Cash', colspan: 5},{label: 'Accruals', colspan: 5}, {label: 'Cash', colspan: 8}, {label: 'Accruals', colspan: 9}],
+      ['Your comment','Activity', 'ID', 'Status', 'Narrative','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21']
     ],
 
   /*    hiddenColumns: {
@@ -312,7 +319,7 @@ function trackerDetailsReview(){
     manualColumnFreeze: true,
     manualColumnMove: false,
     manualRowMove: true,
-    fixedColumnsLeft: 4,
+    fixedColumnsLeft: 5,
     colHeaders: true,
     colWidths: 100,
     width: '100%',
@@ -421,7 +428,7 @@ function beisTrackerDashboard(){
                                content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
                              }
                              // content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].budget_activity + '</td>';
-                             content += '<td class="govuk-table__cell"><a href="tracker/index">Review activities</a></td>';
+                             content += '<td class="govuk-table__cell"><a href="tracker/index">Review submission</a></td>';
                              content += '</tr>';
                      }
                    }

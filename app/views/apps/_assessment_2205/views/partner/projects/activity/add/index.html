@@ -852,7 +852,7 @@
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="address-postcode">
-          Expected duration
+          Expected duration <span class="govuk-hint">(Months)
         </label>
         <input class="govuk-input govuk-input--width-3" id="address-postcode" name="address-postcode" type="text">
       </div>
@@ -868,6 +868,12 @@
         <label class="govuk-label" for="address-postcode">
           Total awards by UK
         </label>
+        <details class="govuk-details" style="margin-bottom: 5px;">
+          <summary class="govuk-details__summary">What is this?</summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Of the total awards granted how many were to external implementors based in the UK</p>
+          </div>
+          </details>
         <input class="govuk-input govuk-input--width-3" id="address-postcode" name="address-postcode" type="text">
       </div>
 
@@ -919,11 +925,11 @@
 
       <div class="govuk-form-group hide">
         <label class="govuk-label" for="address-postcode">
-          Equivalence note
+          Equivalence note (optional)
         </label>
         <details class="govuk-details">
           <summary>what is an equivalence note</summary>
-          <div class="govuk-details-body">Tell the user what this is</div>
+          <div class="govuk-details-body">Add any notes regarding the fund matching that may take place</div>
         </details>
         <textarea rows="8" cols="80" class="govuk-textarea" id="address-postcode" name="address-postcode" type="text"></textarea>
       </div>

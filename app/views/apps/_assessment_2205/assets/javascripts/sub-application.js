@@ -158,6 +158,7 @@ $(".govuk-button").click(function(e){
   e.preventDefault();
   projectCount = localStorage.getItem("projectCount");
   localStorage.setItem("projectCount",projectCount++);
+  console.log(projectCount)
   window.location = $(this).attr("href");
 })
 
@@ -178,6 +179,9 @@ function partnerAddActivity(){
 
 function partnerActivitiesDashboard(projectCount){
 
+  $("#emptyState").addClass("hide");
+  $(".js-accordion-with-descriptions, #addProject").removeClass("hide");
+
   if (state == "newProject") {
     // show added project feedback
     $("#newProject.govuk-panel--confirmation").removeClass("hide");
@@ -185,12 +189,12 @@ function partnerActivitiesDashboard(projectCount){
   } else if ( state == "newActivity"){
     $("#newActivity.govuk-panel--confirmation").removeClass("hide");
   }
-  projectCount = localStorage.getItem("projectCount");
-  console.log("porject count is: " + projectCount);
-  if (projectCount != 0) {
-    $(".js-accordion-with-descriptions, #addProject").removeClass("hide");
-    $("#emptyState").addClass("hide");
-  }
+  // projectCount = localStorage.getItem("projectCount");
+  // console.log("porject count is: " + projectCount);
+  // if (projectCount != 0) {
+  //   $(".js-accordion-with-descriptions, #addProject").removeClass("hide");
+  //   $("#emptyState").addClass("hide");
+  // }
 
 }
 
@@ -295,27 +299,13 @@ function trackerDetailsReview(){
     allowEmpty: false,
     allowRemoveColumn: false,
     allowRemoveRow: false,
-
-
+    editable: false,
+    tableOverflow: false,
     nestedHeaders: [
       [{label: '', colspan: 4}, {label: 'Actuals', colspan: 10}, {label: 'Forecast', colspan: 17}],
       [{label: '', colspan: 4}, {label: 'Cash', colspan: 5},{label: 'Accruals', colspan: 5}, {label: 'Cash', colspan: 8}, {label: 'Accruals', colspan: 9}],
       ['Your comment','Activity', 'ID', 'Status', 'Narrative','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q1 18','Q2 18','Q3 18','Q4 18','Q1 19','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21','Q2 19','Q3 19','Q4 19','Q1 20','Q2 20','Q3 20','Q4 20','Q1 21']
     ],
-
-  /*    hiddenColumns: {
-      columns: [4, 5, 6,7],
-      indicators: true
-    },
-
-  */
-  //
-  // hiddenColumns: {
-  //   // set columns that are hidden by default
-  //   // columns: [5, 10, 15],
-  //   // show where are hidden columns
-  //   indicators: true
-  // },
     manualColumnFreeze: true,
     manualColumnMove: false,
     manualRowMove: true,
@@ -326,7 +316,8 @@ function trackerDetailsReview(){
     height: viewportHeightAvailable,
     fixedColumnsLeft: 4,
     filters: true,
-    dropdownMenu: false
+    dropdownMenu: false,
+    allowComments: true
   });
 
   // filter drop downs
@@ -401,7 +392,7 @@ function beisTrackerDashboard(){
                  content += '<tr class="govuk-table__row" data-row="100"><td class="govuk-table__header" colspan="4"></td><td class="govuk-table__header">'+data.trackerApprovalSheet.elements[i].budget_month+'</td><td class="govuk-table__header">'+data.trackerApprovalSheet.elements[i].budget_activity+'</td><td class="govuk-table__header"></td></tr>';
                } else {
                              content += '<tr class="govuk-table__row" data-row="'+i+'">';
-                             content += '<td class="govuk-table__cell"><a href="trackers/tracker">' + data.trackerApprovalSheet.elements[i].delivery_partner + '</a></td>';
+                             content += '<td class="govuk-table__cell"><a href="tracker/index">' + data.trackerApprovalSheet.elements[i].delivery_partner + '</a></td>';
                              content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].funds +'</td>';
                              content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].status + '</td>';
                              content += '<td class="govuk-table__cell">' + data.trackerApprovalSheet.elements[i].qa_status + '</td>';

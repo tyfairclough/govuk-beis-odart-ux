@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+<h1 class="govuk-heading-xl">Add an activity</h1>
+<div class="govuk-inset-text">
+          <p class="govuk-body">You currently have no projects or activities in your account. <a href="index">Set up your first project now</a>.
+        </p></div>
+</div>
+
+<div class="govuk-width-container hide">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Add an activity</h1>
+    <p class="govuk-body-lead">Answer questions about the acitivity you wish to report funding against.</p>
+    <p class="govuk-body">This task takes about five minutes to complete per activity you add.</p>
+    <h2 class="govuk-heading-m">You will need</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>details about the project call, if you have not previously added it, including</li>
+      <ul>
+        <li>a unique ID for the project</li>
+        <li>project start and end dates</li>
+        <li>the project delivery code</li>
+        <li>the programme call it delivers against</li>
+        <li>the type of aid being delivered</li>
+        <li>the aims of the project</li>
+      </ul>
+      <p>and</p>
+      <li>details about the activity including</li>
+      <ul>
+        <li>a unique ID for the activity</li>
+        <li>activity start and end dates</li>
+        <li>details of the principal investigator</li>
+        <li>the country where funds are spent</li>
+        <li>when the grant's first payment is due</li>
+      </ul>
+    </ul>
+    <a class="govuk-button govuk-button--start" href="add-a-project.html">Start</a>
+
+
+  </main>
+</div>
+{% endblock %}

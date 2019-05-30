@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section id="viewID" data-page-name="partnerProjectDetails">
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+
+    <p class="govuk-caption-l">Project details</p>
+    <h1 class="govuk-heading-xl">Climate Investment Funds	</h1>
+    <!-- <a class="govuk-button" href="start.html">Add an activity</a> -->
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">Fund</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Newton Fund
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> fund</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+    <h2 class="govuk-heading-m">Project</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Title
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Climate Investment Funds
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Channel of delivery code
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    11001
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> delivery code</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Is project eligible for ODA funding?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Yes
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> eligibility</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Aid type
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">A02</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> aid type</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    GCRF challenges
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">Climate change adaption</p>
+                    <p class="govuk-body">Climate change mitigation</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> GCRF challenges</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <h2 class="govuk-heading-m">Remove project</h2>
+              <p class="govuk-body">You can request for a project to be removed from you account. This can take up to a week to schedule and complete.</p>
+              <a href="../index?state=newProject" class="govuk-button-secondary">Remove project</a>
+              <!-- <a href="#">Save and  -->
+
+    </div>
+    </div>
+
+
+</div>
+
+</section>
+{% endblock %}

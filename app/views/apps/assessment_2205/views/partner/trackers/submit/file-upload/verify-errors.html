@@ -1,0 +1,227 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <!-- <section class="govuk-main-wrapper hide" id="success">
+    <h1 class="govuk-heading-xl">Verify your submission</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+          <p class="govuk-body-lead">Please check the data has been processed as you expected.</p>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">Programme</th>
+                <th class="govuk-table__header" scope="col">IATI Code</th>
+                <th class="govuk-table__header" scope="col">Actual</th>
+                <th class="govuk-table__header" scope="col">Accrual 04/19</th>
+                <th class="govuk-table__header" scope="col">Accrual 08/19</th>
+                <th class="govuk-table__header" scope="col">Accrual 12/19</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility</td>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Forests Carbon Partnership Facility</td>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91101</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">International Carbon Capture and Storage Capacity Building</th>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91106</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <form>
+            <legend class="govuk-heading-m">Approve tracker for submission</legend>
+            <p class="govuk-body">
+              Please check the data.
+            </p>
+            <div class="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+        I confirm the data is correct to the best of my knowledge and I am authorised to submit it to BEIS.
+      </label>
+    </div>
+      </div>
+            </form>
+            <br>
+          <button href="#" class="govuk-button">Continue</button>
+
+        </div>
+  </section> -->
+  <section class="govuk-main-wrapper" id="warning">
+    <h1 class="govuk-heading-xl">Verify your submission</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+          <p class="govuk-body-lead">Please check the data has been processed as you expected.</p>
+
+          <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              Errors to fix
+            </h2>
+            <p class="govuk-body">Please fix errors listed and <a href="upload.html">upload your financial tracker file</a> again to continue.</p>
+
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list hide">
+                <li>
+                  <a href="#warning-1">Row 1, Column 3: Not a valid figure</a>
+                </li>
+                <li>
+                  <a href="#warning-2">Row 2: Column 7: No content entered</a>
+                </li>
+                <li>
+                  <a href="#warning-3">Row 3: Column 3: No content entered</a>
+                </li>
+              </ul>
+            </div>
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Row</th>
+                  <th class="govuk-table__header" scope="col">Column</th>
+                  <th class="govuk-table__header" scope="col">Column name</th>
+                  <th class="govuk-table__header" scope="col">Actual</th>
+                  <th class="govuk-table__header" scope="col">Error</th>
+                  <th class="govuk-table__header" scope="col">Example</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row warning">
+                  <td class="govuk-table__cell" scope="row">1</td>
+                  <td class="govuk-table__cell" scope="row">3</td>
+                  <td class="govuk-table__cell" scope="row">Q3 19 accrual actual</td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row">9540000</td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">Not a valid figure</div></td>
+                  <td class="govuk-table__cell" scope="row" style="padding-left: 5px">954,000.00</td>
+                </tr>
+                <tr class="govuk-table__row warning">
+                  <td class="govuk-table__cell" scope="row">2</td>
+                  <td class="govuk-table__cell" scope="row">7</td>
+                  <td class="govuk-table__cell" scope="row">Narrative</td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"></td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">No content entered</div></td>
+                  <td class="govuk-table__cell" scope="row" style="padding-left: 5px">"The project was downscaled as part of an aggregation of another programme."</td>
+                </tr>
+                <tr class="govuk-table__row warning">
+                  <td class="govuk-table__cell" scope="row">3</td>
+                  <td class="govuk-table__cell" scope="row">3</td>
+                  <td class="govuk-table__cell" scope="row">Status</td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"></td>
+                  <td class="govuk-table__cell govuk-error__cell" scope="row"><div id="warning-1">Status of activity not declared</div></td>
+                  <td class="govuk-table__cell" scope="row" style="padding-left: 5px">Grey</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="upload" class="govuk-button govuk-button--secondary">Re-upload financial tracker spreadsheet</a>
+          </div>
+
+
+
+          <form class="hide">
+            <legend class="govuk-heading-m">Approve tracker for submission</legend>
+            <div class="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+        I confirm the data is correct to the best of my knowledge and I am authorised to submit it to BEIS.
+      </label>
+    </div>
+      </div>
+      <br>
+
+      <a href="#" class="govuk-button">Continue</a>
+
+            </form>
+
+        </div>
+  </section>
+  <!-- <section class="govuk-main-wrapper hide" id="failed">
+    <h1 class="govuk-heading-xl">Verify your submission</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+          <p class="govuk-body-lead">Please check the data has been processed as you expected.</p>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">Programme</th>
+                <th class="govuk-table__header" scope="col">IATI Code</th>
+                <th class="govuk-table__header" scope="col">Actual</th>
+                <th class="govuk-table__header" scope="col">Accrual 04/19</th>
+                <th class="govuk-table__header" scope="col">Accrual 08/19</th>
+                <th class="govuk-table__header" scope="col">Accrual 12/19</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Nationally Appropriate Mitigating Actions Facility</td>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">Forests Carbon Partnership Facility</td>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91101</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">International Carbon Capture and Storage Capacity Building</th>
+                <td class="govuk-table__cell" scope="row">GB-GOV-13-91106</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+                <td class="govuk-table__cell" scope="row">£1,909.80</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <form class="hide">
+            <legend class="govuk-heading-m">Approve tracker for submission</legend>
+            <p class="govuk-body">
+              Please check the data.
+            </p>
+            <div class="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+        I confirm the data is correct to the best of my knowledge and I am authorised to submit it to BEIS.
+      </label>
+    </div>
+      </div>
+            </form>
+            <br>
+          <button href="#" class="govuk-button">Continue</button>
+
+        </div>
+  </section> -->
+</div>
+{% endblock %}

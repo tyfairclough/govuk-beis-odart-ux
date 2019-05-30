@@ -1,0 +1,267 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section id="viewID" data-page-name="partnerAddProject">
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-xl">Add an activity</h1>
+
+<section id="odaEligible">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="choose-oda-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Is your activity ODA eligible?
+          </h1>
+        </legend>
+        <span id="choose-oda-hint" class="govuk-hint">
+          If you are unsure check with your BEIS support worker.
+        </span>
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="choose-oda-1" name="choose-oda" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="choose-oda-1">
+              Yes
+            </label> </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="choose-oda-2" name="choose-oda" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="choose-oda-2">
+              No
+            </label> </div>
+        </div>
+
+      </fieldset>
+    </div>
+    <div class="govuk-form-group">
+    <a href="#" class="govuk-button">Continue</a>
+    </div>
+  </fieldset>
+</section>
+
+
+<section id="odaEligibleWhatNext" class="hide">
+  <h1 class="govuk-heading-l">
+    Secure eligibility before continuing
+  </h1>
+  <p class="govuk-body">All activities added must be eligible for ODA. Liaise with with your BEIS support worker to continue.</p>
+  <a href="../index">Go back to activities</a>
+</section>
+
+<section id="chooseFund" class="hide">
+    <fieldset class="govuk-fieldset">
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="chooseFundSelect">
+        What programme (activity h1) does this belong to?
+      </label>
+      <select id="select-fund" name="select-fund">
+        <option value="" disabled selected></option>
+        <optgroup label="GCRF">
+          <option value="1">Sustainable energy and international development: beyond technology</option>
+          <option value="2">Early Child Education 2019</option>
+          <option value="3">Rethinking the off-grid city: Human-infrastructure interactions in the context of urban crises and urban change</option>
+          <option value="4">A Combined Food Systems Approach to Scaling-up Interventions to Address the Double Burden of Malnutrition</option>
+          <option value="5">Education as a Driver of Sustainable Development</option>
+          <option value="6">Cultures, Behaviours and Histories of Agriculture, Food, and Nutrition</option>
+          <option value="7">Development-based approaches to protracted displacement</option>
+          <option value="8">Pre announcement: GCRF Global Research Translation Awards</option>
+        </optgroup>
+        <optgroup label="Newton Fund">
+          <option value="9">UK-Malaysia Joint Partnership on Non-Communicable Diseases</option>
+          <option value="10">Cultural Heritage, Migration and Indian Diasporas</option>
+        </optgroup>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    </fieldset>
+    <a href="#" class="govuk-button" id="fundSelected">Continue</a>
+</section>
+
+<section id="projectNewton" class="hide">
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="address-line-1">
+      Activity name (h2)
+    </label>
+    <details class="govuk-details" style="margin-bottom:5px;">
+      <summary class="govuk-details__summary">What is a h2 activity?</summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">Explain to the user what a h2 activities is and explain its previous names.</p>
+      </div>
+    </details>
+    <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-line-1">
+      Channel of delivery code
+    </label>
+    <span id="nationality-hint" class="govuk-hint">
+    What is the channel of delivery code?.
+  </span>
+  <details class="govuk-details" style="margin-bottom: 5px;">
+    <summary class="govuk-details__summary">Help with channel of delivery codes</summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">Channel of delivery codes are an <a href="#">externally managed list of codes</a> that describe how the external implementor will work on the sub activity.</p>
+    </div>
+    </details>
+<select class="select-oda-channel">
+  <option value=""></option>
+  <option value="11001">11001</option>
+  <option value="20000">20000</option>
+</select>
+  </div>
+    <div class="govuk-form-group">
+<label class="govuk-label" for="aidType">
+  Aid type
+</label>
+<details class="govuk-details" style="margin-bottom: 5px;">
+  <summary class="govuk-details__summary">Help with Aid type codes</summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Aid types are categories of <a href="#">aid defined by DFID</a>.</p>
+  </div>
+  </details>
+<select class="select-aid">
+  <option value="" disabled selected></option>
+  <option value="a01">A01</option>
+  <option value="a02">A02</option>
+  <option value="b01">B01</option>
+  <option value="b02">B02</option>
+  <option value="b03">B03</option>
+  <option value="b04">B04</option>
+  <option value="c01">C01</option>
+  <option value="d01">D01</option>
+  <option value="d02">D02</option>
+  <option value="e01">E01</option>
+  <option value="e02">E02</option>
+  <option value="f01">F01</option>
+  <option value="g01">G01</option>
+  <option value="h01">H01</option>
+  <option value="h02">H02</option>
+  <option value="h03">H03</option>
+  <option value="h04">H04</option>
+  <option value="h05">H05</option>
+</select>
+</div>
+<a class="govuk-button" href="../add/check-answers.html">Continue</a>
+</section>
+
+<section id="projectGCRF" class="hide">
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="address-line-1">
+    Activity name (h2)
+  </label>
+  <details class="govuk-details" style="margin-bottom:5px;">
+    <summary class="govuk-details__summary">What is a h2 activity?</summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">You may of referred activity (h2) as project or call in the past. The activity (h2) refers to brief of what you are asking external implementors to come forward with projects for.</p>
+    </div>
+  </details>
+  <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="address-line-1">
+    Channel of delivery code
+  </label>
+  <span id="nationality-hint" class="govuk-hint">
+  What is the channel of delivery code?.
+  </span>
+  <details class="govuk-details" style="margin-bottom: 5px;">
+  <summary class="govuk-details__summary">Help with channel of delivery codes</summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Channels of delivery are a list of channels that describe the main methods an external implementor will deliver their sub-activity.</p>
+  </div>
+  </details>
+  <select class="select-oda-channel">
+    <option value=""></option>
+    <option value="11001">11001</option>
+    <option value="20000">20000</option>
+  </select>
+  </div>
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="aidType">
+  Aid type
+  </label>
+  <details class="govuk-details" style="margin-bottom: 5px;">
+    <summary class="govuk-details__summary">Help with Aid type codes</summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">Aid types are categories of <a href="#">aid defined by DFID</a>.</p>
+    </div>
+    </details>
+  <select class="select-aid">
+  <option value="" disabled selected></option>
+  <option value="a01">A01</option>
+  <option value="a02">A02</option>
+  <option value="b01">B01</option>
+  <option value="b02">B02</option>
+  <option value="b03">B03</option>
+  <option value="b04">B04</option>
+  <option value="c01">C01</option>
+  <option value="d01">D01</option>
+  <option value="d02">D02</option>
+  <option value="e01">E01</option>
+  <option value="e02">E02</option>
+  <option value="f01">F01</option>
+  <option value="g01">G01</option>
+  <option value="h01">H01</option>
+  <option value="h02">H02</option>
+  <option value="h03">H03</option>
+  <option value="h04">H04</option>
+  <option value="h05">H05</option>
+  </select>
+  </div>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <label class="govuk-label">Which GCRF challenge areas does this project align to?</label>
+      <details class="govuk-details" style="margin-bottom: 5px;">
+        <summary class="govuk-details__summary">Help with GCRF challenges</summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">All GCRF funding is aligned to <a href="#">themes</a> that will be awarded funding for.</p>
+        </div>
+        </details>
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-1">
+            Climate change adaption
+          </label> </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            Climate change mitigation
+          </label> </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+            Desertification
+          </label> </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+            Biodiversity
+          </label> </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+            Gender
+          </label> </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <a class="govuk-button" href="../add/check-answers.html">Continue</a>
+</section>
+
+
+</div>
+</div>
+
+  </main>
+</div>
+</section>
+{% endblock %}

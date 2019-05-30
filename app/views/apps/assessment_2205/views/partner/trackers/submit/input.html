@@ -1,0 +1,178 @@
+{% extends "layout-subapp.html" %}
+
+{% block content %}
+
+<section id="viewID" data-page-name="submitDataTable">
+
+
+<div class="govuk-grid-row">
+<aside class="govuk-grid-column-one-third aside">
+  <a href="#" class="govuk-back-link">Back financial data</a>
+
+  <div class="related">
+      <div class="relatedHeader">
+      <i class="fa fa-plus"></i>
+      <h3 class="govuk-heading-s">Filter data by</h3>
+      <p class="govuk-caption-m govuk-!-font-size-16">Choose from the options below</p>
+      </div>
+      <div class="relatedBody hide">
+        <form>
+          <fieldset class="govuk-fieldset">
+
+            <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Fund
+            </label>
+            <select id="select-fund" class="selectized" placeholder="Select a region(s)..." tabindex="-1" >
+              <option value="All" selected="selected">All</option>
+            </select>
+            </div>
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Country
+        </label>
+        <select id="select-country" class="selectized" placeholder="Select a country(s)..." multiple="multiple" tabindex="-1" >
+          <option value="All" selected="selected">All</option>
+        </select>
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="address-postcode">
+          Keyword
+        </label>
+        <input type="text" id="select-keywords" class="selectized" placeholder="Enter words to search…" tabindex="-1" value="">
+        </div>
+
+        <button class="govuk-button govuk-button--secondary">Update</button>
+
+        </fieldset>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="related">
+    <div class="relatedHeader">
+    <i class="fa fa-plus"></i>
+    <h3 class="govuk-heading-s">Sort data by</h3>
+    <p class="govuk-caption-m govuk-!-font-size-16">Choose from the options below</p>
+    </div>
+    <div class="relatedBody hide">
+      <form>
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Activity Status
+          </label>
+          <select id="select-activity" class="selectized" placeholder="Choose an activity status(s)…">
+            <option selected=""></option>
+            <option value="1">Grey</option>
+            <option value="2">Green</option>
+            <option value="3">Amber</option>
+            <option value="4">Red</option>
+            <option value="5">Blue</option>
+            <option value="6">No longer happening</option>
+            <option value="7">Delivery</option>
+            </select>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+    <div class="related">
+    <div class="relatedHeader">
+    <i class="fa fa-plus"></i>
+    <h3 class="govuk-heading-s">Show/hide data</h3>
+    <p class="govuk-caption-m govuk-!-font-size-16">Choose from the options below</p>
+    </div>
+    <div class="relatedBody hide">
+      <form>
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-1">
+                    Actuals
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    Accruals
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                    Forecast
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Cash
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Activity (h1)
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Activity (h2)
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Sub-activity (h3)
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Country
+                  </label> </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Narrative
+                  </label> </div>
+              </div>
+            </fieldset>
+          </div>
+          <button class="govuk-button govuk-button--secondary">Update</button>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+       <a class="govuk-button" href="file-upload/verify-clean.html">Submit</a>
+
+</aside>
+<div class="govuk-grid-column-two-thirds main">
+  <br />
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl" style="margin-bottom:5px;">Report financial data</h1>
+      <!-- <p class="govuk-caption-m">This document automatically saves as you make changes</p> -->
+      <br />
+      <br />
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="panel-blue">
+              <div class="govuk-caption-m">Last saved <span>3</span> seconds ago</div>
+              <!-- <div class="govuk-heading-s"></div> -->
+           </div>
+    </div>
+  </div>
+
+  <div id="jexcel-0"></div>
+
+</div>
+</div>
+
+
+
+</section>
+{% endblock %}

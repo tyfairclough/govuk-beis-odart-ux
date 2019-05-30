@@ -1,0 +1,114 @@
+{% extends "layout-subapp.html" %}
+{% block content %}
+<section id="viewID" data-page-name="beisTrackerDashboard">
+<br />
+<br />
+  <div class="govuk-panel govuk-panel--confirmation hide" id="sentToBeis">
+        <h1 class="govuk-panel__title">
+          Academy of Medical Sciences
+        </h1>
+        <div class="govuk-panel__body">
+          Financial sent to BEIS analyst.
+        </div>
+      </div>
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+<a href="#" class="govuk-back-link">Back</a>
+          <div class="hgroup">
+            <h1 class="govuk-heading-xl">Submissions</h1>
+            <p class="govuk-body">View status of submissions and review data quality.</p>
+          </div>
+    </div>
+   </div>
+   <div class="govuk-grid-row">
+     <div class="govuk-grid-column-one-third">
+       <div class="govuk-caption-m">Delivery partner deadline</div>
+       <div class="govuk-heading-m">28 Jun 2019</div>
+     </div>
+     <div class="govuk-grid-column-two-thirds">
+       <h3 class="govuk-heading-s">Filter submissions</h3>
+<form>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Fund
+        </label>
+        <select id="select-fund" class="selectized" placeholder="Select a fund..." tabindex="-1">
+          <option value="All">All</option>
+          <option value="newton">Newton</option>
+          <option value="gcrf">GCRF</option>
+        </select>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Status
+        </label>
+        <select id="select-status" class="selectized" placeholder="Select a fund..." tabindex="-1">
+          <option value="All">All</option>
+          <option value="not-received">Not yet received</option>
+          <option value="pending-review">Pending review</option>
+          <option value="returned">Returned to delivery partner</option>
+          <option value="approved">Approved</option>
+        </select>
+        </div>
+      </div>
+    </div>
+
+        <button class="sr-only govuk-button govuk-button--secondary">Update</button>
+  </fieldset>
+</form>
+     </div>
+   </div>
+   <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+
+   <div class="govuk-grid-row">
+     <div class="govuk-grid-column-one-third">
+       <div class="panel-blue">
+          <div class="govuk-caption-m">Submissions outstanding</div>
+          <div class="govuk-heading-l">2</div>
+       </div>
+     </div>
+     <div class="govuk-grid-column-one-third">
+        <div class="panel-blue">
+        <div class="govuk-caption-m">Total spend this period</div>
+        <div class="govuk-heading-l">£15,590,000</div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="panel panel-blue">
+          <div class="govuk-caption-m">Budget v forecast</div>
+          <div class="govuk-heading-l"><span>-</span> <span>£1,105,000</span></div>
+        </div>
+      </div>
+   </div>
+   <div class="govuk-grid-row">
+         <div class="govuk-grid-column-full">
+         <br>
+         <br>
+   <table class="govuk-table govuk-table--small" id="trackerReviewTable">
+
+     <thead class="govuk-table__head">
+       <tr class="govuk-table__row">
+         <th class="govuk-table__header" scope="col">Delivery partner</th>
+         <th class="govuk-table__header" scope="col">Funds</th>
+         <th class="govuk-table__header" scope="col">Status</th>
+         <th class="govuk-table__header" scope="col">QA Status</th>
+         <th class="govuk-table__header" scope="col">Budget (month)</th>
+         <th class="govuk-table__header" scope="col">Budget (activity)</th>
+         <th class="govuk-table__header" scope="col"></th>
+       </tr>
+     </thead>
+     <tbody class="govuk-table__body">
+       <tr><td><p class="govuk-body-hint">Please wait</p></td></tr>
+     </tbody>
+   </table>
+           </div>
+
+     </div>
+</section>
+{% endblock %}

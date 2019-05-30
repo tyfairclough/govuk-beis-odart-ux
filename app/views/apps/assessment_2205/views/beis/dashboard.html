@@ -1,0 +1,50 @@
+{% extends "layout-subapp.html" %}
+{% block content %}
+<section id="viewID" data-page-name="beisDashboard">
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <div class="hgroup">
+            <h1 class="govuk-heading-xl">Report ODA activity and financial data</h1>
+            <!-- <p class="govuk-body">Use this page to navigate towards tasks you need to complete.</p> -->
+          </div>
+    </div>
+   </div>
+
+   <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+       <section>
+       <h2 class="govuk-heading-m"><a href="trackers/index"><span class="sr-only">View all</span>Submissions</a></h2>
+       <p class="govuk-body">View the status of submissions and review data quality.</p>
+       </section>
+       <section>
+       <h2 class="govuk-heading-m"><a href="reporting">Reports</a></h2>
+       <p class="govuk-body">Run a selection of standard reports or create your own.</p>
+       </section>
+     </div>
+     <div class="govuk-grid-column-one-third panel-blue">
+       <h3 class="govuk-heading-m">To do list</h3>
+       <p class="govuk-body">Actions reported by the service that need your attention.</p>
+       <ol class="govuk-list govuk-list--number">
+         <!-- <li><a href="#">Review new submissions</a></li> -->
+         <li><a href="#">Review activity changes</a></li>
+         <li><a href="#">Chase missing submissions</a></li>
+       </ol>
+     </div>
+   </div>
+   <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+     <h3 class="govuk-heading-m">Administration</h3>
+     <section>
+     <h2 class="govuk-heading-s"><a href="#">Delivery partner account settings</a></h2>
+     <p class="govuk-body">Configure and update delivery partner accounts. Invite delivery partner users into the service.</p>
+     </section>
+
+     <section class="hide">
+     <h2 class="govuk-heading-s"><a href="#">General administration</a></h2>
+     <p class="govuk-body">Manage the service's settings.</p>
+     </section>
+     </div>
+   </div>
+</section>
+{% endblock %}

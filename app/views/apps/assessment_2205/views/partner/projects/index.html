@@ -1,0 +1,202 @@
+{% extends "layout-subapp.html" %}
+
+{% block content %}
+<section id="viewID" data-page-name="partnerActivitiesDashboard">
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <div class="govuk-panel govuk-panel--confirmation hide" id="newProject">
+    <h1 class="govuk-panel__title">
+      Activity (h2) added
+    </h1>
+    <div class="govuk-panel__body">
+      You can now <a href="activity/add/index.html"><strong>add sub-activities (h3)</strong></a> to this activity (h2)<br/><br/>
+      New activity (h2) reference ID is GB-GOV-13-91116
+      <p style="color: white; padding: 15px 0 0; font-size: 18px; margin:0;" class="govuk-body">Use this ID as your unique reference when reporting financial data for this activity</p>
+    </div>
+  </div>
+
+  <div class="govuk-panel govuk-panel--confirmation hide" id="newActivity">
+    <h1 class="govuk-panel__title">
+      Sub-activity (h3) added
+    </h1>
+    <div class="govuk-panel__body">
+      You can now <a href="../trackers/index.html"><strong>report financial data</strong></a> for this sub-activity (h3)<br/><br/>
+      New sub-activity (h3) ID is GB-GOV-13-91116
+      <p style="color: white; padding: 15px 0 0; font-size: 18px; margin:0;" class="govuk-body">Use this ID as your unique reference when reporting financial data for this activity</p>
+    </div>
+  </div>
+
+  <main class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Activities</h1>
+    <p class="govuk-body-lead">Manage activities that your organisation report ODA spending on.</p>
+    <section id="addProject" class="hide">
+    <p class="govuk-body">All activities belong to a project. You need to associate activities with projects in order to report funds.</p>
+    <a class="govuk-button" href="add/index.html">Add an activity (h2)</a>
+    </section>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+<div class="govuk-inset-text" id="emptyState">
+  <p class="govuk-body">You currently have no activities in your account. <a href="add/">Set up your first activity now</a>.
+</div>
+
+<div class="js-accordion-with-descriptions hide" data-module="accordion-with-descriptions"><div class="subsection-controls js-subsection-controls"><button aria-expanded="false" aria-controls="subsection_content_0 subsection_content_1 ">Open all</button></div>
+					<div class="subsection-wrapper">
+						<div class="js-subsection subsection">
+							<div class="subsection__header">
+
+                <h2 class="subsection__title">
+                  <button class="subsection__button js-subsection-button" aria-expanded="false" aria-controls="subsection_content_0">Early Child Development Fund</button>
+                </h2>
+								<!-- <p class="subsection__description">Short sentence describing category.</p> -->
+							<span class="subsection__icon"></span></div>
+							<div class="subsection__content js-subsection-content js-hidden activity-table" id="subsection_content_0">
+
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="row">Activity name (h1)</th>
+                      <td class="govuk-table__cell">Early Child Development Fund</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="row">Fund</th>
+                      <td class="govuk-table__cell">GCRF</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="row">Activity ID (h1)</th>
+                      <td class="govuk-table__cell">GB-GOV-13-91116</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="row">Budget allocation</th>
+                      <td class="govuk-table__cell">£46,000,000</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="row">Spend to date</th>
+                      <td class="govuk-table__cell">£3,900,500</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Activity name (h2)</th>
+                      <th class="govuk-table__header" scope="col">Activity ID (h2)</th>
+                      <th class="govuk-table__header" scope="col">Status</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Budget</th>
+                      <th class="govuk-table__header" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell" scope="row">GCRF</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,000</td>
+                    <td class="govuk-table__cell"><a href="details?hasActivity=1">Details</a></td>
+                  </tr>
+                </table>
+                <table class="govuk-table govuk-table--small">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Activity name</th>
+                      <th class="govuk-table__header" scope="col">Sub-activity ID (h3)</th>
+                      <th class="govuk-table__header" scope="col">Countries</th>
+                      <th class="govuk-table__header" scope="col">Status</th>
+                      <th class="govuk-table__header" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Shoreline reinforcement, Morroco</td>
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell">Morroco</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Duplicate</a></td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Details</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Shoreline reinforcement, Morroco</td>
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell">Morroco</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Duplicate</a></td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Details</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Shoreline reinforcement, Morroco</td>
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell">Morroco</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Duplicate</a></td>
+                    <td class="govuk-table__cell"><a href="activity/details.html">Details</a></td>
+                  </tr>
+                </table>
+                <a class="govuk-button govuk-button--secondary" href="activity/add/index">Add an sub-activity (h3)</a>
+							</div>
+						</div>
+            <div class="js-subsection subsection">
+							<div class="subsection__header">
+								<h2 class="subsection__title">
+                  <button class="subsection__button js-subsection-button" aria-expanded="false" aria-controls="subsection_content_0">Education as a driver of sustainable development</button>
+                </h2>
+								<!-- <p class="subsection__description">Short sentence describing category.</p> -->
+							<span class="subsection__icon"></span></div>
+							<div class="subsection__content js-subsection-content js-hidden" id="subsection_content_0">
+                <table class="govuk-table">
+                                  <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                      <th class="govuk-table__header" scope="row">Activity name (h1)</th>
+                                      <td class="govuk-table__cell">Education as a driver of sustainable development</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                      <th class="govuk-table__header" scope="row">Fund</th>
+                                      <td class="govuk-table__cell">GCRF</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                      <th class="govuk-table__header" scope="row">Activity ID (h1)</th>
+                                      <td class="govuk-table__cell">GB-GOV-13-91116</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                      <th class="govuk-table__header" scope="row">Budget allocation</th>
+                                      <td class="govuk-table__cell">£46,000,000</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                      <th class="govuk-table__header" scope="row">Spend to date</th>
+                                      <td class="govuk-table__cell">£3,900,500</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                <table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Activity name (h2)</th>
+                      <th class="govuk-table__header" scope="col">Activity ID (h2)</th>
+                      <th class="govuk-table__header" scope="col">Status</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Budget</th>
+                      <th class="govuk-table__header" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody><tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">GB-GOV-13-91116</td>
+                    <td class="govuk-table__cell" scope="row">GCRF</td>
+                    <td class="govuk-table__cell">Live</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,000</td>
+                    <td class="govuk-table__cell"><a href="details?hasActivity=1">Details</a></td>
+                  </tr>
+                </tbody></table>
+                <div class="govuk-inset-text">You have no sub-activities (h3) listed for this project. <a href="#">Add an activity (h3)</a> to report financial data.</div>
+                <a class="govuk-button govuk-button--secondary" href="activity/add/index">Add an activity</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+        </div>
+
+  </main>
+</div>
+</section>
+{% endblock %}
